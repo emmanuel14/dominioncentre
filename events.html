@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover upcoming events at RCCG Dominion Centre. Join us for worship services, conferences, community outreach, and fellowship events.">
+    <meta name="keywords" content="RCCG Events, Church Events, Port Harcourt, Worship, Conferences, Community">
+    <title>Events - RCCG Dominion Centre</title>
+    
+    <!-- Google Fonts -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">RCCG</span>
+                        <span class="logo-subtext">Dominion Centre</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                    <li><a href="give.html" class="nav-link">Give</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Events & Gatherings</h1>
+                <p class="page-subtitle">Connect, Grow, and Experience God Together</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Events</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Filter Section -->
+    <section class="event-filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-calendar-alt"></i> All Events
+                </button>
+                <button class="filter-btn" data-filter="upcoming">
+                    <i class="fas fa-clock"></i> Upcoming
+                </button>
+                <button class="filter-btn" data-filter="worship">
+                    <i class="fas fa-music"></i> Worship
+                </button>
+                <button class="filter-btn" data-filter="conference">
+                    <i class="fas fa-users"></i> Conferences
+                </button>
+                <button class="filter-btn" data-filter="community">
+                    <i class="fas fa-hands-helping"></i> Community
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Event Banner -->
+    <section class="featured-event section-padding">
+        <div class="container">
+            <div class="featured-banner" data-category="upcoming">
+                <div class="featured-content">
+                    <div class="featured-badge">Featured Event</div>
+                    <h2>Gratitude 3.0</h2>
+                    <p class="featured-meta">
+                        <i class="far fa-calendar"></i> Coming Soon | 
+                        <i class="far fa-clock"></i> TBA | 
+                        <i class="fas fa-map-marker-alt"></i> RCCG Dominion Centre
+                    </p>
+                    <p class="featured-description">The sound of gratitude is rising, the atmosphere of worship is building, and hearts are getting ready to overflow with praise! Join us as we count down to Gratitude 3.0‼️ Just a few more days until we gather in one voice, one heart, to lift the Name above all names!</p>
+                    <a href="contact.html" class="btn btn-primary">Register Now</a>
+                </div>
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop" alt="Gratitude 3.0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Grid Section -->
+    <section class="events-listing section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">What's Happening</span>
+                <h2 class="section-title">All Events</h2>
+            </div>
+
+            <div class="events-grid">
+                <!-- Event 1: Thanksgiving Service -->
+                <div class="event-card" data-category="worship">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600&h=400&fit=crop" alt="Thanksgiving Service">
+                        <div class="event-badge worship">Worship</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Every</span>
+                                <span class="date-month">Sunday</span>
+                            </div>
+                        </div>
+                        <h3>Thanksgiving Sunday</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> 7:00 AM | 9:00 AM | 10:30 AM
+                        </p>
+                        <p>Thanksgiving is the heart posture of the grateful. As Overcomers, with hearts full of gratitude, we gather to lift holy hands in one accord, giving glory and thanks to the One who has made us victorious.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Face to Face with Pastor -->
+                <div class="event-card" data-category="conference">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop" alt="Face to Face">
+                        <div class="event-badge conference">Conference</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Special</span>
+                                <span class="date-month">Session</span>
+                            </div>
+                        </div>
+                        <h3>Face to Face with Dr. Perez Araka</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> Interactive Session
+                        </p>
+                        <p>Get ready for an unforgettable evening of wisdom, inspiration, and real talk as we go face-to-face with Dr. Perez Araka, Lead Pastor of RCCG Dominion Centre, for an intensive, no-holds-barred interactive session where nothing is off the table.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Register <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Talent Showcase -->
+                <div class="event-card" data-category="community">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop" alt="Talent Showcase">
+                        <div class="event-badge community">Community</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Annual</span>
+                                <span class="date-month">Event</span>
+                            </div>
+                        </div>
+                        <h3>Talent Showcase</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> Date TBA
+                        </p>
+                        <p>It's not just a competition, it's the ultimate showcase of talents, skills and love on the same stage. It is where talents meet and friendships grow. Join us for an evening of celebration and discovery.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Get Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4: Midweek Service -->
+                <div class="event-card" data-category="worship">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?w=600&h=400&fit=crop" alt="Midweek Service">
+                        <div class="event-badge worship">Worship</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Every</span>
+                                <span class="date-month">Wed</span>
+                            </div>
+                        </div>
+                        <h3>Wednesday Prayer & Bible Study</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> 5:00 PM
+                        </p>
+                        <p>Join us midweek for a powerful time of prayer, worship, and in-depth Bible study. Grow deeper in your faith and connect with fellow believers as we dive into God's Word together.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Join Us <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5: Dominion Series -->
+                <div class="event-card" data-category="upcoming">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Dominion Series">
+                        <div class="event-badge upcoming">Upcoming</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">New</span>
+                                <span class="date-month">Series</span>
+                            </div>
+                        </div>
+                        <h3>Unlock Your God-Given Dominion</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> Sunday Services
+                        </p>
+                        <p>Discover powerful secrets to self-discipline! In this sermon series, we reveal the truth that will help you rise to leadership in God's kingdom. Why do some rise to rule while others remain servants?</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Watch Series <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6: Kids Church -->
+                <div class="event-card" data-category="community">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop" alt="Kids Church">
+                        <div class="event-badge community">Community</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Every</span>
+                                <span class="date-month">Sun</span>
+                            </div>
+                        </div>
+                        <h3>Kids Church</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> 10:30 AM
+                        </p>
+                        <p>A fun, engaging, and age-appropriate service designed for children. Your kids will learn about Jesus through interactive lessons, worship, games, and activities in a safe and loving environment.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 7: Youth Service -->
+                <div class="event-card" data-category="upcoming">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop" alt="Youth Service">
+                        <div class="event-badge upcoming">Upcoming</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Coming</span>
+                                <span class="date-month">Soon</span>
+                            </div>
+                        </div>
+                        <h3>Youth Explosion</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> Date TBA
+                        </p>
+                        <p>An electrifying gathering for young people to encounter God, discover their purpose, and connect with peers. Featuring worship, powerful teaching, and opportunities for fellowship and growth.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Stay Tuned <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 8: Outreach Program -->
+                <div class="event-card" data-category="community">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&h=400&fit=crop" alt="Community Outreach">
+                        <div class="event-badge community">Community</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Monthly</span>
+                                <span class="date-month">Event</span>
+                            </div>
+                        </div>
+                        <h3>Community Outreach</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> Various Locations
+                        </p>
+                        <p>Join us as we take the love of Christ beyond our walls. Through feeding programs, medical outreach, and evangelism, we're making a tangible difference in our community.</p>
+                        <div class="event-footer">
+                            <a href="volunteer.html" class="btn btn-text">Volunteer <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 9: Prayer Summit -->
+                <div class="event-card" data-category="worship">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600&h=400&fit=crop" alt="Prayer Summit">
+                        <div class="event-badge worship">Worship</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="date-day">Quarterly</span>
+                                <span class="date-month">Event</span>
+                            </div>
+                        </div>
+                        <h3>Prayer Summit</h3>
+                        <p class="event-meta">
+                            <i class="far fa-clock"></i> Date TBA
+                        </p>
+                        <p>A powerful gathering dedicated to intercession and spiritual warfare. Join believers in seeking God's face, praying for our nation, families, and personal breakthroughs.</p>
+                        <div class="event-footer">
+                            <a href="contact.html" class="btn btn-text">Join Prayer <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event CTA Section -->
+    <section class="event-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Never Miss an Event</h2>
+                <p>Stay connected and be the first to know about our upcoming events, special services, and community programs.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Event Updates</a>
+                    <a href="volunteer.html" class="btn btn-outline-light">Volunteer at Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h3>RCCG Dominion Centre</h3>
+                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="give.html">Give</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Times -->
+                <div class="footer-column">
+                    <h4>Service Times</h4>
+                    <ul class="footer-links">
+                        <li><strong>Sunday:</strong> 7:00 AM | 9:00 AM | 10:30 AM</li>
+                        <li><strong>Wednesday:</strong> 5:00 PM</li>
+                        <li><strong>Kids Church:</strong> Sunday 10:30 AM</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            #199 Woji Road, GRA Phase 2<br>
+                            Port Harcourt, Rivers State, Nigeria
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+234">+234 XXX XXX XXXX</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
