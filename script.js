@@ -358,3 +358,22 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c🙏 RCCG Dominion Centre', 'color: #d4af37; font-size: 20px; font-weight: bold;');
     console.log('%cWelcome! God bless you.', 'color: #1a3a5c; font-size: 14px;');
 });
+
+
+
+
+// ===================================
+// PAGE LOADER
+// ===================================
+window.addEventListener('load', function() {
+    const loader = document.getElementById('pageLoader');
+    
+    if (loader) {
+        setTimeout(function() {
+            loader.classList.add('loaded');
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 500);
+        }, 500);
+    }
+});

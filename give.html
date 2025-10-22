@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Give online at RCCG Dominion Centre. Your generosity helps us spread the gospel and serve our community in Port Harcourt and beyond.">
+    <meta name="keywords" content="RCCG Give, Online Giving, Church Donation, Tithes, Offerings, Port Harcourt">
+    <title>Give - RCCG Dominion Centre</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <!-- Logo with Zoom Animation -->
+        <div class="loader-logo">
+            <img src="images/dclogo1.png" alt="RCCG Logo">
+        </div>
+
+        <!-- Loading Text -->
+        <div class="loader-text">Loading...</div>
+
+        <!-- Optional Spinner -->
+        <div class="loader-spinner"></div>
+
+        <!-- Church Name -->
+        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
+        <div class="loader-tagline">An Expression Church</div>
+    </div>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">RCCG</span>
+                        <span class="logo-subtext">Dominion Centre</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                    <li><a href="give.html" class="nav-link active">Give</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Give</h1>
+                <p class="page-subtitle">Your Generosity Changes Lives</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Give</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Section -->
+    <section class="scripture-section section-padding">
+        <div class="container">
+            <div class="scripture-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="scripture-text">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."</p>
+                <p class="scripture-reference">2 Corinthians 9:7 (NIV)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Give Section -->
+    <section class="why-give-section">
+        <div class="container">
+            <div class="why-give-content">
+                <div class="why-give-text">
+                    <div class="section-header">
+                        <span class="section-label">Generous Living</span>
+                        <h2 class="section-title">Why We Give</h2>
+                    </div>
+                    <p>Giving is an act of worship and a demonstration of our faith in God's provision. When you give to RCCG Dominion Centre, you're not just supporting a building or organization—you're investing in changed lives, transformed communities, and the advancement of God's kingdom.</p>
+                    
+                    <p>Your generosity enables us to:</p>
+                    
+                    <div class="impact-list">
+                        <div class="impact-item">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <h4>Spread the Gospel</h4>
+                                <p>Reach more people with the life-changing message of Jesus Christ</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Build Community</h4>
+                                <p>Create spaces for fellowship, growth, and spiritual development</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <div>
+                                <h4>Serve Others</h4>
+                                <p>Support the needy, widows, and vulnerable in our community</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-seedling"></i>
+                            <div>
+                                <h4>Develop Leaders</h4>
+                                <p>Train and equip the next generation of Christian leaders</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-give-image">
+                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&h=600&fit=crop" alt="Helping Hands">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ways to Give Section -->
+    <section class="ways-to-give section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">Giving Options</span>
+                <h2 class="section-title">Ways to Give</h2>
+                <p class="section-description">Choose the method that works best for you</p>
+            </div>
+
+            <div class="giving-options-grid">
+                
+                <!-- Online Giving -->
+                <div class="giving-option-card featured">
+                    <div class="option-badge">Recommended</div>
+                    <div class="option-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Give Online</h3>
+                    <p>Safe, secure, and convenient. Give from anywhere at any time using your debit card, credit card, or bank transfer.</p>
+                    <div class="option-features">
+                        <div class="feature"><i class="fas fa-check"></i> Instant & Secure</div>
+                        <div class="feature"><i class="fas fa-check"></i> One-Time or Recurring</div>
+                        <div class="feature"><i class="fas fa-check"></i> 24/7 Access</div>
+                    </div>
+                    <a href="#online-giving" class="btn btn-primary">Give Now</a>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="giving-option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Bank Transfer</h3>
+                    <p>Transfer directly to our church account using your banking app or at your bank branch.</p>
+                    <div class="option-features">
+                        <div class="feature"><i class="fas fa-check"></i> Direct Transfer</div>
+                        <div class="feature"><i class="fas fa-check"></i> Bank Details Below</div>
+                        <div class="feature"><i class="fas fa-check"></i> No Transaction Fees</div>
+                    </div>
+                    <a href="#bank-details" class="btn btn-outline">View Details</a>
+                </div>
+
+                <!-- In-Person -->
+                <div class="giving-option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Give In Person</h3>
+                    <p>Give during any of our services. Offering envelopes are available at the entrance and in the pews.</p>
+                    <div class="option-features">
+                        <div class="feature"><i class="fas fa-check"></i> Sunday Services</div>
+                        <div class="feature"><i class="fas fa-check"></i> Wednesday Services</div>
+                        <div class="feature"><i class="fas fa-check"></i> Cash or Cheque</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline">Service Times</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Giving Section -->
+    <section id="online-giving" class="online-giving-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Give Online</h2>
+                <p class="section-description">Select your giving type and amount below</p>
+            </div>
+
+            <div class="giving-form-container">
+                <div class="giving-tabs">
+                    <button class="giving-tab active" data-tab="tithe">
+                        <i class="fas fa-heart"></i>
+                        <span>Tithe</span>
+                    </button>
+                    <button class="giving-tab" data-tab="offering">
+                        <i class="fas fa-gift"></i>
+                        <span>Offering</span>
+                    </button>
+                    <button class="giving-tab" data-tab="seed">
+                        <i class="fas fa-seedling"></i>
+                        <span>Seed</span>
+                    </button>
+                    <button class="giving-tab" data-tab="project">
+                        <i class="fas fa-building"></i>
+                        <span>Building Project</span>
+                    </button>
+                    <button class="giving-tab" data-tab="other">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Other</span>
+                    </button>
+                </div>
+
+                <div class="giving-form-content">
+                    <div class="amount-section">
+                        <h3>Select or Enter Amount</h3>
+                        <div class="quick-amounts">
+                            <button class="amount-btn" data-amount="5000">₦5,000</button>
+                            <button class="amount-btn" data-amount="10000">₦10,000</button>
+                            <button class="amount-btn" data-amount="20000">₦20,000</button>
+                            <button class="amount-btn" data-amount="50000">₦50,000</button>
+                            <button class="amount-btn" data-amount="100000">₦100,000</button>
+                            <button class="amount-btn custom-btn">Custom</button>
+                        </div>
+                        <div class="custom-amount-input">
+                            <label for="custom-amount">Enter Custom Amount (₦)</label>
+                            <input type="number" id="custom-amount" placeholder="Enter amount" min="100">
+                        </div>
+                    </div>
+
+                    <div class="giving-frequency">
+                        <h3>Giving Frequency</h3>
+                        <div class="frequency-options">
+                            <label class="frequency-option">
+                                <input type="radio" name="frequency" value="one-time" checked>
+                                <span>One-Time</span>
+                            </label>
+                            <label class="frequency-option">
+                                <input type="radio" name="frequency" value="weekly">
+                                <span>Weekly</span>
+                            </label>
+                            <label class="frequency-option">
+                                <input type="radio" name="frequency" value="monthly">
+                                <span>Monthly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="payment-buttons">
+                            <button class="payment-btn">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Card Payment</span>
+                            </button>
+                            <button class="payment-btn">
+                                <i class="fas fa-university"></i>
+                                <span>Bank Transfer</span>
+                            </button>
+                            <button class="payment-btn">
+                                <i class="fas fa-wallet"></i>
+                                <span>E-Wallet</span>
+                            </button>
+                        </div>
+                        <p class="payment-note">
+                            <i class="fas fa-lock"></i>
+                            Secure payment powered by Paystack, Flutterwave & PayPal
+                        </p>
+                    </div>
+
+                    <button class="btn btn-primary btn-large">
+                        <i class="fas fa-heart"></i> Complete Donation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bank Details Section -->
+    <section id="bank-details" class="bank-details-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">Bank Information</span>
+                <h2 class="section-title">Bank Transfer Details</h2>
+            </div>
+
+            <div class="bank-cards-grid">
+                <div class="bank-card">
+                    <div class="bank-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Naira Account (NGN)</h3>
+                    <div class="bank-info">
+                        <div class="bank-detail">
+                            <span class="detail-label">Bank Name:</span>
+                            <span class="detail-value">Access Bank PLC</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value">RCCG Dominion Centre</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="detail-label">Account Number:</span>
+                            <span class="detail-value copy-text">0123456789</span>
+                            <button class="copy-btn" onclick="copyToClipboard('0123456789')">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bank-card">
+                    <div class="bank-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Dollar Account (USD)</h3>
+                    <div class="bank-info">
+                        <div class="bank-detail">
+                            <span class="detail-label">Bank Name:</span>
+                            <span class="detail-value">Access Bank PLC</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value">RCCG Dominion Centre</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="detail-label">Account Number:</span>
+                            <span class="detail-value copy-text">9876543210</span>
+                            <button class="copy-btn" onclick="copyToClipboard('9876543210')">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bank-note">
+                <i class="fas fa-info-circle"></i>
+                <p>Please include your name and purpose (Tithe/Offering/Seed) in the transfer description. For confirmation, you can send your transfer receipt to our email or WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">Your Impact</span>
+                <h2 class="section-title">Where Your Giving Goes</h2>
+            </div>
+
+            <div class="impact-stats-grid">
+                <div class="impact-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bible"></i>
+                    </div>
+                    <div class="stat-number">40%</div>
+                    <h4>Ministry & Missions</h4>
+                    <p>Evangelism, outreach programs, and global missions</p>
+                </div>
+
+                <div class="impact-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">25%</div>
+                    <h4>Staff & Operations</h4>
+                    <p>Pastoral care, administration, and daily operations</p>
+                </div>
+
+                <div class="impact-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number">20%</div>
+                    <h4>Facilities</h4>
+                    <p>Maintenance, utilities, and building improvements</p>
+                </div>
+
+                <div class="impact-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number">15%</div>
+                    <h4>Community Service</h4>
+                    <p>Benevolence, charity, and community outreach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">Common Questions</span>
+                <h2 class="section-title">Giving FAQs</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is my online donation secure?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We use industry-leading payment processors (Paystack, Flutterwave, PayPal) with bank-level encryption to ensure your financial information is completely secure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I get a receipt for tax purposes?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. All donations are automatically receipted via email. You can also request an annual giving statement by contacting our finance department.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What's the difference between tithes and offerings?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A tithe is 10% of your income given to God as an act of obedience and worship (Malachi 3:10). Offerings are gifts given above and beyond your tithe, as the Holy Spirit leads.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I set up recurring donations?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can set up weekly or monthly recurring donations through our online giving platform. This ensures consistent giving without having to remember each time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I know my donation is being used wisely?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We practice financial transparency and accountability. Our annual budget is approved by church leadership, and we provide regular updates on how funds are being used to advance God's kingdom.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Give CTA -->
+    <section class="give-cta">
+        <div class="container">
+            <div class="cta-content">
+                <i class="fas fa-hands-helping cta-icon-large"></i>
+                <h2>Thank You for Your Generosity</h2>
+                <p>Your giving makes a real difference in the lives of people in Port Harcourt and beyond. Together, we're building God's kingdom and transforming communities.</p>
+                <a href="#online-giving" class="btn btn-light">Give Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h3>RCCG Dominion Centre</h3>
+                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="give.html">Give</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Times -->
+                <div class="footer-column">
+                    <h4>Service Times</h4>
+                    <ul class="footer-links">
+                        <li><strong>Sunday:</strong> 7:00 AM | 9:00 AM | 10:30 AM</li>
+                        <li><strong>Wednesday:</strong> 5:00 PM</li>
+                        <li><strong>Kids Church:</strong> Sunday 10:30 AM</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            #199 Woji Road, GRA Phase 2<br>
+                            Port Harcourt, Rivers State, Nigeria
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+234">+234 XXX XXX XXXX</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Account number copied to clipboard!');
+            });
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Giving Tabs
+        document.querySelectorAll('.giving-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.giving-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Amount Buttons
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                if (!this.classList.contains('custom-btn')) {
+                    document.getElementById('custom-amount').value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

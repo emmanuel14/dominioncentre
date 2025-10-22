@@ -1,375 +1,4 @@
-/* ===================================
-           LOADER STYLES - ADD THIS TO YOUR style.css
-           =================================== */
-        
-        /* Loader Overlay */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #1a3a5c 0%, #2c5f8d 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
 
-        /* Hide loader when page is loaded */
-        .page-loader.loaded {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        /* Logo Container */
-        .loader-logo {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 2rem;
-            animation: zoomInOut 1.5s ease-in-out infinite;
-        }
-
-        .loader-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Zoom In and Out Animation */
-        @keyframes zoomInOut {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-        }
-
-        /* Loading Text */
-        .loader-text {
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Loading Spinner (Optional - below logo) */
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top-color: #d4af37;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Church Name */
-        .loader-church-name {
-            color: #d4af37;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .loader-tagline {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .loader-logo {
-                width: 120px;
-                height: 120px;
-            }
-
-            .loader-text {
-                font-size: 1rem;
-            }
-
-            .loader-church-name {
-                font-size: 1.2rem;
-            }
-        }
-
-
-
-
-
-
-
-.leader-quote {
-        font-size: 1rem;
-        padding: 1.5rem;
-    }
-}
-
-/* 7 Mountains Section */
-.mountains-section {
-    background: var(--white);
-}
-
-.mountains-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.mountain-card {
-    background: var(--beige);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border-top: 4px solid var(--mountain-color);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.mountain-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-}
-
-.mountain-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--mountain-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 1.5rem;
-    color: var(--white);
-}
-
-.mountain-card h4 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.mountain-card strong {
-    color: var(--mountain-color);
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.mountain-card p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--text-light);
-}
-
-/* Unique Section */
-.unique-section {
-    background: var(--beige);
-}
-
-.unique-content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.unique-main {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.unique-lead {
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-}
-
-.unique-highlight {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-    font-style: italic;
-}
-
-.unique-features {
-    display: grid;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.unique-feature {
-    display: flex;
-    gap: 1.5rem;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    align-items: start;
-}
-
-.unique-feature:hover {
-    transform: translateX(10px);
-    box-shadow: var(--shadow-hover);
-}
-
-.unique-feature i {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    flex-shrink: 0;
-}
-
-.unique-feature h4 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.unique-feature p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-light);
-    margin: 0;
-}
-
-/* Culture Section */
-.culture-section {
-    margin-top: 4rem;
-    padding: 3rem;
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.culture-section h3 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-}
-
-.culture-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.culture-item {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--beige);
-    border-radius: 10px;
-}
-
-.culture-item i {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.culture-item h4 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.culture-item p {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin: 0;
-}
-
-.culture-description {
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    padding: 1.5rem;
-    background: rgba(212, 175, 55, 0.1);
-    border-radius: 10px;
-    margin: 0;
-}
-
-.culture-description strong {
-    color: var(--secondary-color);
-}
-
-/* Responsive for New Sections */
-@media (max-width: 992px) {
-    .mountains-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .mountains-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mountain-card {
-        padding: 1.5rem;
-    }
-
-    .unique-lead {
-        font-size: 1.1rem;
-    }
-
-    .unique-highlight {
-        font-size: 1.15rem;
-    }
-
-    .unique-feature {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
-    }
-
-    .unique-feature i {
-        font-size: 2rem;
-    }
-
-    .culture-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .culture-section {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .mountain-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-
-    .culture-section h3 {
-        font-size: 1.5rem;
-    }
-
-    .culture-description {
-        font-size: 1rem;
-    }
-}    .giving-option-card {
-        padding: 2rem;
-    }
-}
 
 /* =============================================
    CONTACT PAGE STYLES
@@ -644,212 +273,6 @@
     padding: 14px 24px;
     background: #dc3545;
     color: var(--white);
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: var(--transition);
-    margin-bottom: 1rem;
-}
-
-.emergency-contact:hover {
-    background: #c82333;
-    transform: scale(1.05);
-}
-
-.emergency-note {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    font-style: italic;
-    margin: 0;
-}
-
-/* Visit Planning Section */
-.visit-planning-section {
-    background: var(--light-gray);
-}
-
-.visit-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.visit-step {
-    position: relative;
-    text-align: center;
-}
-
-.step-number {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--white);
-    box-shadow: var(--shadow);
-}
-
-.step-content h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 0.8rem;
-}
-
-.step-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-light);
-}
-
-.visit-cta {
-    text-align: center;
-    background: var(--white);
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.visit-cta h3 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.visit-cta p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Contact FAQ Section */
-.contact-faq-section {
-    padding: 80px 0;
-    background: var(--white);
-}
-
-.faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.faq-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Contact CTA */
-.contact-cta {
-    padding: 100px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #2c5f8d 100%);
-    background-image: 
-        linear-gradient(135deg, rgba(26, 58, 92, 0.95) 0%, rgba(44, 95, 141, 0.95) 100%),
-        url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&h=600&fit=crop');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: var(--white);
-}
-
-.contact-cta .cta-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-cta h2 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-cta p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
-}
-
-/* Responsive Styles for Contact Page */
-@media (max-width: 992px) {
-    .contact-main-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .contact-sidebar {
-        order: -1;
-    }
-
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .visit-steps {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .social-links-large {
-        grid-template-columns: 1fr;
-    }
-
-    .visit-cta {
-        padding: 2rem;
-    }
-
-    .visit-cta h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-cta h2 {
-        font-size: 2rem;
-    }
-
-    .contact-cta p {
-        font-size: 1.1rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-info-card {
-        padding: 2rem;
-    }
-
-    .info-box {
-        padding: 1.5rem;
-    }
-
-    .visit-steps {
-        grid-template-columns: 1fr;
-    }
-
-    .step-number {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-}
         .intro-quote p {
         font-size: 1rem;
     }
@@ -2747,7 +2170,7 @@ ul {
     background: linear-gradient(135deg, var(--primary-color) 0%, #2c5f8d 100%);
     background-image: 
         linear-gradient(135deg, rgba(26, 58, 92, 0.85) 0%, rgba(44, 95, 141, 0.85) 100%),
-        url('images/dcimage2.jpg');
+        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920&h=1080&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2756,7 +2179,7 @@ ul {
 
 .hero-overlay {
     position: absolute;
-    top: ;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -3064,9 +2487,12 @@ ul {
 }
 
 /* Thanksgiving Section */
+.thanksgiving-section {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+}
+
 .thanksgiving-card {
-    background: linear-gradient(135deg, #070b32, #2c4f8d 100%);
-    color: var(--white);
+    background: rgba(255, 255, 255, 0.95);
     padding: 4rem;
     border-radius: 20px;
     text-align: center;
@@ -3076,29 +2502,29 @@ ul {
 .thanksgiving-icon {
     width: 100px;
     height: 100px;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 2rem;
     font-size: 3rem;
-}
-
-.thanksgiving-card h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
     color: var(--secondary-color);
 }
 
-.thanksgiving-card p {
-    max-width: 800px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    opacity: 0.95;
+.thanksgiving-card h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
+.thanksgiving-card p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
 
 /* Call to Action Section */
 .cta-section {

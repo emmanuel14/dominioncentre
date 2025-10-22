@@ -1,0 +1,475 @@
+
+/* =============================================
+   VOLUNTEER PAGE STYLES
+   ============================================= */
+
+/* Volunteer Intro Section */
+.volunteer-intro {
+    background: var(--beige);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.intro-benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--white);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-item i {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+.benefit-item span {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.intro-image {
+    position: relative;
+}
+
+.intro-image img {
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.intro-quote {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    background: rgba(26, 58, 92, 0.95);
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: var(--white);
+    text-align: center;
+}
+
+.intro-quote i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-quote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.intro-quote span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Volunteer Departments Section */
+.volunteer-departments {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.department-card {
+    background: var(--beige);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.department-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.department-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.department-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.department-card > p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.department-roles {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.department-roles li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.department-roles i {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    width: 20px;
+}
+
+.department-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.department-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.department-meta i {
+    color: var(--secondary-color);
+}
+
+/* Volunteer Form Section */
+.volunteer-form-section {
+    background: var(--light-gray);
+}
+
+.form-intro {
+    margin-bottom: 3rem;
+}
+
+.form-intro h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.form-intro p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.volunteer-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.volunteer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: #dc3545;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #dc3545;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.success-message {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: slideDown 0.3s ease;
+}
+
+.success-message i {
+    font-size: 2rem;
+    color: #28a745;
+}
+
+.success-message p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Volunteer CTA */
+.volunteer-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2c5f8d 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(26, 58, 92, 0.95) 0%, rgba(44, 95, 141, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=600&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+}
+
+.volunteer-cta .cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.volunteer-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.volunteer-cta p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* Responsive Styles for Volunteer Page */
+@media (max-width: 992px) {
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .intro-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .departments-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .volunteer-form-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-cta h2 {
+        font-size: 2rem;
+    }
+
+    .volunteer-cta p {
+        font-size: 1.1rem;
+    }
+
+    .departments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .department-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-intro h2 {
+        font-size: 2rem;
+    }
+
+    .volunteer-form-container {
+        padding: 1.5rem;
+    }
+
+    .btn-large {
+        padding: 14px 32px;
+        font-size: 1rem;
+    }
+
+    .intro-quote {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        padding: 1rem;
+    }
+
+    .intro-quote p {
+        font-size: 1rem;
+    }
+}@media (max-width: 480px) {
+    .story-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .mv-card {
+        padding: 2rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-quote {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+}

@@ -8,18 +8,35 @@
     <title>About Us - RCCG Dominion Centre</title>
     
     <!-- Google Fonts -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <!-- Logo with Zoom Animation -->
+        <div class="loader-logo">
+            <img src="images/dclogo1.png" alt="RCCG Logo">
+        </div>
+
+        <!-- Loading Text -->
+        <div class="loader-text">Loading...</div>
+
+        <!-- Optional Spinner -->
+        <div class="loader-spinner"></div>
+
+        <!-- Church Name -->
+        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
+        <div class="loader-tagline">An Expression Church</div>
+    </div>
     <!-- Header / Navigation -->
     <header class="site-header">
         <nav class="navbar">
@@ -76,9 +93,9 @@
                     </div>
                     <p>The Redeemed Christian Church of God, Dominion Centre (RCCGDC) was birthed on the <strong>9th of October, 2022</strong>. Born out of a divine mandate and vision to reach more souls for Christ, our church represents a new chapter in the RCCG journey.</p>
                     
-                    <p>We are a Satellite Church of <strong>REDEEMED CHRISTIAN CHURCH OF GOD, THE KING'S PALACE PARISH HEADQUARTERS OF REGION 33</strong>. This connection roots us in a rich heritage while positioning us to embrace innovative approaches to ministry.</p>
+                    <p>We are a Satellite Church of <strong>REDEEMED CHRISTIAN CHURCH OF GOD, THE KING'S PALACE PARISH HEADQUARTERS OF REGION 33</strong>.</p>
                     
-                    <p>RCCGDC is an <strong>expression church which brands the future look of RCCG</strong>. We are committed to maintaining the core values and doctrines of the Redeemed Christian Church of God while embracing contemporary methods of worship, teaching, and community engagement.</p>
+                    <p><strong>An Expression Church which brands the future look of the RCCG.</strong> We are a church for the younger generation (The Future), for professionals, entrepreneurs and career-minded worshippers, committed to impacting the immediate community for Jesus. Our foundation is rooted in the original ideals of the main church - The Word, Prayer, Holiness, Soul Winning and manifestation of the gifts of the Holy Spirit.</p>
                     
                     <div class="story-stats">
                         <div class="stat-item">
@@ -90,14 +107,14 @@
                             <div class="stat-label">Region</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">Members</div>
+                            <div class="stat-number">7</div>
+                            <div class="stat-label">Mountains</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&h=600&fit=crop" alt="Church Building">
+                    <img src="images/dcimg19.jpg" alt="Church Building">
                     <div class="image-overlay-text">
                         <i class="fas fa-quote-left"></i>
                         <p>"An Expression Church Branding the Future"</p>
@@ -117,28 +134,92 @@
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Our Mission</h3>
-                    <p>To practically apply scriptural principles of dominion in every sphere of life — empowering believers to live victoriously and finish well in their divine assignments.</p>
-                    <ul class="mv-list">
-                        <li><i class="fas fa-check-circle"></i> Spread the Gospel of Jesus Christ</li>
-                        <li><i class="fas fa-check-circle"></i> Nurture spiritual growth and maturity</li>
-                        <li><i class="fas fa-check-circle"></i> Build a strong community of believers</li>
-                        <li><i class="fas fa-check-circle"></i> Impact society through service</li>
-                    </ul>
+                    <p>To be practical in applying the fundamental scriptural principles of winning and having dominion in all spheres of life, with an ultimate view of finishing well and strong.</p>
                 </div>
 
                 <!-- Vision Card -->
                 <div class="mv-card">
                     <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <h3>Our Vision</h3>
-                    <p>To raise Kingdom stars of today and the future who will rule, reign, and have dominion over the seven mountains of influence — Religion, Family, Business (Finance & Economy), Government (Power), Education, Arts & Entertainment (including Sports), and Media.</p>
-                    <ul class="mv-list">
-                        <li><i class="fas fa-check-circle"></i> Raise leaders for the kingdom</li>
-                        <li><i class="fas fa-check-circle"></i> Establish a culture of excellence</li>
-                        <li><i class="fas fa-check-circle"></i> Pioneer innovative ministry approaches</li>
-                        <li><i class="fas fa-check-circle"></i> Expand God's kingdom globally</li>
-                    </ul>
+                    <h3>Our Micro-Vision</h3>
+                    <p>To raise Kingdom Stars of today and the future who will rule, reign and have dominion over the mountains of influence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7 Mountains of Influence Section -->
+    <section class="mountains-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">Our Focus</span>
+                <h2 class="section-title">The 7 Mountains of Influence</h2>
+                <p class="section-description">Raising Kingdom Stars to rule, reign and have dominion</p>
+            </div>
+
+            <div class="mountains-grid">
+                <div class="mountain-card" style="--mountain-color: #e74c3c">
+                    <div class="mountain-icon">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <h4>Religion</h4>
+                    <p><strong>Sound Doctrine</strong></p>
+                    <p>Fundamental pillars of the Christian faith, RCCG's doctrines, new creation realities, a church given to prayer & fasting.</p>
+                </div>
+
+                <div class="mountain-card" style="--mountain-color: #e67e22">
+                    <div class="mountain-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Family</h4>
+                    <p><strong>Leadership</strong></p>
+                    <p>Leadership, values, relationship, love & affection, responsibilities, character, vision, capacity.</p>
+                </div>
+
+                <div class="mountain-card" style="--mountain-color: #f39c12">
+                    <div class="mountain-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4>Business</h4>
+                    <p><strong>Economy & Finance</strong></p>
+                    <p>Professional and career development, kingdom financing, entrepreneurship & investment.</p>
+                </div>
+
+                <div class="mountain-card" style="--mountain-color: #27ae60">
+                    <div class="mountain-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h4>Government</h4>
+                    <p><strong>Politics & Social Impact</strong></p>
+                    <p>Engaging in politics and creating meaningful social transformation in our communities.</p>
+                </div>
+
+                <div class="mountain-card" style="--mountain-color: #3498db">
+                    <div class="mountain-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Education</h4>
+                    <p><strong>Training & Development</strong></p>
+                    <p>Digital upskilling, technology, medicine, literature, academic career development.</p>
+                </div>
+
+                <div class="mountain-card" style="--mountain-color: #9b59b6">
+                    <div class="mountain-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Arts, Entertainment & Sports</h4>
+                    <p><strong>Culture & Creativity</strong></p>
+                    <p>Creative arts, music, entertainment and culture.</p>
+                </div>
+
+                <div class="mountain-card" style="--mountain-color: #8e44ad">
+                    <div class="mountain-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h4>Media</h4>
+                    <p><strong>Technology & The Future</strong></p>
+                    <p>Information technology, social media, digital upskilling, techies, creatives, miners of the new oil.</p>
                 </div>
             </div>
         </div>
@@ -149,13 +230,14 @@
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-label">Leadership</span>
-                <h2 class="section-title">Meet Our Shepherd</h2>
+                <h2 class="section-title">Meet Our Shepherds</h2>
                 <p class="section-description">Committed to leading with wisdom, integrity, and love</p>
             </div>
             
+            <!-- Lead Pastor -->
             <div class="leader-profile">
                 <div class="leader-image">
-                    <img src="images/pastors.jpg" alt="Dr. Perez Araka">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop" alt="Dr. Perez Araka">
                     <div class="leader-badge">Lead Pastor</div>
                 </div>
                 <div class="leader-info">
@@ -188,6 +270,39 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Pastor's Wife -->
+            <div class="leader-profile" style="margin-top: 4rem;">
+                <div class="leader-image">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=600&fit=crop" alt="Dcns. Greamba Perez Araka">
+                    <div class="leader-badge">Co-Pastor & Women's Leader</div>
+                </div>
+                <div class="leader-info">
+                    <h3>Dcns. Greamba Perez Araka (GPA)</h3>
+                    <p class="leader-title">Wife of the Lead Pastor & Co-founder, Jesus Cares Family Outreach</p>
+                    
+                    <p class="leader-bio">Greamba Perez Araka (GPA), is the wife of the Lead Pastor of RCCG DC - Dr. Perez Araka. She's also the Co-founder of Jesus Cares Family Outreach and Dream-Aid Community Charity Trust; NGOs aimed at uplifting the less privileged in society, feeding and caring for the needs of children and ensuring that youths channel their energy to learning a skill.</p>
+                    
+                    <p class="leader-bio">GPA, as she's fondly called, has a burning desire for the education of children in society especially education for the girl-child which has largely been de-emphasized in certain parts of the country. She founded the Sisters Fellowship of RCCG Dominion Centre, where she uses it as a platform to bring sisters together to learn, bond, aspire to be better ladies and ultimately uphold Christian virtues as a lady.</p>
+
+                    <p class="leader-bio">By the grace of God, she influences people by being real as much as possible, living her life by example. Her lifestyle, character, attitude, disposition and opinion in sensitive issues speaks for itself. GPA has a special love for children and teenagers and as such, she commits as much as she can to their all-round well-being.</p>
+                    
+                    <div class="leader-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Children's Advocate</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-female"></i>
+                            <span>Women's Ministry Leader</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Community Builder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -196,8 +311,8 @@
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-label">What We Stand For</span>
-                <h2 class="section-title">Our Core Values</h2>
-                <p class="section-description">The principles that guide everything we do</p>
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-description">Rooted in The Word of God (Light/Purity), with a deep culture of love, fellowship, care and prayer, after the order of the Early Church in Acts 2:42-47</p>
             </div>
             
             <div class="values-grid">
@@ -207,25 +322,25 @@
                         <i class="fas fa-bible"></i>
                     </div>
                     <h4>Word-Centered</h4>
-                    <p>We believe the Bible is God's inspired, infallible Word and the foundation for faith and practice.</p>
+                    <p>Rooted in The Word of God with light and purity as our foundation for faith and practice.</p>
                 </div>
 
                 <!-- Value 2 -->
                 <div class="value-card">
                     <div class="value-icon">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <h4>Spirit-Led</h4>
-                    <p>We depend on the Holy Spirit for guidance, power, and transformation in all aspects of ministry.</p>
+                    <h4>Love & Fellowship</h4>
+                    <p>A deep culture of love, fellowship and care, after the order of the Early Church in Acts 2:42-47.</p>
                 </div>
 
                 <!-- Value 3 -->
                 <div class="value-card">
                     <div class="value-icon">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-praying-hands"></i>
                     </div>
-                    <h4>Love & Unity</h4>
-                    <p>We cultivate a community of authentic love, acceptance, and genuine fellowship among believers.</p>
+                    <h4>Prayer & Holiness</h4>
+                    <p>Committed to prayer, fasting, and holiness as our lifestyle to maintain unhindered breakthrough.</p>
                 </div>
 
                 <!-- Value 4 -->
@@ -233,27 +348,93 @@
                     <div class="value-icon">
                         <i class="fas fa-award"></i>
                     </div>
-                    <h4>Excellence</h4>
-                    <p>We pursue excellence in all we do, honoring God with our best efforts and highest standards.</p>
+                    <h4>Intentionality & Excellence</h4>
+                    <p>Nothing is done carelessly here; we pay attention to details. Our watchwords are intentionality and excellence.</p>
                 </div>
 
                 <!-- Value 5 -->
                 <div class="value-card">
                     <div class="value-icon">
-                        <i class="fas fa-hands-helping"></i>
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h4>Service</h4>
-                    <p>We are committed to serving God, each other, and our community with humility and joy.</p>
+                    <h4>Smart Church</h4>
+                    <p>Like the Sons of Issachar, we understand the times and deploy technology to run the Church business.</p>
                 </div>
 
                 <!-- Value 6 -->
                 <div class="value-card">
                     <div class="value-icon">
-                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h4>Growth</h4>
-                    <p>We foster continuous spiritual growth and personal development for every member.</p>
+                    <h4>Community Impact</h4>
+                    <p>Committed to impacting our immediate community for Jesus through corporate social responsibility.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Unique Section -->
+    <section class="unique-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">What Sets Us Apart</span>
+                <h2 class="section-title">What is Unique About Us</h2>
+            </div>
+
+            <div class="unique-content">
+                <div class="unique-main">
+                    <p class="unique-lead">We are a <strong>Family and a Community-Based Church</strong> rooted in deep fellowship and care for one another, all of which is embedded in the one and most important Word, <strong>LOVE</strong>, the greatest commandment.</p>
+                    <p class="unique-highlight">The LOVE we mean here is a MAN, and His Name is JESUS – OUR SOURCE. (Matt.22:37-39)</p>
+                </div>
+
+                <div class="unique-features">
+                    <div class="unique-feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <h4>A Smart Church</h4>
+                            <p>Like the Sons of Issachar, we understand the times, deploy technology, and keep an excellent and modern worship atmosphere.</p>
+                        </div>
+                    </div>
+
+                    <div class="unique-feature">
+                        <i class="fas fa-user-graduate"></i>
+                        <div>
+                            <h4>Developing Capacity</h4>
+                            <p>We develop partnerships with reputable individuals and organizations. We have The DreamAid Innovation Centre equipping our people with crucial tech-skills for their careers.</p>
+                        </div>
+                    </div>
+
+                    <div class="unique-feature">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <h4>Our Priority</h4>
+                            <p>At Dominion Centre, your success and total well-being - BODY, SOUL & SPIRIT is our priority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Style & Culture -->
+            <div class="culture-section">
+                <h3 class="text-center">Our Style & Culture</h3>
+                <div class="culture-grid">
+                    <div class="culture-item">
+                        <i class="fas fa-music"></i>
+                        <h4>Music</h4>
+                        <p>Contemporary, R&B, POP & Afrobeat</p>
+                    </div>
+                    <div class="culture-item">
+                        <i class="fas fa-tshirt"></i>
+                        <h4>Dressing</h4>
+                        <p>Stylish, Contemporary/Urbane and Moderate</p>
+                    </div>
+                    <div class="culture-item">
+                        <i class="fas fa-running"></i>
+                        <h4>Dance</h4>
+                        <p>Moderate & Modern</p>
+                    </div>
+                </div>
+                <p class="culture-description"><strong>Our Looks:</strong> Expressive | Intelligent | Confident | Composed | Decent</p>
             </div>
         </div>
     </section>
@@ -263,47 +444,47 @@
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-label">What We Believe</span>
-                <h2 class="section-title">Our core Values</h2>
+                <h2 class="section-title">Statement of Faith</h2>
             </div>
             
             <div class="beliefs-content">
                 <div class="belief-item">
                     <div class="belief-number">01</div>
                     <div class="belief-text">
-                        <h4>Love and Fellowship</h4>
-                        <p>Deep, genuine relationships rooted in God’s Word.</p>
+                        <h4>The Holy Scripture</h4>
+                        <p>We believe the Bible is the inspired Word of God, inerrant in its original writings, and the supreme authority in all matters of faith and conduct.</p>
                     </div>
                 </div>
 
                 <div class="belief-item">
                     <div class="belief-number">02</div>
                     <div class="belief-text">
-                        <h4>Holiness and Purity</h4>
-                        <p>We live as lights in the world, reflecting Christ’s righteousness.</p>
+                        <h4>The Godhead</h4>
+                        <p>We believe in one God eternally existing in three persons: Father, Son, and Holy Spirit, co-equal in nature, power, and glory.</p>
                     </div>
                 </div>
 
                 <div class="belief-item">
                     <div class="belief-number">03</div>
                     <div class="belief-text">
-                        <h4>Excellence and Intentionality</h4>
-                        <p>We do all things decently and in order (1 Corinthians 14:40).</p>
+                        <h4>Jesus Christ</h4>
+                        <p>We believe Jesus Christ is the Son of God, born of a virgin, lived a sinless life, died for our sins, rose from the dead, and ascended to heaven.</p>
                     </div>
                 </div>
 
                 <div class="belief-item">
                     <div class="belief-number">04</div>
                     <div class="belief-text">
-                        <h4>Innovation and Relevance</h4>
-                        <p>As a tech-driven church, we embrace technology to advance the Kingdom.</p>
+                        <h4>Salvation</h4>
+                        <p>We believe salvation is a free gift of God's grace, received through faith in Jesus Christ, resulting in spiritual regeneration and eternal life.</p>
                     </div>
                 </div>
 
                 <div class="belief-item">
                     <div class="belief-number">05</div>
                     <div class="belief-text">
-                        <h4>Service and Community</h4>
-                        <p>We are passionate about impacting lives and developing people for purpose.</p>
+                        <h4>The Holy Spirit</h4>
+                        <p>We believe in the baptism of the Holy Spirit, speaking in tongues as the Spirit gives utterance, and the manifestation of spiritual gifts.</p>
                     </div>
                 </div>
 
