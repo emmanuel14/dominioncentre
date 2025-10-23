@@ -8,6 +8,7 @@
     <title>Contact Us - RCCG Dominion Centre</title>
     
     <!-- Google Fonts -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -38,14 +39,17 @@
     </div>
     <!-- Header / Navigation -->
     <header class="site-header">
-        <nav class="navbar">
+      <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-                    <a href="index.html">
-                        <span class="logo-text">RCCG</span>
-                        <span class="logo-subtext">Dominion Centre</span>
-                    </a>
-                </div>
+    <a href="index.html">
+        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
+        <div class="logo-text-wrapper">
+            <span class="logo-text">RCCG</span>
+            <span class="logo-subtext">Dominion Centre</span>
+        </div>
+    </a>
+</div>
                 
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -218,7 +222,7 @@
                     <!-- Google Map -->
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.6984937896845!2d7.0331!3d4.8156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDgnNTYuMiJOIDfCsDAxJzU5LjIiRQ!5e0!3m2!1sen!2sng!4v1234567890" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.7081362960002!2d6.992951174712748!3d4.820093740611519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cdc9832a1647%3A0xe3961554d2d903b3!2sRCCG%20Dominion%20Centre!5e0!3m2!1sen!2sng!4v1745529241489!5m2!1sen!2sng" 
                             width="100%" 
                             height="400" 
                             style="border:0;" 
@@ -252,15 +256,15 @@
                         <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
                         <p>Follow us on social media to stay updated with our latest events, sermons, and announcements.</p>
                         <div class="social-links-large">
-                            <a href="#" class="social-btn facebook">
+                            <a href="https://www.facebook.com/rccgdcph/" class="social-btn facebook">
                                 <i class="fab fa-facebook-f"></i>
                                 <span>Facebook</span>
                             </a>
-                            <a href="#" class="social-btn youtube">
+                            <a href="https://www.youtube.com/@rccgdc_ph" class="social-btn youtube">
                                 <i class="fab fa-youtube"></i>
                                 <span>YouTube</span>
                             </a>
-                            <a href="#" class="social-btn instagram">
+                            <a href="https://www.instagram.com/rccgdc_ph/?hl=en" class="social-btn instagram">
                                 <i class="fab fa-instagram"></i>
                                 <span>Instagram</span>
                             </a>
@@ -275,8 +279,8 @@
                     <div class="info-box emergency">
                         <h3><i class="fas fa-exclamation-circle"></i> Need Prayer?</h3>
                         <p>If you need urgent prayer or pastoral care, please contact us immediately:</p>
-                        <a href="tel:+234XXXXXXXXXX" class="emergency-contact">
-                            <i class="fas fa-phone"></i> +234 XXX XXX XXXX
+                        <a href="tel:+2349087484840" class="emergency-contact">
+                            <i class="fas fa-phone"></i> +234 908 748 4840
                         </a>
                         <p class="emergency-note">Available 24/7 for emergencies</p>
                     </div>
@@ -447,9 +451,9 @@
                     <h3>RCCG Dominion Centre</h3>
                     <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -473,7 +477,7 @@
                     <ul class="footer-links">
                         <li><strong>Sunday:</strong> 7:00 AM | 9:00 AM | 10:30 AM</li>
                         <li><strong>Wednesday:</strong> 5:00 PM</li>
-                        <li><strong>Kids Church:</strong> Sunday 10:30 AM</li>
+                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
                     </ul>
                 </div>
 
@@ -488,7 +492,7 @@
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 XXX XXX XXXX</a>
+                            <a href="tel:+234">+234 908 748 4840 </a>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
@@ -506,5 +510,41 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Account number copied to clipboard!');
+            });
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Giving Tabs
+        document.querySelectorAll('.giving-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.giving-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Amount Buttons
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                if (!this.classList.contains('custom-btn')) {
+                    document.getElementById('custom-amount').value = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
