@@ -2,8 +2,8 @@
 // RCCG Dominion Centre - Interactive Scripts
 // =============================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // =============================================
     // Mobile Navigation Toggle
     // =============================================
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Close menu when clicking on a link
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth Scroll for Internal Links
     // =============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href !== '#' && href !== '') {
                 e.preventDefault();
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.site-header');
     let lastScroll = 0;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset;
 
         if (currentScroll > 100) {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fade-in');
@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================
     // Active Navigation Link (Current Page)
     // =============================================
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'index';
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index')) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
@@ -132,27 +132,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form fields
             const name = document.getElementById('name');
             const email = document.getElementById('email');
             const subject = document.getElementById('subject');
             const message = document.getElementById('message');
-            
+
             let isValid = true;
-            
+
             // Clear previous errors
             document.querySelectorAll('.error-message').forEach(el => el.remove());
             document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
-            
+
             // Validate name
             if (name && name.value.trim() === '') {
                 showError(name, 'Please enter your name');
                 isValid = false;
             }
-            
+
             // Validate email
             if (email && email.value.trim() === '') {
                 showError(email, 'Please enter your email');
@@ -161,19 +161,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 showError(email, 'Please enter a valid email');
                 isValid = false;
             }
-            
+
             // Validate subject
             if (subject && subject.value.trim() === '') {
                 showError(subject, 'Please enter a subject');
                 isValid = false;
             }
-            
+
             // Validate message
             if (message && message.value.trim() === '') {
                 showError(message, 'Please enter your message');
                 isValid = false;
             }
-            
+
             if (isValid) {
                 // Show success message
                 showSuccessMessage();
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     function showError(input, message) {
         input.classList.add('input-error');
         const errorDiv = document.createElement('div');
@@ -192,12 +192,12 @@ document.addEventListener('DOMContentLoaded', function() {
         errorDiv.textContent = message;
         input.parentElement.appendChild(errorDiv);
     }
-    
+
     function isValidEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
-    
+
     function showSuccessMessage() {
         const successDiv = document.createElement('div');
         successDiv.className = 'success-message';
@@ -218,13 +218,13 @@ document.addEventListener('DOMContentLoaded', function() {
             Thank you! Your message has been sent successfully.
         `;
         document.body.appendChild(successDiv);
-        
+
         setTimeout(() => {
             successDiv.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => successDiv.remove(), 300);
         }, 3000);
     }
-    
+
     // Add animations for success message
     const animationStyle = document.createElement('style');
     animationStyle.textContent = `
@@ -262,14 +262,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (filterButtons.length > 0) {
         filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 // Add active class to clicked button
                 this.classList.add('active');
-                
+
                 const filterValue = this.getAttribute('data-filter');
-                
+
                 eventCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                         card.style.display = 'block';
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(backToTop);
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
             backToTop.style.opacity = '1';
             backToTop.style.visibility = 'visible';
@@ -324,19 +324,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    backToTop.addEventListener('click', function() {
+    backToTop.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
 
-    backToTop.addEventListener('mouseenter', function() {
+    backToTop.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px)';
         this.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
     });
 
-    backToTop.addEventListener('mouseleave', function() {
+    backToTop.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
         this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
     });
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================
     // Loading Animation
     // =============================================
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         document.body.style.opacity = '0';
         setTimeout(() => {
             document.body.style.transition = 'opacity 0.5s ease';
@@ -365,13 +365,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================================
 // PAGE LOADER
 // ===================================
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const loader = document.getElementById('pageLoader');
-    
+
     if (loader) {
-        setTimeout(function() {
+        setTimeout(function () {
             loader.classList.add('loaded');
-            setTimeout(function() {
+            setTimeout(function () {
                 loader.style.display = 'none';
             }, 500);
         }, 500);
