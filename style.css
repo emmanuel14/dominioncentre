@@ -201,7 +201,7 @@
         font-size: 1rem;
         padding: 1.5rem;
     }
-}
+
 
 /* 7 Mountains Section */
 .mountains-section {
@@ -454,11 +454,11 @@
 }    .giving-option-card {
         padding: 2rem;
     }
-}
 
-/* =============================================
+
+/* 
    CONTACT PAGE STYLES
-   ============================================= */
+    */
 
 /* Contact Info Cards Section */
 .contact-cards-section {
@@ -938,11 +938,11 @@
         .intro-quote p {
         font-size: 1rem;
     }
-}
 
-/* =============================================
+
+/* 
    GIVE PAGE STYLES
-   ============================================= */
+    */
 
 /* Scripture Section */
 .scripture-section {
@@ -1718,11 +1718,11 @@
 }    .detail-item i {
         font-size: 1.5rem;
     }
-}
 
-/* =============================================
+
+/* 
    VOLUNTEER PAGE STYLES
-   ============================================= */
+   */
 
 /* Volunteer Intro Section */
 .volunteer-intro {
@@ -2194,9 +2194,9 @@
         padding: 1.5rem;
     }
 }
-/* =============================================
+/* 
    EVENTS PAGE STYLES
-   ============================================= */
+   */
 
 /* Event Filters */
 .event-filters {
@@ -2840,7 +2840,7 @@ ul {
 
 .hero-overlay {
     position: absolute;
-    top: ;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -3446,9 +3446,9 @@ ul {
     transform: translateY(0);
 }
 
-/* =============================================
+/* 
    ABOUT PAGE STYLES
-   ============================================= */
+    */
 
 /* Page Header */
 .page-header {
@@ -3466,7 +3466,7 @@ ul {
 
 .page-header-overlay {
     position: absolute;
-    top: ;
+    top:0 ;
     left: 0;
     right: 0;
     bottom: 0;
