@@ -546,32 +546,6 @@
     text-decoration: none;
 }
 
-.service-times-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    text-align: left;
-}
-
-.service-time-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 0.8rem;
-    background: var(--beige);
-    border-radius: 8px;
-}
-
-.service-time-item strong {
-    color: var(--primary-color);
-    font-size: 0.95rem;
-}
-
-.service-time-item span {
-    color: var(--secondary-color);
-    font-weight: 600;
-}
-
 /* Contact Main Section */
 .contact-main-section {
     padding: 80px 0;
@@ -864,21 +838,6 @@
     line-height: 1.8;
     margin-bottom: 2.5rem;
     opacity: 0.95;
-}
-
-.service-times-section {
-    background: var(--beige);
-}
-
-.service-times-section .container {
-    display: flex;
-    justify-content: center;
-}
-
-.service-times-standalone {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
 }
 
 /* Responsive Styles for Contact Page */
