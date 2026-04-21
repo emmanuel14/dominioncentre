@@ -3090,6 +3090,10 @@ ul {
     align-items: center;
 }
 
+.series-content-single {
+    grid-template-columns: 1fr;
+}
+
 .series-info h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
