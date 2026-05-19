@@ -128,7 +128,6 @@
     height: 40px;
     object-fit: contain;
     transition: transform 0.3s ease;
-    margin-right: 80px;
 }
 
 .logo a:hover .logo-image {
@@ -2715,7 +2714,6 @@ ul {
 
 .logo a {
     display: flex;
-    flex-direction: column;
     font-weight: 700;
 }
 
