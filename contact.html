@@ -3,54 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact RCCG Dominion Centre. Visit us at #199 Woji Road, Port Harcourt. Get directions, service times, and connect with us.">
-    <meta name="keywords" content="RCCG Contact, Church Location, Port Harcourt, Woji Road, Service Times">
-    <title>Contact Us - RCCG Dominion Centre</title>
-    
-    <!-- Google Fonts -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
+    <meta name="description" content="Contact RCCG Dominion Centre in Port Harcourt. Visit us, call, or send a message. Plan your visit today.">
+    <title>Contact Us | RCCG Dominion Centre</title>
+    <link rel="icon" type="image/png" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <!-- Logo with Zoom Animation -->
-        <div class="loader-logo">
-            <img src="images/dclogo1.png" alt="RCCG Logo">
+    <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo-wrap">
+                <img src="images/dclogo1.png" alt="RCCG Dominion Centre">
+            </div>
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <p class="loader-church-name">RCCG Dominion Centre</p>
+            <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
         </div>
-
-        <!-- Loading Text -->
-        <div class="loader-text">Loading...</div>
-
-        <!-- Optional Spinner -->
-        <div class="loader-spinner"></div>
-
-        <!-- Church Name -->
-        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
-        <div class="loader-tagline">The gathering of eagles...</div>
     </div>
-    <!-- Header / Navigation -->
-    <header class="site-header">
-      <nav class="navbar">
+
+    <header class="site-header site-header--solid" id="siteHeader">
+        <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-    <a href="index">
-        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-            <span class="logo-text">RCCG</span>
-            <span class="logo-subtext">Dominion Centre</span>
-        </div>
-    </a>
-</div>
-                
+                    <a href="index">
+                        <img src="images/dclogo1.png" alt="RCCG Dominion Centre" class="logo-image">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">RCCG</span>
+                            <span class="logo-subtext">Dominion Centre</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index" class="nav-link">Home</a></li>
                     <li><a href="about" class="nav-link">About</a></li>
@@ -58,127 +42,69 @@
                     <li><a href="volunteer" class="nav-link">Volunteer</a></li>
                     <li><a href="give" class="nav-link">Give</a></li>
                     <li><a href="contact" class="nav-link active">Contact</a></li>
+                    <li><a href="contact" class="btn btn-nav-cta">Plan a Visit</a></li>
                 </ul>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="hamburger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
             </div>
         </nav>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-overlay"></div>
-        <div class="container">
-            <div class="page-header-content">
-                <h1 class="page-title">Contact Us</h1>
-                <p class="page-subtitle">We'd Love to Hear From You</p>
-                <div class="breadcrumb">
-                    <a href="index">Home</a>
-                    <span>/</span>
-                    <span>Contact</span>
-                </div>
-            </div>
+        <div class="container page-header-content">
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">We would love to hear from you</p>
+            <nav class="breadcrumb"><a href="index">Home</a><span>/</span><span>Contact</span></nav>
         </div>
     </section>
 
-    <!-- Contact Info Cards Section -->
-    <section class="contact-cards-section section-padding">
+    <section class="section">
         <div class="container">
             <div class="contact-cards-grid">
-                
-                <!-- Location Card -->
                 <div class="contact-info-card">
-                    <div class="contact-card-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
+                    <div class="contact-card-icon"><span class="icon icon--location icon--xl" aria-hidden="true"></span></div>
                     <h3>Visit Us</h3>
-                    <p>#199 Woji Road, GRA Phase 2<br>(Opp PrimeWash)<br>Port Harcourt, Rivers State<br>Nigeria</p>
-                    <a href="https://maps.google.com/?q=#199+Woji+Road+GRA+Phase+2+Port+Harcourt" target="_blank" class="contact-link">
-                        <i class="fas fa-directions"></i> Get Directions
+                    <p>#199 Woji Road, GRA Phase 2<br>(Opp PrimeWash)<br>Port Harcourt, Rivers State</p>
+                    <a href="https://maps.google.com/?q=RCCG+Dominion+Centre+Woji+Road+Port+Harcourt" target="_blank" rel="noopener" class="contact-link">
+                        <span class="icon icon--external" aria-hidden="true"></span> Get Directions
                     </a>
                 </div>
-
-                <!-- Phone Card -->
                 <div class="contact-info-card">
-                    <div class="contact-card-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
+                    <div class="contact-card-icon"><span class="icon icon--phone icon--xl" aria-hidden="true"></span></div>
                     <h3>Call Us</h3>
-                    <p>Main Office:<br><a href="tel:+234XXXXXXXXXX">+234 908 748 4840</a></p>
-                    <p>WhatsApp:<br><a href="https://wa.me/234XXXXXXXXXX" target="_blank">+234 XXX XXX XXXX</a></p>
-                    <a href="tel:+234XXXXXXXXXX" class="contact-link">
-                        <i class="fas fa-phone-alt"></i> Call Now
-                    </a>
+                    <p>Main Office:<br><a href="tel:+2349087484840">+234 908 748 4840</a></p>
+                    <p>WhatsApp:<br><a href="https://wa.me/2349087484840" target="_blank" rel="noopener">+234 908 748 4840</a></p>
+                    <a href="tel:+2349087484840" class="contact-link"><span class="icon icon--phone" aria-hidden="true"></span> Call Now</a>
                 </div>
-
-                <!-- Email Card -->
                 <div class="contact-info-card">
-                    <div class="contact-card-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="contact-card-icon"><span class="icon icon--mail icon--xl" aria-hidden="true"></span></div>
                     <h3>Email Us</h3>
-                    <p>General Inquiries:<br><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></p>
-                    <p>Pastor's Office:<br><a href="mailto:pastor@rccgdc.org">pastor@rccgdc.org</a></p>
-                    <a href="mailto:info@rccgdc.org" class="contact-link">
-                        <i class="fas fa-paper-plane"></i> Send Email
-                    </a>
+                    <p>General: <a href="mailto:info@rccgdc.org">info@rccgdc.org</a></p>
+                    <p>Pastor's Office: <a href="mailto:pastor@rccgdc.org">pastor@rccgdc.org</a></p>
+                    <a href="mailto:info@rccgdc.org" class="contact-link"><span class="icon icon--mail" aria-hidden="true"></span> Send Email</a>
                 </div>
-
-                <!-- Service Times Card -->
-                <div class="contact-info-card highlight">
-                    <div class="contact-card-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Service Times</h3>
-                    <div class="service-times-list">
-                        <div class="service-time-item">
-                            <strong>Sunday Services:</strong>
-                            <span>7:00 AM | 8:30 AM | 10:30 AM</span>
-                        </div>
-                        <div class="service-time-item">
-                            <strong>Wednesday Service:</strong>
-                            <span>5:00 PM</span>
-                        </div>
-                        <div class="service-time-item">
-                            <strong>Kids Church:</strong>
-                            <span>Sunday 10:30 AM</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Contact Form & Map Section -->
-    <section class="contact-main-section">
+    <section class="section section--gray">
         <div class="container">
             <div class="contact-main-grid">
-                
-                <!-- Contact Form -->
                 <div class="contact-form-wrapper">
-                    <div class="section-header">
-                        <span class="section-label">Get In Touch</span>
-                        <h2 class="section-title">Send Us a Message</h2>
-                        <p>Have a question or want to learn more about our church? Fill out the form below and we'll get back to you as soon as possible.</p>
-                    </div>
-
+                    <span class="eyebrow">Get In Touch</span>
+                    <h2 class="display-title">Send Us a Message</h2>
+                    <p class="lead" style="margin-bottom:2rem;">Have a question or want to learn more? Fill out the form and we will respond as soon as possible.</p>
                     <form id="contact-form" class="contact-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                                <input type="text" id="name" name="name" required placeholder="Your full name">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                <input type="email" id="email" name="email" required placeholder="you@example.com">
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
@@ -198,288 +124,137 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Your Message <span class="required">*</span></label>
                             <textarea id="message" name="message" rows="6" required placeholder="Write your message here..."></textarea>
                         </div>
-
                         <div class="form-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" name="newsletter">
-                                <span>I would like to receive updates and newsletters from RCCG Dominion Centre</span>
+                                <span>I would like to receive updates from RCCG Dominion Centre</span>
                             </label>
                         </div>
-
-                        <button type="submit" class="btn btn-primary btn-large">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                     </form>
                 </div>
-
-                <!-- Map & Additional Info -->
                 <div class="contact-sidebar">
-                    <!-- Google Map -->
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.7081362960002!2d6.992951174712748!3d4.820093740611519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cdc9832a1647%3A0xe3961554d2d903b3!2sRCCG%20Dominion%20Centre!5e0!3m2!1sen!2sng!4v1745529241489!5m2!1sen!2sng" 
-                            width="100%" 
-                            height="400" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <a 
-        href="https://www.google.com/maps/place/RCCG+Dominion+Centre/@4.820088,6.995526,15z/data=!4m6!3m5!1s0x1069cdc9832a1647:0xe3961554d2d903b3!8m2!3d4.8200884!4d6.9955261!16s%2Fg%2F11tjs3m33x?hl=en&entry=ttu&g_ep=EgoyMDI1MDQyMi4wIKXMDSoASAFQAw%3D%3D"
-        style="
-            
-            background-color:#d4af37;
-            color:#fff;
-            padding:12px 28px;
-            border-radius:6px;
-            text-decoration:none;
-            font-weight:600;
-            font-size:16px;
-            transition:all 0.3s ease;
-            box-shadow:0 4px 8px rgba(0,0,0,0.15);
-            margin-top:1rem;
-            
-        "
-        onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';"
-        onmouseout="this.style.backgroundColor='#007bff'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
-    >
-        Open in Map
-    </a>
-                    </div>
-
-                    <!-- Office Hours -->
-                    <div class="info-box">
-                        <h3><i class="fas fa-business-time"></i> Office Hours</h3>
-                        <div class="hours-list">
-                            <div class="hours-item">
-                                <span class="day">Monday - Friday:</span>
-                                <span class="time">8:30 AM - 5:00 PM</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Saturday:</span>
-                                <span class="time">10:00 AM - 2:00 PM</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Sunday:</span>
-                                <span class="time">Service Hours Only</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="info-box">
-                        <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
-                        <p>Follow us on social media to stay updated with our latest events, sermons, and announcements.</p>
-                        <div class="social-links-large">
-                            <a href="https://www.facebook.com/rccgdcph/" class="social-btn facebook">
-                                <i class="fab fa-facebook-f"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a href="https://www.youtube.com/@rccgdc_ph" class="social-btn youtube">
-                                <i class="fab fa-youtube"></i>
-                                <span>YouTube</span>
-                            </a>
-                            <a href="https://www.instagram.com/rccgdc_ph/?hl=en" class="social-btn instagram">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="#" class="social-btn twitter">
-                                <i class="fab fa-twitter"></i>
-                                <span>Twitter</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Emergency Contact -->
-                    <div class="info-box emergency">
-                        <h3><i class="fas fa-exclamation-circle"></i> Need Prayer?</h3>
-                        <p>If you need urgent prayer or pastoral care, please contact us immediately:</p>
-                        <a href="tel:+2349087484840" class="emergency-contact">
-                            <i class="fas fa-phone"></i> +234 908 748 4840
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.7081362960002!2d6.992951174712748!3d4.820093740611519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cdc9832a1647%3A0xe3961554d2d903b3!2sRCCG%20Dominion%20Centre!5e0!3m2!1sen!2sng!4v1745529241489!5m2!1sen!2sng" width="100%" height="360" style="border:0;" allowfullscreen loading="lazy" title="RCCG Dominion Centre location"></iframe>
+                        <a href="https://www.google.com/maps/place/RCCG+Dominion+Centre/@4.820088,6.995526,15z" target="_blank" rel="noopener" class="map-link">
+                            <span class="icon icon--external" aria-hidden="true"></span> Open in Google Maps
                         </a>
-                        <p class="emergency-note">Available 24/7 for emergencies</p>
+                    </div>
+                    <div class="info-box">
+                        <h3><span class="icon icon--time" aria-hidden="true"></span> Office Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item"><span class="day">Monday – Friday</span><span class="time">8:30 AM – 5:00 PM</span></div>
+                            <div class="hours-item"><span class="day">Saturday</span><span class="time">10:00 AM – 2:00 PM</span></div>
+                            <div class="hours-item"><span class="day">Sunday</span><span class="time">Service Hours Only</span></div>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <h3>Connect With Us</h3>
+                        <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:1rem;">Follow us for sermons, events, and announcements.</p>
+                        <div class="social-links-large">
+                            <a href="https://www.facebook.com/rccgdcph/" class="social-btn" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""> Facebook</a>
+                            <a href="https://www.youtube.com/@rccgdc_ph" class="social-btn" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""> YouTube</a>
+                            <a href="https://www.instagram.com/rccgdc_ph/" class="social-btn" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""> Instagram</a>
+                        </div>
+                    </div>
+                    <div class="info-box emergency">
+                        <h3>Need Prayer?</h3>
+                        <p style="font-size:0.875rem;color:var(--text-muted);">For urgent prayer or pastoral care, contact us immediately:</p>
+                        <a href="tel:+2349087484840" class="emergency-contact"><span class="icon icon--phone" aria-hidden="true"></span> +234 908 748 4840</a>
+                        <p class="emergency-note">Available for emergencies</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Visit Planning Section -->
-    <section class="visit-planning-section section-padding">
+    <section class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Plan Your Visit</span>
-                <h2 class="section-title">What to Expect When You Visit</h2>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Plan Your Visit</span>
+                <h2 class="display-title">What to Expect</h2>
             </div>
-
             <div class="visit-steps">
-                <div class="visit-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Arrival</h3>
-                        <p>Arrive 15-20 minutes early to find parking and get settled. Our parking attendants will guide you to available spaces.</p>
-                    </div>
-                </div>
-
-                <div class="visit-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Welcome</h3>
-                        <p>Our friendly ushers will greet you at the entrance, provide you with a bulletin, and help you find a seat.</p>
-                    </div>
-                </div>
-
-                <div class="visit-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Kids Check-In</h3>
-                        <p>If you have children, visit our Kids Church check-in desk. Our secure check-in system ensures your child's safety.</p>
-                    </div>
-                </div>
-
-                <div class="visit-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Enjoy the Service</h3>
-                        <p>Relax and enjoy the worship, teaching, and fellowship. Services typically last 1.5-2 hours.</p>
-                    </div>
-                </div>
-
-                <div class="visit-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Connect</h3>
-                        <p>After service, visit our connect desk to learn more about the church, meet our pastors, and get involved.</p>
-                    </div>
-                </div>
+                <div class="visit-step"><div class="step-number">1</div><div><h3>Arrival</h3><p>Arrive 15–20 minutes early. Our parking team will guide you to available spaces.</p></div></div>
+                <div class="visit-step"><div class="step-number">2</div><div><h3>Welcome</h3><p>Our ushers will greet you, provide a bulletin, and help you find a seat.</p></div></div>
+                <div class="visit-step"><div class="step-number">3</div><div><h3>Kids Check-In</h3><p>Visit our Kids Church desk for secure check-in for children ages 3–12.</p></div></div>
+                <div class="visit-step"><div class="step-number">4</div><div><h3>Enjoy the Service</h3><p>Relax and enjoy worship and teaching. Services typically last 1.5–2 hours.</p></div></div>
+                <div class="visit-step"><div class="step-number">5</div><div><h3>Connect</h3><p>Visit our connect desk after service to meet pastors and learn how to get involved.</p></div></div>
             </div>
-
             <div class="visit-cta">
-                <h3>Have Questions About Visiting?</h3>
-                <p>We're here to help! Reach out to us and we'll make sure your first visit is comfortable and welcoming.</p>
-                <a href="#contact-form" class="btn btn-primary">Contact Us</a>
+                <h3>Questions About Visiting?</h3>
+                <p>We are here to make your first visit comfortable and welcoming.</p>
+                <a href="#contact-form" class="btn btn-primary">Send a Message</a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="contact-faq-section">
+    <section class="section section--gray">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Quick Answers</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Quick Answers</span>
+                <h2 class="display-title">Frequently Asked Questions</h2>
             </div>
-
             <div class="faq-grid">
                 <div class="faq-column">
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h4>What should I wear to church?</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Come as you are! While some dress formally, others prefer casual attire. The most important thing is that you're comfortable and ready to worship.</p>
-                        </div>
+                        <div class="faq-question"><h4>What should I wear?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                        <div class="faq-answer"><p>Come as you are. Some dress formally, others prefer casual attire. Comfort is what matters most.</p></div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h4>Is there parking available?</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! We have ample parking space around the church premises. Our parking attendants will guide you to available spots.</p>
-                        </div>
+                        <div class="faq-question"><h4>Is parking available?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                        <div class="faq-answer"><p>Yes. We have ample parking and attendants to guide you on Sundays.</p></div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h4>Do you have programs for children?</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Absolutely! We have a vibrant Kids Church program for ages 3-12 during our 10:30 AM Sunday service, with age-appropriate lessons and activities.</p>
-                        </div>
+                        <div class="faq-question"><h4>Programs for children?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                        <div class="faq-answer"><p>We have a vibrant Kids Church for ages 3–12 during our 10:30 AM Sunday service.</p></div>
                     </div>
                 </div>
-
                 <div class="faq-column">
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h4>How long are your services?</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Our services typically last between 1.5 to 2 hours, including worship, teaching, and ministry time.</p>
-                        </div>
+                        <div class="faq-question"><h4>How long are services?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                        <div class="faq-answer"><p>Services typically last between 1.5 and 2 hours including worship and teaching.</p></div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h4>Can I watch services online?</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! We livestream our Sunday services on Facebook and YouTube. You can also access past sermons on our YouTube channel.</p>
-                        </div>
+                        <div class="faq-question"><h4>Can I watch online?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                        <div class="faq-answer"><p>Yes. We livestream on Facebook and YouTube. Past sermons are on our YouTube channel.</p></div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h4>How can I become a member?</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We'd love to have you! Contact us to learn about our membership process, which includes attending our Welcome Class and meeting with our pastoral team.</p>
-                        </div>
+                        <div class="faq-question"><h4>How do I become a member?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                        <div class="faq-answer"><p>Contact us to learn about our Welcome Class and membership process with our pastoral team.</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA -->
     <section class="contact-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Still Have Questions?</h2>
-                <p>Don't hesitate to reach out. We're always happy to help and answer any questions you may have about our church, services, or ministries.</p>
-                <div class="cta-buttons">
-                    <a href="tel:+234XXXXXXXXXX" class="btn btn-light">
-                        <i class="fas fa-phone"></i> Call Us Now
-                    </a>
-                    <a href="mailto:info@rccgdc.org" class="btn btn-outline-light">
-                        <i class="fas fa-envelope"></i> Send an Email
-                    </a>
-                </div>
+            <h2>Still Have Questions?</h2>
+            <p>We are always happy to help with any questions about our church, services, or ministries.</p>
+            <div class="cta-buttons">
+                <a href="tel:+2349087484840" class="btn btn-primary">Call Us Now</a>
+                <a href="mailto:info@rccgdc.org" class="btn btn-outline-light">Send an Email</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
-                <div class="footer-column">
+                <div class="footer-column footer-brand">
                     <h3>RCCG Dominion Centre</h3>
-                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <p>An expression church branding the future look of RCCG.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -491,82 +266,18 @@
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Service Times -->
                 <div class="footer-column">
-                    <h4>Service Times</h4>
-                    <ul class="footer-links">
-                        <li><strong>Sunday:</strong> 7:00 AM | 8:30 AM | 10:30 AM</li>
-                        <li><strong>Wednesday:</strong> 5:00 PM</li>
-                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            #199 Woji Road, GRA Phase 2<br>
-                            Port Harcourt, Rivers State, Nigeria
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 908 748 4840 </a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
-                        </li>
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt</span></li>
+                        <li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p><br>
-                <p>Developed by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved.</p></div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Account number copied to clipboard!');
-            });
-        }
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const faqItem = this.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // Giving Tabs
-        document.querySelectorAll('.giving-tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.giving-tab').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Amount Buttons
-        document.querySelectorAll('.amount-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
-                this.classList.add('selected');
-                
-                if (!this.classList.contains('custom-btn')) {
-                    document.getElementById('custom-amount').value = '';
-                }
-            });
-        });
-    </script>
 </body>
 </html>

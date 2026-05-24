@@ -3,54 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to RCCG Dominion Centre - A Satellite Church expressing the future look of RCCG. Join us for worship, fellowship, and spiritual growth.">
-    <meta name="keywords" content="RCCG, Dominion Centre, Church, Port Harcourt, Worship, Christian">
-    <title>RCCG Dominion Centre - Welcome Home</title>
-    
-    <!-- Google Fonts -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
+    <meta name="description" content="RCCG Dominion Centre — An expression church branding the future look of RCCG. Worship, fellowship, and spiritual growth in Port Harcourt.">
+    <title>RCCG Dominion Centre | Welcome Home</title>
+    <link rel="icon" type="image/png" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <!-- Logo with Zoom Animation -->
-        <div class="loader-logo">
-            <img src="images/dclogo1.png" alt="RCCG Logo">
+    <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo-wrap">
+                <img src="images/dclogo1.png" alt="RCCG Dominion Centre">
+            </div>
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <p class="loader-church-name">RCCG Dominion Centre</p>
+            <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
         </div>
-
-        <!-- Loading Text -->
-        <div class="loader-text">Loading...</div>
-
-        <!-- Optional Spinner -->
-        <div class="loader-spinner"></div>
-
-        <!-- Church Name -->
-        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
-        <div class="loader-tagline">The gathering of eagles...</div>
     </div>
-    <!-- Header / Navigation -->
-    <header class="site-header">
+
+    <header class="site-header site-header--transparent" id="siteHeader">
         <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-    <a href="index">
-        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-            <span class="logo-text">RCCG</span>
-            <span class="logo-subtext">Dominion Centre</span>
-        </div>
-    </a>
-</div>
-                
+                    <a href="index">
+                        <img src="images/dclogo1.png" alt="RCCG Dominion Centre" class="logo-image">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">RCCG</span>
+                            <span class="logo-subtext">Dominion Centre</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index" class="nav-link active">Home</a></li>
                     <li><a href="about" class="nav-link">About</a></li>
@@ -58,263 +42,241 @@
                     <li><a href="volunteer" class="nav-link">Volunteer</a></li>
                     <li><a href="give" class="nav-link">Give</a></li>
                     <li><a href="contact" class="nav-link">Contact</a></li>
+                    <li><a href="http://localhost/review/login.php" class="nav-link">Review</a></li>
+                    <li><a href="contact" class="btn btn-nav-cta">Plan a Visit</a></li>
                 </ul>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="hamburger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="images/hero_video.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title fade-in">Welcome to RCCG Dominion Centre</h1>
-            <p class="hero-subtitle fade-in-delay">An Expression Church Branding the Future Look of RCCG</p>
-            <div class="hero-buttons fade-in-delay-2">
-                <a href="#services" class="btn btn-primary">Join Our Service</a>
-                <a href="about" class="btn btn-secondary">Learn More</a>
+        <div class="hero-content container">
+            <p class="hero-eyebrow">Welcome to RCCG Dominion Centre</p>
+            <h1 class="hero-title">Raising Kingdom Stars for Dominion</h1>
+            <p class="hero-subtitle">An expression church branding the future look of RCCG — where faith, excellence, and community converge.</p>
+            <div class="hero-buttons">
+                <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="btn btn-primary">
+                    <span class="icon icon--play" aria-hidden="true"></span> Watch Online
+                </a>
+                <a href="contact" class="btn btn-outline">Plan Your Visit</a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+        <a href="#welcome" class="scroll-indicator" aria-label="Scroll down">
+            <span class="icon icon--chevron-down icon--lg" aria-hidden="true"></span>
+        </a>
+    </section>
+
+    <section class="vision-band">
+        <div class="container">
+            <span class="eyebrow eyebrow--light">Our Vision</span>
+            <p class="vision-statement">To raise Kingdom stars of today and the future who will rule, reign, and have dominion over the mountains of influence.</p>
+            <a href="about" class="btn btn-primary">Discover Our Story</a>
         </div>
     </section>
 
-    <!-- About Preview Section -->
-    <section class="about-preview section-padding">
+    <section class="section" id="welcome">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Who We Are</span>
-                <h2 class="section-title">Welcome Home</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>The Redeemed Christian Church of God, Dominion Centre (RCCGDC) was birthed on the 9th of October, 2022. It is a Satellite Church of THE REDEEMED CHRISTIAN CHURCH OF GOD, THE KING'S PALACE PARISH (Headquaters of Region 33).</p>
-                    <p>We are an expression church which brands the future look of RCCG, committed to spiritual growth, fellowship, and transforming lives through the power of God's Word.</p>
-                    <a href="about" class="btn btn-outline">Discover Our Story</a>
+            <div class="split-grid">
+                <div class="split-content animate-on-scroll">
+                    <span class="eyebrow">Who We Are</span>
+                    <h2 class="display-title">Welcome Home</h2>
+                    <p class="lead">The Redeemed Christian Church of God, Dominion Centre (RCCGDC) was birthed on the 9th of October, 2022 — a satellite church of The King's Palace Parish, Headquarters of Region 33.</p>
+                    <p class="lead" style="margin-top:1rem;">We are an expression church committed to spiritual growth, fellowship, and transforming lives through the power of God's Word.</p>
+                    <a href="about" class="btn btn-outline-dark" style="margin-top:1.5rem;">Learn More About Us</a>
                 </div>
-                <div class="about-image">
-                    <img src="images/dcimg33.jpg" alt="Church Community">
+                <div class="split-media animate-on-scroll">
+                    <img src="images/dcimg33.jpg" alt="RCCG Dominion Centre worship">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Times Section -->
-    <section id="services" class="service-times">
+    <section class="section section--gray">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Join Us</span>
-                <h2 class="section-title">Service Times</h2>
+            <div class="section-header section-header--center animate-on-scroll">
+                <span class="eyebrow">Get Connected</span>
+                <h2 class="display-title">Your Journey Starts Here</h2>
+                <p class="lead">Dive into our teachings, events, and community. There is a place for everyone at Dominion Centre.</p>
+            </div>
+            <div class="link-cards">
+                <a href="about" class="link-card animate-on-scroll">
+                    <div class="link-card__bg" style="background-image:url('images/dcimg19.jpg')"></div>
+                    <div class="link-card__overlay"></div>
+                    <div class="link-card__content">
+                        <span class="link-card__label">Who We Are</span>
+                        <h3>About Us</h3>
+                        <p>Our story, mission, vision, and the values that define us.</p>
+                        <span class="btn btn-ghost">Learn More <span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+                    </div>
+                </a>
+                <a href="contact" class="link-card animate-on-scroll">
+                    <div class="link-card__bg" style="background-image:url('images/dcimg20.jpg')"></div>
+                    <div class="link-card__overlay"></div>
+                    <div class="link-card__content">
+                        <span class="link-card__label">Join Our Community</span>
+                        <h3>Connect With Us</h3>
+                        <p>Plan your visit and become part of the family.</p>
+                        <span class="btn btn-ghost">Get In Touch <span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+                    </div>
+                </a>
+                <a href="events" class="link-card animate-on-scroll">
+                    <div class="link-card__bg" style="background-image:url('images/dcimg46.jpeg')"></div>
+                    <div class="link-card__overlay"></div>
+                    <div class="link-card__content">
+                        <span class="link-card__label">What's Happening</span>
+                        <h3>Events</h3>
+                        <p>Worship services, conferences, and gatherings.</p>
+                        <span class="btn btn-ghost">View Events <span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header section-header--center animate-on-scroll">
+                <span class="eyebrow">Join Us</span>
+                <h2 class="display-title">Service Times</h2>
+                <p class="lead">We gather to worship, learn, and grow together.</p>
             </div>
             <div class="service-grid">
-                <!-- Sunday Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-church"></i>
-                    </div>
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon"><span class="icon icon--calendar icon--xl" aria-hidden="true"></span></div>
                     <h3>Sunday Worship</h3>
-                    <p class="service-time">7:00 AM | 8:30 AM | 10:30 AM</p>
-                    <p class="service-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        #199 Woji Road, GRA Phase 2<br>
-                        Port Harcourt, Rivers State
-                    </p>
-                </div>
-
-                <!-- Wednesday Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bible"></i>
-                    </div>
+                    <p class="service-card__time">7:00 AM &middot; 8:30 AM &middot; 10:30 AM</p>
+                    <p class="service-card__location"><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt</span></p>
+                </article>
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon"><span class="icon icon--book icon--xl" aria-hidden="true"></span></div>
                     <h3>Midweek Service</h3>
-                    <p class="service-time">Wednesday - 5:00 PM</p>
-                    <p class="service-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        #199 Woji Road, GRA Phase 2<br>
-                        Port Harcourt, Rivers State
-                    </p>
-                </div>
-
-                <!-- Kids Church -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-children"></i>
-                    </div>
+                    <p class="service-card__time">Wednesday &middot; 5:00 PM</p>
+                    <p class="service-card__location"><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt</span></p>
+                </article>
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon"><span class="icon icon--users icon--xl" aria-hidden="true"></span></div>
                     <h3>Kids Church</h3>
-                    <p class="service-time">Sunday - 10:30 AM</p>
-                    <p class="service-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Children's Wing<br>
-                        Same Location
-                    </p>
-                </div>
+                    <p class="service-card__time">Sunday &middot; 10:30 AM</p>
+                    <p class="service-card__location"><span class="icon icon--location" aria-hidden="true"></span><span>Children's Wing</span></p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Upcoming Events Section -->
-    <section class="events-preview section-padding">
+    <section class="section section--gray">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">What's Happening</span>
-                <h2 class="section-title">Upcoming Events</h2>
+            <div class="section-header section-header--center animate-on-scroll">
+                <span class="eyebrow">Calendar</span>
+                <h2 class="display-title">Upcoming Events</h2>
             </div>
             <div class="events-grid">
-                <!-- Event 1:  Dominion Power Confrence 3.0 -->
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="images/dcimg49.jpeg" alt="Gratitude Event">
-                        <div class="event-badge">Upcoming</div>
-                    </div>
-                    <div class="event-content">
-                        <h3> Dominion Power Confrence 3.0</h3>
-                        <p class="event-meta">
-                            <i class="far fa-calendar"></i>  May 25th – 31st, 2026
-                        </p>
+                <article class="event-card animate-on-scroll">
+                    <div class="event-card__image"><img src="images/dcimg49.jpeg" alt="Conference"><span class="event-badge">Conference</span></div>
+                    <div class="event-card__body">
+                        <h3>Dominion Power Conference 3.0</h3>
+                        <p class="event-meta"><span class="icon icon--calendar" aria-hidden="true"></span> Scheduled Event</p>
                         <p>Last year, we ADVANCED… ➡
-This year, we go higher⬆️ — we are ELEVATING to something more. 🔥
-DPC 3.0 is not a repetition — it is a progression. From climbing to soaring. From effort to empowerment. From pursuit to divine lifting. Get ready for a week of intense Word, Prayer & Prophetic encounters, and Worship that will shift you into your next dimension.</p>
-                        <a href="events" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+This year, we go higher — we are ELEVATING to something more. </p>
+                        <a href="events" class="btn btn-ghost">Learn More <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
                     </div>
-                </div>
-
-                <!-- Event 2: 84 Days Non-Stop Prayer -->
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="images/dcimg48.jpeg" alt="84 Days Non-Stop Prayer Event">
-                        <div class="event-badge">Upcoming</div>
+                </article>
+                <article class="event-card animate-on-scroll">
+                    <div class="event-card__image"><img src="images/dcimg45.jpeg" alt="Night of Wonders"><span class="event-badge">Monthly</span></div>
+                    <div class="event-card__body">
+                        <h3>Night of Wonders &amp; Communion</h3>
+                        <p class="event-meta"><span class="icon icon--calendar" aria-hidden="true"></span> Last Friday Monthly</p>
+                        <p>A powerful night of intercession, communion, and divine manifestation.</p>
+                        <a href="events" class="btn btn-ghost">Learn More <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
                     </div>
-                    <div class="event-content">
-                        <h3>84 Days Non-Stop Prayer</h3>
-                        <p class="event-meta">
-                            <i class="far fa-calendar"></i> Wednesday, March 25th & Sunday, March 29th, 2025
-                        </p>
-                        <p>Come and ignite your altar, stir the embers, and burn with purpose. This is not routine prayer — this is intentional fire for transformation, revival, and answers. 🔥🙏🏽</p>
-                        <a href="events" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="event-card animate-on-scroll">
+                    <div class="event-card__image"><img src="images/dcimg46.jpeg" alt="Sunday Service"><span class="event-badge">Weekly</span></div>
+                    <div class="event-card__body">
+                        <h3>Sunday Worship Service</h3>
+                        <p class="event-meta"><span class="icon icon--calendar" aria-hidden="true"></span> Every Sunday</p>
+                        <p>Inspiring worship, biblical teaching, and meaningful fellowship.</p>
+                        <a href="events" class="btn btn-ghost">Learn More <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
                     </div>
-                </div>
-
-                <!-- Event 3: Thanksgiving Sunday -->
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="images/dcimg46.jpeg" alt="Thanksgiving Sunday Event">
-                        <div class="event-badge">Featured</div>
-                    </div>
-                    <div class="event-content">
-                        <h3>Thanksgiving Sunday </h3>
-                        <p class="event-meta">
-                            <i class="far fa-calendar"></i> Sunday 1st March, 2025
-                        </p>
-                        <p>There’s a place for you here; a gathering of eagles, a family of faith, a house of worship.
-
-Join us this Sunday and experience God’s presence like never before!</p>
-                        <a href="events" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            <div class="text-center" style="margin-top: 3rem;">
+                </article>
             </div>
-            <a href="events" class="btn btn-primary">View All Events</a>
+            <div class="text-center mt-4"><a href="events" class="btn btn-primary">View All Events</a></div>
         </div>
     </section>
 
-    <!-- Current Series Section -->
-    <section class="current-series">
+    <section class="section video-section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Latest Message</span>
-                <h2 class="section-title">Current Series</h2>
+            <div class="section-header section-header--center animate-on-scroll">
+                <span class="eyebrow eyebrow--light">Latest Message</span>
+                <h2 class="display-title display-title--light">Watch Our Latest Sermon</h2>
             </div>
-            <div class="series-content">
-                <div class="series-info">
-                    <h3>FOUR CORE PILLARS OF LEADERSHIP</h3>
-                    <p>Leadership is not defined by position but by the principles that sustain influence and guide impact. In this powerful message, we explore the 4 core pillars of leadership—the foundational qualities that shape effective and transformative leaders.</p>
-                    <div class="series-buttons">
-                        <a href="https://youtu.be/KNe1WvzsMqU?si=-thzKGFpfMhr-c0-" class="btn btn-primary">
-                            <i class="fab fa-youtube"></i> Watch on YouTube
-                        </a>
-                        <!-- <a href="#" class="btn btn-secondary">
-                            <i class="fas fa-podcast"></i> Listen to Podcast
-                        </a> -->
-                    </div>
-                    <p class="series-note">Never miss a message. Subscribe to our YouTube channel.</p>
-                </div>
-                <div class="series-image">
-             <div class="video-container">
-                    <iframe 
-                    src="https://www.youtube.com/embed/KNe1WvzsMqU?si=-thzKGFpfMhr-c0-" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-             </div>
-        </div>
+            <div class="video-wrapper animate-on-scroll">
+                <iframe src="https://www.youtube.com/embed/KNe1WvzsMqU" title="Latest sermon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Thanksgiving Section -->
-    <section class="thanksgiving-section section-padding">
+    <section class="section">
         <div class="container">
-            <div class="thanksgiving-card">
-                <div class="thanksgiving-icon">
-                    <i class="fas fa-hands-praying"></i>
+            <div class="pastor-spotlight animate-on-scroll">
+                <div class="pastor-spotlight__image">
+                    <img src="images/dcimg36.png" alt="Dr. Perez Araka">
+                    <span class="pastor-spotlight__badge">Lead Pastor</span>
                 </div>
-                <h2>Thanksgiving: The Heart Posture of the Grateful</h2>
-                <p>As Overcomers, with hearts full of gratitude, we gather to lift holy hands in one accord, giving glory and thanks to the One who has made us victorious. Join the community of Overcomers in any of our services.</p>
-                <a href="contact" class="btn btn-light">Join Us This Sunday</a>
+                <div>
+                    <span class="eyebrow">Leadership</span>
+                    <h2 class="display-title">Dr. Perez Araka</h2>
+                    <p class="lead">A passionate teacher of God's Word committed to raising overcomers and establishing kingdom dominion.</p>
+                    <p class="pastor-quote">"Self-discipline is the key to your divine purpose. Rise to rule, don't remain a servant."</p>
+                    <a href="about" class="btn btn-outline-dark" style="margin-top:1.5rem;">Meet Our Leadership</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta-section">
+    <section class="cta-band">
         <div class="container">
+            <h2>Get Involved in Our Community</h2>
+            <p>Grow in faith, serve with purpose, and make a lasting difference.</p>
             <div class="cta-grid">
-                <div class="cta-card">
-                    <div class="cta-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3>Volunteer With Us</h3>
-                    <p>Looking to serve and grow in your faith? There's a place for you here.</p>
+                <div class="cta-card animate-on-scroll">
+                    <div class="cta-card__icon"><span class="icon icon--hand icon--lg" aria-hidden="true"></span></div>
+                    <h3>Volunteer</h3>
+                    <p>Join our ministry teams and serve with your gifts.</p>
                     <a href="volunteer" class="btn btn-outline-light">Get Involved</a>
                 </div>
-                <div class="cta-card">
-                    <div class="cta-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Give Online</h3>
-                    <p>Your generosity helps us spread the gospel and serve our community.</p>
+                <div class="cta-card animate-on-scroll">
+                    <div class="cta-card__icon"><span class="icon icon--heart icon--lg" aria-hidden="true"></span></div>
+                    <h3>Give</h3>
+                    <p>Support our mission through faithful giving.</p>
                     <a href="give" class="btn btn-outline-light">Give Now</a>
+                </div>
+                <div class="cta-card animate-on-scroll">
+                    <div class="cta-card__icon"><span class="icon icon--mail icon--lg" aria-hidden="true"></span></div>
+                    <h3>Connect</h3>
+                    <p>Reach our pastoral team — we would love to hear from you.</p>
+                    <a href="contact" class="btn btn-outline-light">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
-                <div class="footer-column">
+                <div class="footer-column footer-brand">
                     <h3>RCCG Dominion Centre</h3>
-                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <p>An expression church branding the future look of RCCG.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -326,46 +288,25 @@ Join us this Sunday and experience God’s presence like never before!</p>
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Service Times -->
                 <div class="footer-column">
                     <h4>Service Times</h4>
                     <ul class="footer-links">
-                        <li><strong>Sunday:</strong> 7:00 AM | 8:30 AM | 10:30 AM</li>
+                        <li><strong>Sunday:</strong> 7:00 AM &middot; 8:30 AM &middot; 10:30 AM</li>
                         <li><strong>Wednesday:</strong> 5:00 PM</li>
-                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            #199 Woji Road, GRA Phase 2<br>
-                            Port Harcourt, Rivers State, Nigeria
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 908 748 4840</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
-                        </li>
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt</span></li>
+                        <li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p><br>
-                <p>Developed by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved.</p></div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

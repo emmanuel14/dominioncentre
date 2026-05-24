@@ -3,55 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about RCCG Dominion Centre - Our history, mission, vision, and leadership. An expression church branding the future look of RCCG.">
-    <meta name="keywords" content="RCCG, Dominion Centre, About Us, Church History, Mission, Vision, Leadership">
-    <title>About Us - RCCG Dominion Centre</title>
-    
-    <!-- Google Fonts -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
+    <meta name="description" content="Learn about RCCG Dominion Centre — our history, mission, vision, leadership, and values. An expression church branding the future look of RCCG in Port Harcourt.">
+    <title>About Us | RCCG Dominion Centre</title>
+    <link rel="icon" type="image/png" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <!-- Logo with Zoom Animation -->
-        <div class="loader-logo">
-            <img src="images/dclogo1.png" alt="RCCG Logo">
+    <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo-wrap">
+                <img src="images/dclogo1.png" alt="RCCG Dominion Centre">
+            </div>
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <p class="loader-church-name">RCCG Dominion Centre</p>
+            <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
         </div>
-
-        <!-- Loading Text -->
-        <div class="loader-text">Loading...</div>
-
-        <!-- Optional Spinner -->
-        <div class="loader-spinner"></div>
-
-        <!-- Church Name -->
-        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
-        <div class="loader-tagline">The gathering of eagles...</div>
     </div>
-    <!-- Header / Navigation -->
-    <header class="site-header">
+
+    <header class="site-header site-header--solid" id="siteHeader">
         <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-    <a href="index">
-        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-            <span class="logo-text">RCCG</span>
-            <span class="logo-subtext">Dominion Centre</span>
-        </div>
-    </a>
-</div>
-                
+                    <a href="index">
+                        <img src="images/dclogo1.png" alt="RCCG Dominion Centre" class="logo-image">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">RCCG</span>
+                            <span class="logo-subtext">Dominion Centre</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index" class="nav-link">Home</a></li>
                     <li><a href="about" class="nav-link active">About</a></li>
@@ -59,48 +42,50 @@
                     <li><a href="volunteer" class="nav-link">Volunteer</a></li>
                     <li><a href="give" class="nav-link">Give</a></li>
                     <li><a href="contact" class="nav-link">Contact</a></li>
+                    <li><a href="contact" class="btn btn-nav-cta">Plan a Visit</a></li>
                 </ul>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="hamburger" aria-label="Open menu" type="button">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-overlay"></div>
+    <section class="about-hero">
+        <div class="about-hero-overlay"></div>
         <div class="container">
-            <div class="page-header-content">
-                <h1 class="page-title">About Us</h1>
-                <p class="page-subtitle">Discover Our Story, Mission, and Vision</p>
-                <div class="breadcrumb">
-                    <a href="index">Home</a>
-                    <span>/</span>
-                    <span>About</span>
-                </div>
-            </div>
+            <span class="eyebrow eyebrow--light">Who We Are</span>
+            <h1 class="page-title">About Dominion Centre</h1>
+            <p class="page-subtitle">An expression church branding the future look of RCCG — rooted in the Word, prayer, and excellence.</p>
+            <nav class="breadcrumb">
+                <a href="index">Home</a>
+                <span>/</span>
+                <span>About</span>
+            </nav>
         </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="our-story section-padding">
+    <section class="vision-band">
         <div class="container">
-            <div class="story-content">
+            <span class="eyebrow eyebrow--light">Our Calling</span>
+            <p class="vision-statement">Raising Kingdom stars who will rule, reign, and have dominion over the mountains of influence.</p>
+        </div>
+    </section>
+
+    <section class="section our-story section--gray">
+        <div class="container">
+            <div class="story-grid">
                 <div class="story-text">
                     <div class="section-header">
-                        <span class="section-label">Our Story</span>
-                        <h2 class="section-title">The Birth of RCCG Dominion Centre</h2>
+                        <span class="eyebrow">Our Story</span>
+                        <h2 class="display-title">The Birth of RCCG Dominion Centre</h2>
                     </div>
                     <p>The Redeemed Christian Church of God, Dominion Centre (RCCGDC) was birthed on the <strong>9th of October, 2022</strong>. Born out of a divine mandate and vision to reach more souls for Christ, our church represents a new chapter in the RCCG journey.</p>
-                    
+
                     <p>We are a Satellite Church of <strong>REDEEMED CHRISTIAN CHURCH OF GOD, THE KING'S PALACE PARISH HEADQUARTERS OF REGION 33</strong>.</p>
-                    
+
                     <p><strong>An Expression Church which brands the future look of the RCCG.</strong> We are a church for the younger generation (The Future), for professionals, entrepreneurs and career-minded worshippers, committed to impacting the immediate community for Jesus. Our foundation is rooted in the original ideals of the main church - The Word, Prayer, Holiness, Soul Winning and manifestation of the gifts of the Holy Spirit.</p>
-                    
+
                     <div class="story-stats">
                         <div class="stat-item">
                             <div class="stat-number">2022</div>
@@ -116,11 +101,11 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="story-image">
-                    <img src="images/dcimg19.jpg" alt="Church Building">
-                    <div class="image-overlay-text">
-                        <i class="fas fa-quote-left"></i>
+
+                <div class="story-image-wrap">
+                    <img src="images/dcimg19.jpg" alt="RCCG Dominion Centre church building">
+                    <div class="story-quote-overlay">
+                        <span class="icon icon--quote" aria-hidden="true"></span>
                         <p>"An Expression Church Branding the Future"</p>
                     </div>
                 </div>
@@ -128,23 +113,20 @@
         </div>
     </section>
 
-    <!-- Mission & Vision Section -->
-    <section class="mission-vision">
+    <section class="section section--dark mission-vision">
         <div class="container">
             <div class="mv-grid">
-                <!-- Mission Card -->
                 <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
+                    <div class="mv-card__icon">
+                        <span class="icon icon--check icon--lg" aria-hidden="true"></span>
                     </div>
                     <h3>Our Mission</h3>
                     <p>To be practical in applying the fundamental scriptural principles of winning and having dominion in all spheres of life, with an ultimate view of finishing well and strong.</p>
                 </div>
 
-                <!-- Vision Card -->
                 <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-star"></i>
+                    <div class="mv-card__icon">
+                        <span class="icon icon--users icon--lg" aria-hidden="true"></span>
                     </div>
                     <h3>Our Micro-Vision</h3>
                     <p>To raise Kingdom Stars of today and the future who will rule, reign and have dominion over the mountains of influence.</p>
@@ -153,92 +135,69 @@
         </div>
     </section>
 
-    <!-- 7 Mountains of Influence Section -->
-    <section class="mountains-section section-padding">
+    <section class="section mountains-section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Our Focus</span>
-                <h2 class="section-title">The 7 Mountains of Influence</h2>
-                <p class="section-description">Raising Kingdom Stars to rule, reign and have dominion</p>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Our Focus</span>
+                <h2 class="display-title">The 7 Mountains of Influence</h2>
+                <p class="lead">Raising Kingdom Stars to rule, reign and have dominion</p>
             </div>
 
             <div class="mountains-grid">
-                <div class="mountain-card" style="--mountain-color: #e74c3c">
-                    <div class="mountain-icon">
-                        <i class="fas fa-cross"></i>
-                    </div>
+                <div class="mountain-card" style="--mountain-color: #c9a227">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">01</span>
                     <h4>Religion</h4>
                     <p><strong>Sound Doctrine</strong></p>
-                    <p>Fundamental pillars of the Christian faith, RCCG's doctrines, new creation realities, a church given to prayer & fasting.</p>
+                    <p>Fundamental pillars of the Christian faith, RCCG's doctrines, new creation realities, a church given to prayer &amp; fasting.</p>
                 </div>
-
-                <div class="mountain-card" style="--mountain-color: #e67e22">
-                    <div class="mountain-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                <div class="mountain-card" style="--mountain-color: #b8922a">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">02</span>
                     <h4>Family</h4>
                     <p><strong>Leadership</strong></p>
-                    <p>Leadership, values, relationship, love & affection, responsibilities, character, vision, capacity.</p>
+                    <p>Leadership, values, relationship, love &amp; affection, responsibilities, character, vision, capacity.</p>
                 </div>
-
-                <div class="mountain-card" style="--mountain-color: #f39c12">
-                    <div class="mountain-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
+                <div class="mountain-card" style="--mountain-color: #a67c1a">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">03</span>
                     <h4>Business</h4>
-                    <p><strong>Economy & Finance</strong></p>
-                    <p>Professional and career development, kingdom financing, entrepreneurship & investment.</p>
+                    <p><strong>Economy &amp; Finance</strong></p>
+                    <p>Professional and career development, kingdom financing, entrepreneurship &amp; investment.</p>
                 </div>
-
-                <div class="mountain-card" style="--mountain-color: #27ae60">
-                    <div class="mountain-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
+                <div class="mountain-card" style="--mountain-color: #8f6b15">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">04</span>
                     <h4>Government</h4>
-                    <p><strong>Politics & Social Impact</strong></p>
+                    <p><strong>Politics &amp; Social Impact</strong></p>
                     <p>Engaging in politics and creating meaningful social transformation in our communities.</p>
                 </div>
-
-                <div class="mountain-card" style="--mountain-color: #3498db">
-                    <div class="mountain-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
+                <div class="mountain-card" style="--mountain-color: #785912">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">05</span>
                     <h4>Education</h4>
-                    <p><strong>Training & Development</strong></p>
+                    <p><strong>Training &amp; Development</strong></p>
                     <p>Digital upskilling, technology, medicine, literature, academic career development.</p>
                 </div>
-
-                <div class="mountain-card" style="--mountain-color: #9b59b6">
-                    <div class="mountain-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h4>Arts, Entertainment & Sports</h4>
-                    <p><strong>Culture & Creativity</strong></p>
+                <div class="mountain-card" style="--mountain-color: #61470f">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">06</span>
+                    <h4>Arts, Entertainment &amp; Sports</h4>
+                    <p><strong>Culture &amp; Creativity</strong></p>
                     <p>Creative arts, music, entertainment and culture.</p>
                 </div>
-
-                <div class="mountain-card" style="--mountain-color: #8e44ad">
-                    <div class="mountain-icon">
-                        <i class="fas fa-broadcast-tower"></i>
-                    </div>
+                <div class="mountain-card" style="--mountain-color: #4a360c">
+                    <span class="mountain-card__num" style="color: var(--mountain-color)">07</span>
                     <h4>Media</h4>
-                    <p><strong>Technology & The Future</strong></p>
+                    <p><strong>Technology &amp; The Future</strong></p>
                     <p>Information technology, social media, digital upskilling, techies, creatives, miners of the new oil.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Section -->
-    <section class="leadership section-padding">
+    <section class="section leadership">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Leadership</span>
-                <h2 class="section-title">Meet Our Shepherds</h2>
-                <p class="section-description">Committed to leading with wisdom, integrity, and love</p>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Leadership</span>
+                <h2 class="display-title">Meet Our Shepherds</h2>
+                <p class="lead">Committed to leading with wisdom, integrity, and love</p>
             </div>
-            
-            <!-- Lead Pastor -->
+
             <div class="leader-profile">
                 <div class="leader-image">
                     <img src="images/dcimg36.png" alt="Dr. Perez Araka">
@@ -247,61 +206,59 @@
                 <div class="leader-info">
                     <h3>Dr. Perez Araka</h3>
                     <p class="leader-title">Lead Pastor, RCCG Dominion Centre</p>
-                    
+
                     <p class="leader-bio">Dr. Perez Araka is a passionate teacher of God's Word, a visionary leader, and a devoted servant of Christ. With a heart for raising overcomers and establishing kingdom dominion, he leads RCCG Dominion Centre with wisdom, grace, and prophetic insight.</p>
-                    
+
                     <p class="leader-bio">Known for his practical, life-changing messages and his commitment to developing leaders, Pastor Perez creates an atmosphere where believers can experience genuine transformation and discover their divine purpose.</p>
-                    
+
                     <div class="leader-highlights">
                         <div class="highlight-item">
-                            <i class="fas fa-book-open"></i>
-                            <span>Author & Teacher</span>
+                            <span class="icon icon--book" aria-hidden="true"></span>
+                            <span>Author &amp; Teacher</span>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-users"></i>
+                            <span class="icon icon--users" aria-hidden="true"></span>
                             <span>Leadership Developer</span>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-praying-hands"></i>
+                            <span class="icon icon--hand" aria-hidden="true"></span>
                             <span>Prayer Warrior</span>
                         </div>
                     </div>
-                    
-                    <p class="leader-quote">
-                        <i class="fas fa-quote-left"></i>
+
+                    <p class="pastor-quote">
+                        <span class="icon icon--quote" aria-hidden="true"></span>
                         "Self-discipline is the key to your divine purpose. Rise to rule, don't remain a servant."
-                        <i class="fas fa-quote-right"></i>
                     </p>
                 </div>
             </div>
 
-            <!-- Pastor's Wife -->
             <div class="leader-profile" style="margin-top: 4rem;">
                 <div class="leader-image">
                     <img src="images/dcimg37.jpg" alt="Dcns. Greamba Perez Araka">
-                    <div class="leader-badge">Co-Pastor & Women's Leader</div>
+                    <div class="leader-badge">Co-Pastor &amp; Women's Leader</div>
                 </div>
                 <div class="leader-info">
                     <h3>Dcns. Greamba Perez Araka (GPA)</h3>
-                    <p class="leader-title">Wife of the Lead Pastor & Co-founder, Jesus Cares Family Outreach</p>
-                    
+                    <p class="leader-title">Wife of the Lead Pastor &amp; Co-founder, Jesus Cares Family Outreach</p>
+
                     <p class="leader-bio">Greamba Perez Araka (GPA), is the wife of the Lead Pastor of RCCG DC - Dr. Perez Araka. She's also the Co-founder of Jesus Cares Family Outreach and Dream-Aid Community Charity Trust; NGOs aimed at uplifting the less privileged in society, feeding and caring for the needs of children and ensuring that youths channel their energy to learning a skill.</p>
-                    
+
                     <p class="leader-bio">GPA, as she's fondly called, has a burning desire for the education of children in society especially education for the girl-child which has largely been de-emphasized in certain parts of the country. She founded the Sisters Fellowship of RCCG Dominion Centre, where she uses it as a platform to bring sisters together to learn, bond, aspire to be better ladies and ultimately uphold Christian virtues as a lady.</p>
 
                     <p class="leader-bio">By the grace of God, she influences people by being real as much as possible, living her life by example. Her lifestyle, character, attitude, disposition and opinion in sensitive issues speaks for itself. GPA has a special love for children and teenagers and as such, she commits as much as she can to their all-round well-being.</p>
-                    
+
                     <div class="leader-highlights">
                         <div class="highlight-item">
-                            <i class="fas fa-heart"></i>
+                            <span class="icon icon--heart" aria-hidden="true"></span>
                             <span>Children's Advocate</span>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-female"></i>
+                            <span class="icon icon--users" aria-hidden="true"></span>
                             <span>Women's Ministry Leader</span>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-hands-helping"></i>
+                            <span class="icon icon--hand" aria-hidden="true"></span>
                             <span>Community Builder</span>
                         </div>
                     </div>
@@ -310,65 +267,58 @@
         </div>
     </section>
 
-    <!-- Core Values Section -->
-    <section class="core-values">
+    <section class="section section--gray core-values">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">What We Stand For</span>
-                <h2 class="section-title">Our Values</h2>
-                <p class="section-description">Rooted in The Word of God (Light/Purity), with a deep culture of love, fellowship, care and prayer, after the order of the Early Church in Acts 2:42-47</p>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">What We Stand For</span>
+                <h2 class="display-title">Our Values</h2>
+                <p class="lead">Rooted in The Word of God (Light/Purity), with a deep culture of love, fellowship, care and prayer, after the order of the Early Church in Acts 2:42-47</p>
             </div>
-            
+
             <div class="values-grid">
-                <!-- Value 1 -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-bible"></i>
+                    <div class="value-card__icon">
+                        <span class="icon icon--book icon--lg" aria-hidden="true"></span>
                     </div>
                     <h4>Word-Centered</h4>
                     <p>Rooted in The Word of God with light and purity as our foundation for faith and practice.</p>
                 </div>
 
-                <!-- Value 2 -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-heart"></i>
+                    <div class="value-card__icon">
+                        <span class="icon icon--heart icon--lg" aria-hidden="true"></span>
                     </div>
-                    <h4>Love & Fellowship</h4>
+                    <h4>Love &amp; Fellowship</h4>
                     <p>A deep culture of love, fellowship and care, after the order of the Early Church in Acts 2:42-47.</p>
                 </div>
 
-                <!-- Value 3 -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-praying-hands"></i>
+                    <div class="value-card__icon">
+                        <span class="icon icon--hand icon--lg" aria-hidden="true"></span>
                     </div>
-                    <h4>Prayer & Holiness</h4>
+                    <h4>Prayer &amp; Holiness</h4>
                     <p>Committed to prayer, fasting, and holiness as our lifestyle to maintain unhindered breakthrough.</p>
                 </div>
 
-                <!-- Value 4 -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-award"></i>
+                    <div class="value-card__icon">
+                        <span class="icon icon--check icon--lg" aria-hidden="true"></span>
                     </div>
-                    <h4>Intentionality & Excellence</h4>
+                    <h4>Intentionality &amp; Excellence</h4>
                     <p>Nothing is done carelessly here; we pay attention to details. Our watchwords are intentionality and excellence.</p>
                 </div>
 
-                <!-- Value 5 -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="value-card__icon">
+                        <span class="icon icon--external icon--lg" aria-hidden="true"></span>
                     </div>
                     <h4>Smart Church</h4>
                     <p>Like the Sons of Issachar, we understand the times and deploy technology to run the Church business.</p>
                 </div>
 
-                <!-- Value 6 -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
+                    <div class="value-card__icon">
+                        <span class="icon icon--users icon--lg" aria-hidden="true"></span>
                     </div>
                     <h4>Community Impact</h4>
                     <p>Committed to impacting our immediate community for Jesus through corporate social responsibility.</p>
@@ -377,23 +327,22 @@
         </div>
     </section>
 
-    <!-- What Makes Us Unique Section -->
-    <section class="unique-section section-padding">
+    <section class="section unique-section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">What Sets Us Apart</span>
-                <h2 class="section-title">What is Unique About Us</h2>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">What Sets Us Apart</span>
+                <h2 class="display-title">What is Unique About Us</h2>
             </div>
 
             <div class="unique-content">
                 <div class="unique-main">
-                    <p class="unique-lead">We are a <strong>Family and a Community-Based Church</strong> rooted in deep fellowship and care for one another, all of which is embedded in the one and most important Word, <strong>LOVE</strong>, the greatest commandment.</p>
+                    <p class="lead">We are a <strong>Family and a Community-Based Church</strong> rooted in deep fellowship and care for one another, all of which is embedded in the one and most important Word, <strong>LOVE</strong>, the greatest commandment.</p>
                     <p class="unique-highlight">The LOVE we mean here is a MAN, and His Name is JESUS – OUR SOURCE. (Matt.22:37-39)</p>
                 </div>
 
                 <div class="unique-features">
                     <div class="unique-feature">
-                        <i class="fas fa-lightbulb"></i>
+                        <span class="icon icon--check icon--lg" aria-hidden="true"></span>
                         <div>
                             <h4>A Smart Church</h4>
                             <p>Like the Sons of Issachar, we understand the times, deploy technology, and keep an excellent and modern worship atmosphere.</p>
@@ -401,7 +350,7 @@
                     </div>
 
                     <div class="unique-feature">
-                        <i class="fas fa-user-graduate"></i>
+                        <span class="icon icon--users icon--lg" aria-hidden="true"></span>
                         <div>
                             <h4>Developing Capacity</h4>
                             <p>We develop partnerships with reputable individuals and organizations. We have The DreamAid Innovation Centre equipping our people with crucial tech-skills for their careers.</p>
@@ -409,49 +358,47 @@
                     </div>
 
                     <div class="unique-feature">
-                        <i class="fas fa-star"></i>
+                        <span class="icon icon--heart icon--lg" aria-hidden="true"></span>
                         <div>
                             <h4>Our Priority</h4>
-                            <p>At Dominion Centre, your success and total well-being - BODY, SOUL & SPIRIT is our priority.</p>
+                            <p>At Dominion Centre, your success and total well-being - BODY, SOUL &amp; SPIRIT is our priority.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Our Style & Culture -->
             <div class="culture-section">
-                <h3 class="text-center">Our Style & Culture</h3>
+                <h3 class="display-title" style="text-align: center; margin-top: 3rem;">Our Style &amp; Culture</h3>
                 <div class="culture-grid">
                     <div class="culture-item">
-                        <i class="fas fa-music"></i>
+                        <span class="icon icon--book icon--lg" aria-hidden="true"></span>
                         <h4>Music</h4>
-                        <p>Contemporary, R&B, POP & Afrobeat</p>
+                        <p>Contemporary, R&amp;B, POP &amp; Afrobeat</p>
                     </div>
                     <div class="culture-item">
-                        <i class="fas fa-tshirt"></i>
+                        <span class="icon icon--heart icon--lg" aria-hidden="true"></span>
                         <h4>Dressing</h4>
                         <p>Stylish, Contemporary/Urbane and Moderate</p>
                     </div>
                     <div class="culture-item">
-                        <i class="fas fa-running"></i>
+                        <span class="icon icon--hand icon--lg" aria-hidden="true"></span>
                         <h4>Dance</h4>
-                        <p>Moderate & Modern</p>
+                        <p>Moderate &amp; Modern</p>
                     </div>
                 </div>
-                <p class="culture-description"><strong>Our Looks:</strong> Expressive | Intelligent | Confident | Composed | Decent</p>
+                <p class="lead" style="text-align: center; margin-top: 2rem;"><strong>Our Looks:</strong> Expressive | Intelligent | Confident | Composed | Decent</p>
             </div>
         </div>
     </section>
 
-    <!-- Beliefs Section -->
-    <section class="beliefs-section section-padding">
+    <section class="section beliefs-section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">What We Believe</span>
-                <h2 class="section-title">Statement of Faith</h2>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">What We Believe</span>
+                <h2 class="display-title">Statement of Faith</h2>
             </div>
-            
-            <div class="beliefs-content">
+
+            <div class="beliefs-list">
                 <div class="belief-item">
                     <div class="belief-number">01</div>
                     <div class="belief-text">
@@ -519,37 +466,38 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
     <section class="about-cta">
         <div class="container">
             <div class="cta-content">
                 <h2>Join Us This Sunday</h2>
                 <p>Experience the transforming presence of God in worship, fellowship, and teaching. You're always welcome at RCCG Dominion Centre.</p>
                 <div class="cta-buttons">
-                    <a href="contact" class="btn btn-primary">Plan Your Visit</a>
-                    <a href="events" class="btn btn-outline-light">See Upcoming Events</a>
+                    <a href="contact" class="btn btn-primary">
+                        <span class="icon icon--calendar" aria-hidden="true"></span>
+                        Plan Your Visit
+                    </a>
+                    <a href="events" class="btn btn-outline-light">
+                        <span class="icon icon--external" aria-hidden="true"></span>
+                        See Upcoming Events
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
-                <div class="footer-column">
+                <div class="footer-column footer-brand">
                     <h3>RCCG Dominion Centre</h3>
-                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith, excellence, and fellowship.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""></a>
+                        <a href="#" aria-label="Twitter"><img src="images/icons/social/icon-twitter.svg" alt=""></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -561,46 +509,29 @@
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Service Times -->
                 <div class="footer-column">
                     <h4>Service Times</h4>
                     <ul class="footer-links">
-                        <li><strong>Sunday:</strong> 7:00 AM | 8:30 AM | 10:30 AM</li>
+                        <li><strong>Sunday:</strong> 7:00 AM &middot; 8:30 AM &middot; 10:30 AM</li>
                         <li><strong>Wednesday:</strong> 5:00 PM</li>
-                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
+                        <li><strong>Kids Church:</strong> Sunday 10:30 AM</li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            #199 Woji Road, GRA Phase 2<br>
-                            Port Harcourt, Rivers State, Nigeria
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 908 748 4840</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
-                        </li>
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt, Rivers State</span></li>
+                        <li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p><br>
-                <p>Developed by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
+                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. A Satellite Church of RCCG Region 33.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

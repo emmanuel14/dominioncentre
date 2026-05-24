@@ -3,54 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Give online at RCCG Dominion Centre. Your generosity helps us spread the gospel and serve our community in Port Harcourt and beyond.">
-    <meta name="keywords" content="RCCG Give, Online Giving, Church Donation, Tithes, Offerings, Port Harcourt">
-    <title>Give - RCCG Dominion Centre</title>
-    
-    <!-- Google Fonts -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
+    <meta name="description" content="Give to RCCG Dominion Centre. Support our mission through tithes, offerings, and bank transfer in Port Harcourt.">
+    <title>Give | RCCG Dominion Centre</title>
+    <link rel="icon" type="image/png" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <!-- Logo with Zoom Animation -->
-        <div class="loader-logo">
-            <img src="images/dclogo1.png" alt="RCCG Logo">
+    <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo-wrap">
+                <img src="images/dclogo1.png" alt="RCCG Dominion Centre">
+            </div>
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <p class="loader-church-name">RCCG Dominion Centre</p>
+            <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
         </div>
-
-        <!-- Loading Text -->
-        <div class="loader-text">Loading...</div>
-
-        <!-- Optional Spinner -->
-        <div class="loader-spinner"></div>
-
-        <!-- Church Name -->
-        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
-        <div class="loader-tagline">The gathering of eagles...</div>
     </div>
-    <!-- Header / Navigation -->
-    <header class="site-header">
+
+    <header class="site-header site-header--solid" id="siteHeader">
         <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-    <a href="index">
-        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-            <span class="logo-text">RCCG</span>
-            <span class="logo-subtext">Dominion Centre</span>
-        </div>
-    </a>
-</div>
-                
+                    <a href="index">
+                        <img src="images/dclogo1.png" alt="RCCG Dominion Centre" class="logo-image">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">RCCG</span>
+                            <span class="logo-subtext">Dominion Centre</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index" class="nav-link">Home</a></li>
                     <li><a href="about" class="nav-link">About</a></li>
@@ -58,434 +42,207 @@
                     <li><a href="volunteer" class="nav-link">Volunteer</a></li>
                     <li><a href="give" class="nav-link active">Give</a></li>
                     <li><a href="contact" class="nav-link">Contact</a></li>
+                    <li><a href="contact" class="btn btn-nav-cta">Plan a Visit</a></li>
                 </ul>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="hamburger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
             </div>
         </nav>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-overlay"></div>
-        <div class="container">
-            <div class="page-header-content">
-                <h1 class="page-title">Give</h1>
-                <p class="page-subtitle">Your Generosity Changes Lives</p>
-                <div class="breadcrumb">
-                    <a href="index">Home</a>
-                    <span>/</span>
-                    <span>Give</span>
-                </div>
-            </div>
+        <div class="container page-header-content">
+            <h1 class="page-title">Give</h1>
+            <p class="page-subtitle">Your generosity changes lives</p>
+            <nav class="breadcrumb"><a href="index">Home</a><span>/</span><span>Give</span></nav>
         </div>
     </section>
 
-    <!-- Scripture Section -->
-    <section class="scripture-section section-padding">
+    <section class="section">
         <div class="container">
             <div class="scripture-card">
-                <i class="fas fa-quote-left"></i>
+                <span class="icon icon--quote icon--xl" aria-hidden="true"></span>
                 <p class="scripture-text">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."</p>
                 <p class="scripture-reference">2 Corinthians 9:7 (NIV)</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Give Section -->
-    <section class="why-give-section">
+    <section class="section section--gray">
         <div class="container">
             <div class="why-give-content">
-                <div class="why-give-text">
-                    <div class="section-header">
-                        <span class="section-label">Generous Living</span>
-                        <h2 class="section-title">Why We Give</h2>
-                    </div>
-                    <p>Giving is an act of worship and a demonstration of our faith in God's provision. When you give to RCCG Dominion Centre, you're not just supporting a building or organization—you're investing in changed lives, transformed communities, and the advancement of God's kingdom.</p>
-                    
-                    <p>Your generosity enables us to:</p>
-                    
+                <div>
+                    <span class="eyebrow">Generous Living</span>
+                    <h2 class="display-title">Why We Give</h2>
+                    <p class="lead">Giving is an act of worship and faith in God's provision. Your generosity enables us to spread the gospel, build community, and serve those in need.</p>
                     <div class="impact-list">
                         <div class="impact-item">
-                            <i class="fas fa-book-open"></i>
-                            <div>
-                                <h4>Spread the Gospel</h4>
-                                <p>Reach more people with the life-changing message of Jesus Christ</p>
-                            </div>
+                            <span class="icon icon--book" aria-hidden="true"></span>
+                            <div><h4>Spread the Gospel</h4><p>Reach more people with the life-changing message of Jesus Christ.</p></div>
                         </div>
                         <div class="impact-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Build Community</h4>
-                                <p>Create spaces for fellowship, growth, and spiritual development</p>
-                            </div>
+                            <span class="icon icon--users" aria-hidden="true"></span>
+                            <div><h4>Build Community</h4><p>Create spaces for fellowship, growth, and spiritual development.</p></div>
                         </div>
                         <div class="impact-item">
-                            <i class="fas fa-hands-helping"></i>
-                            <div>
-                                <h4>Serve Others</h4>
-                                <p>Support the needy, widows, and vulnerable in our community</p>
-                            </div>
+                            <span class="icon icon--hand" aria-hidden="true"></span>
+                            <div><h4>Serve Others</h4><p>Support the needy, widows, and vulnerable in our community.</p></div>
                         </div>
                         <div class="impact-item">
-                            <i class="fas fa-seedling"></i>
-                            <div>
-                                <h4>Develop Leaders</h4>
-                                <p>Train and equip the next generation of Christian leaders</p>
-                            </div>
+                            <span class="icon icon--heart" aria-hidden="true"></span>
+                            <div><h4>Develop Leaders</h4><p>Train and equip the next generation of Christian leaders.</p></div>
                         </div>
                     </div>
                 </div>
                 <div class="why-give-image">
-                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&h=600&fit=crop" alt="Helping Hands">
+                    <img src="images/dcimg3.jpg" alt="Community and giving at RCCG Dominion Centre">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ways to Give Section -->
-    <section class="ways-to-give section-padding">
+    <section class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Giving Options</span>
-                <h2 class="section-title">Ways to Give</h2>
-                <p class="section-description">Choose the method that works best for you</p>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Giving Options</span>
+                <h2 class="display-title">Ways to Give</h2>
+                <p class="lead">Choose the method that works best for you</p>
             </div>
-
             <div class="giving-options-grid">
-                
-                <!-- Online Giving -->
-                <!-- <div class="giving-option-card featured">
-                    <div class="option-badge">Recommended</div>
-                    <div class="option-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Give Online</h3>
-                    <p>Safe, secure, and convenient. Give from anywhere at any time using your debit card, credit card, or bank transfer.</p>
-                    <div class="option-features">
-                        <div class="feature"><i class="fas fa-check"></i> Instant & Secure</div>
-                        <div class="feature"><i class="fas fa-check"></i> One-Time or Recurring</div>
-                        <div class="feature"><i class="fas fa-check"></i> 24/7 Access</div>
-                    </div>
-                    <a href="#online-giving" class="btn btn-primary">Give Now</a>
-                </div> -->
-
-                <!-- Bank Transfer -->
                 <div class="giving-option-card featured">
-                    <div class="option-badge">Recommended</div>
-                    <div class="option-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
+                    <span class="option-badge">Recommended</span>
+                    <div class="option-icon"><span class="icon icon--external icon--xl" aria-hidden="true"></span></div>
                     <h3>Bank Transfer</h3>
                     <p>Transfer directly to our church account using your banking app or at your bank branch.</p>
                     <div class="option-features">
-                        <div class="feature"><i class="fas fa-check"></i> Direct Transfer</div>
-                        <div class="feature"><i class="fas fa-check"></i> Bank Details Below</div>
-                        <div class="feature"><i class="fas fa-check"></i> No Transaction Fees</div>
+                        <div class="feature"><span class="icon icon--check" aria-hidden="true"></span> Direct Transfer</div>
+                        <div class="feature"><span class="icon icon--check" aria-hidden="true"></span> Bank Details Below</div>
+                        <div class="feature"><span class="icon icon--check" aria-hidden="true"></span> No Transaction Fees</div>
                     </div>
-                    <a href="#bank-details" class="btn btn-outline">View Details</a>
+                    <a href="#bank-details" class="btn btn-primary">View Details</a>
                 </div>
-
-                <!-- In-Person -->
                 <div class="giving-option-card">
-                    <div class="option-icon">
-                        <i class="fas fa-church"></i>
-                    </div>
+                    <div class="option-icon"><span class="icon icon--location icon--xl" aria-hidden="true"></span></div>
                     <h3>Give In Person</h3>
-                    <p>Give during any of our services. Offering envelopes are available at the entrance and in the pews.</p>
+                    <p>Give during any of our services. Offering envelopes are available at the entrance.</p>
                     <div class="option-features">
-                        <div class="feature"><i class="fas fa-check"></i> Sunday Services</div>
-                        <div class="feature"><i class="fas fa-check"></i> Wednesday Services</div>
-                        <div class="feature"><i class="fas fa-check"></i> Cash or Cheque</div>
+                        <div class="feature"><span class="icon icon--check" aria-hidden="true"></span> Sunday Services</div>
+                        <div class="feature"><span class="icon icon--check" aria-hidden="true"></span> Wednesday Services</div>
+                        <div class="feature"><span class="icon icon--check" aria-hidden="true"></span> Cash or Cheque</div>
                     </div>
-                    <a href="contact" class="btn btn-outline">Service Times</a>
+                    <a href="contact" class="btn btn-outline-dark">Service Times</a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Online Giving Section -->
-<!--     <section id="online-giving" class="online-giving-section">
+    <section class="section section--gray" id="bank-details">
         <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Give Online</h2>
-                <p class="section-description">Select your giving type and amount below</p>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Bank Information</span>
+                <h2 class="display-title">Bank Transfer Details</h2>
             </div>
-
-            <div class="giving-form-container">
-                <div class="giving-tabs">
-                    <button class="giving-tab active" data-tab="tithe">
-                        <i class="fas fa-heart"></i>
-                        <span>Tithe</span>
-                    </button>
-                    <button class="giving-tab" data-tab="offering">
-                        <i class="fas fa-gift"></i>
-                        <span>Offering</span>
-                    </button>
-                    <button class="giving-tab" data-tab="seed">
-                        <i class="fas fa-seedling"></i>
-                        <span>Seed</span>
-                    </button>
-                    <button class="giving-tab" data-tab="project">
-                        <i class="fas fa-building"></i>
-                        <span>Building Project</span>
-                    </button>
-                    <button class="giving-tab" data-tab="other">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <span>Other</span>
-                    </button>
-                </div>
-
-                <div class="giving-form-content">
-                    <div class="amount-section">
-                        <h3>Select or Enter Amount</h3>
-                        <div class="quick-amounts">
-                            <button class="amount-btn" data-amount="5000">₦5,000</button>
-                            <button class="amount-btn" data-amount="10000">₦10,000</button>
-                            <button class="amount-btn" data-amount="20000">₦20,000</button>
-                            <button class="amount-btn" data-amount="50000">₦50,000</button>
-                            <button class="amount-btn" data-amount="100000">₦100,000</button>
-                            <button class="amount-btn custom-btn">Custom</button>
-                        </div>
-                        <div class="custom-amount-input">
-                            <label for="custom-amount">Enter Custom Amount (₦)</label>
-                            <input type="number" id="custom-amount" placeholder="Enter amount" min="100">
-                        </div>
-                    </div>
-
-                    <div class="giving-frequency">
-                        <h3>Giving Frequency</h3>
-                        <div class="frequency-options">
-                            <label class="frequency-option">
-                                <input type="radio" name="frequency" value="one-time" checked>
-                                <span>One-Time</span>
-                            </label>
-                            <label class="frequency-option">
-                                <input type="radio" name="frequency" value="weekly">
-                                <span>Weekly</span>
-                            </label>
-                            <label class="frequency-option">
-                                <input type="radio" name="frequency" value="monthly">
-                                <span>Monthly</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="payment-methods">
-                        <h3>Payment Method</h3>
-                        <div class="payment-buttons">
-                            <button class="payment-btn">
-                                <i class="fas fa-credit-card"></i>
-                                <span>Card Payment</span>
-                            </button>
-                            <button class="payment-btn">
-                                <i class="fas fa-university"></i>
-                                <span>Bank Transfer</span>
-                            </button>
-                            <button class="payment-btn">
-                                <i class="fas fa-wallet"></i>
-                                <span>E-Wallet</span>
-                            </button>
-                        </div>
-                        <p class="payment-note">
-                            <i class="fas fa-lock"></i>
-                            Secure payment powered by Paystack, Flutterwave & PayPal
-                        </p>
-                    </div>
-
-                    <button class="btn btn-primary btn-large">
-                        <i class="fas fa-heart"></i> Complete Donation
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Bank Details Section -->
-    <section id="bank-details" class="bank-details-section section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Bank Information</span>
-                <h2 class="section-title">Bank Transfer Details</h2>
-            </div>
-
             <div class="bank-cards-grid">
                 <div class="bank-card">
-                    <div class="bank-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
+                    <div class="bank-icon"><span class="icon icon--external icon--xl" aria-hidden="true"></span></div>
                     <h3>Naira Account (NGN)</h3>
                     <div class="bank-info">
-                        <div class="bank-detail">
-                            <span class="detail-label">Bank Name:</span>
-                            <span class="detail-value">Premium Trust Bank</span>
-                        </div>
-                        <div class="bank-detail">
-                            <span class="detail-label">Account Name:</span>
-                            <span class="detail-value">RCCG Dominion Centre</span>
-                        </div>
-                        <div class="bank-detail">
-                            <span class="detail-label">Account Number:</span>
-                            <span class="detail-value copy-text">0040047124</span>
-                            <button class="copy-btn" onclick="copyToClipboard('0123456789')">
-                                <i class="fas fa-copy"></i> Copy
-                            </button>
-                        </div>
+                        <div class="bank-detail"><span class="detail-label">Bank Name</span><span class="detail-value">Premium Trust Bank</span></div>
+                        <div class="bank-detail"><span class="detail-label">Account Name</span><span class="detail-value">RCCG Dominion Centre</span></div>
+                        <div class="bank-detail"><span class="detail-label">Account Number</span><span class="detail-value">0040047124</span></div>
                     </div>
+                    <button type="button" class="copy-btn" onclick="copyToClipboard('0040047124')">Copy Account Number</button>
                 </div>
             </div>
-
             <div class="bank-note">
-                <i class="fas fa-info-circle"></i>
-                <p>Please include your name and purpose (Tithe/Offering/Seed) in the transfer description. For confirmation, you can send your transfer receipt to our email or WhatsApp.</p>
+                <span class="icon icon--book" aria-hidden="true"></span>
+                <p>Please include your name and purpose (Tithe/Offering/Seed) in the transfer description. Send your receipt to our email or WhatsApp for confirmation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="impact-section">
+    <section class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Your Impact</span>
-                <h2 class="section-title">Where Your Giving Goes</h2>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Your Impact</span>
+                <h2 class="display-title">Where Your Giving Goes</h2>
             </div>
-
             <div class="impact-stats-grid">
                 <div class="impact-stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-bible"></i>
-                    </div>
+                    <div class="stat-icon"><span class="icon icon--book icon--xl" aria-hidden="true"></span></div>
                     <div class="stat-number">40%</div>
-                    <h4>Ministry & Missions</h4>
-                    <p>Evangelism, outreach programs, and global missions</p>
+                    <h4>Ministry &amp; Missions</h4>
+                    <p>Evangelism, outreach, and global missions</p>
                 </div>
-
                 <div class="impact-stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                    <div class="stat-icon"><span class="icon icon--users icon--xl" aria-hidden="true"></span></div>
                     <div class="stat-number">25%</div>
-                    <h4>Staff & Operations</h4>
-                    <p>Pastoral care, administration, and daily operations</p>
+                    <h4>Staff &amp; Operations</h4>
+                    <p>Pastoral care and daily operations</p>
                 </div>
-
                 <div class="impact-stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
+                    <div class="stat-icon"><span class="icon icon--location icon--xl" aria-hidden="true"></span></div>
                     <div class="stat-number">20%</div>
                     <h4>Facilities</h4>
-                    <p>Maintenance, utilities, and building improvements</p>
+                    <p>Maintenance and building improvements</p>
                 </div>
-
                 <div class="impact-stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
+                    <div class="stat-icon"><span class="icon icon--heart icon--xl" aria-hidden="true"></span></div>
                     <div class="stat-number">15%</div>
                     <h4>Community Service</h4>
-                    <p>Benevolence, charity, and community outreach</p>
+                    <p>Benevolence and outreach programs</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section section-padding">
+    <section class="section section--gray">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">Common Questions</span>
-                <h2 class="section-title">Giving FAQs</h2>
+            <div class="section-header section-header--center">
+                <span class="eyebrow">Common Questions</span>
+                <h2 class="display-title">Giving FAQs</h2>
             </div>
-
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Why do we give?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Giving is an act of worship and gratitude. We give to honor God, support His work, and help those in need. It’s our way of showing thankfulness for His blessings.</p>
-                    </div>
+                    <div class="faq-question"><h4>Why do we give?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                    <div class="faq-answer"><p>Giving is an act of worship and gratitude — honoring God, supporting His work, and helping those in need.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Can I designate my giving to a specific cause?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. You can specify whether your donation is for Tithe, Offering, Building Project, Outreach, or Welfare, and it will be directed accordingly.</p>
-                    </div>
+                    <div class="faq-question"><h4>Can I designate my giving?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                    <div class="faq-answer"><p>Yes. Specify Tithe, Offering, Building Project, Outreach, or Welfare in your transfer description.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>What's the difference between tithes and offerings?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A tithe is 10% of your income given to God as an act of obedience and worship (Malachi 3:10). Offerings are gifts given above and beyond your tithe, as the Holy Spirit leads.</p>
-                    </div>
+                    <div class="faq-question"><h4>Tithes vs offerings?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                    <div class="faq-answer"><p>A tithe is 10% of income given in obedience (Malachi 3:10). Offerings are gifts above the tithe as the Spirit leads.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Can I give even if I’m not a member of the church?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! Anyone who feels led to support God’s work through our ministry is welcome to give.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>What if I can’t give financially right now?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Giving isn’t only about money — your time, service, and prayers are also powerful gifts to God’s Kingdom.</p>
-                    </div>
+                    <div class="faq-question"><h4>Can non-members give?</h4><span class="icon icon--chevron-down" aria-hidden="true"></span></div>
+                    <div class="faq-answer"><p>Absolutely. Anyone led to support God's work through our ministry is welcome to give.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Give CTA -->
     <section class="give-cta">
         <div class="container">
-            <div class="cta-content">
-                <i class="fas fa-hands-helping cta-icon-large"></i>
-                <h2>Thank You for Your Generosity</h2>
-                <p>Your giving makes a real difference in the lives of people in Port Harcourt and beyond. Together, we're building God's kingdom and transforming communities.</p>
-                <a href="#online-giving" class="btn btn-light">Give Now</a>
-            </div>
+            <h2>Thank You for Your Generosity</h2>
+            <p>Your giving makes a real difference in Port Harcourt and beyond. Together we are building God's kingdom.</p>
+            <a href="#bank-details" class="btn btn-primary">Give Now</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
-                <div class="footer-column">
+                <div class="footer-column footer-brand">
                     <h3>RCCG Dominion Centre</h3>
-                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <p>An expression church branding the future look of RCCG.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -497,82 +254,18 @@
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Service Times -->
                 <div class="footer-column">
-                    <h4>Service Times</h4>
-                    <ul class="footer-links">
-                        <li><strong>Sunday:</strong> 7:00 AM | 8:30 AM | 10:30 AM</li>
-                        <li><strong>Wednesday:</strong> 5:00 PM</li>
-                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            #199 Woji Road, GRA Phase 2<br>
-                            Port Harcourt, Rivers State, Nigeria
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 908 748 4840</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
-                        </li>
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt</span></li>
+                        <li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p><br>
-                <p>DESIGNED by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved.</p></div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Account number copied to clipboard!');
-            });
-        }
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const faqItem = this.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // Giving Tabs
-        document.querySelectorAll('.giving-tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.giving-tab').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Amount Buttons
-        document.querySelectorAll('.amount-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
-                this.classList.add('selected');
-                
-                if (!this.classList.contains('custom-btn')) {
-                    document.getElementById('custom-amount').value = '';
-                }
-            });
-        });
-    </script>
 </body>
 </html>

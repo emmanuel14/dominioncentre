@@ -11,46 +11,33 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <!-- Logo with Zoom Animation -->
-        <div class="loader-logo">
-            <img src="images/dclogo1.png" alt="RCCG Logo">
+    <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo-wrap">
+                <img src="images/dclogo1.png" alt="RCCG Dominion Centre">
+            </div>
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <p class="loader-church-name">RCCG Dominion Centre</p>
+            <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
         </div>
-
-        <!-- Loading Text -->
-        <div class="loader-text">Loading...</div>
-
-        <!-- Optional Spinner -->
-        <div class="loader-spinner"></div>
-
-        <!-- Church Name -->
-        <div class="loader-church-name">RCCG DOMINION CENTRE</div>
-        <div class="loader-tagline">The gathering of eagles...</div>
     </div>
-    <!-- Header / Navigation -->
-    <header class="site-header">
-      <nav class="navbar">
+    <header class="site-header site-header--solid" id="siteHeader">
+        <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-    <a href="index">
-        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-            <span class="logo-text">RCCG</span>
-            <span class="logo-subtext">Dominion Centre</span>
-        </div>
-    </a>
-</div>
-                
+                    <a href="index">
+                        <img src="images/dclogo1.png" alt="RCCG Dominion Centre" class="logo-image">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">RCCG</span>
+                            <span class="logo-subtext">Dominion Centre</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index" class="nav-link">Home</a></li>
                     <li><a href="about" class="nav-link">About</a></li>
@@ -58,13 +45,9 @@
                     <li><a href="volunteer" class="nav-link">Volunteer</a></li>
                     <li><a href="give" class="nav-link">Give</a></li>
                     <li><a href="contact" class="nav-link">Contact</a></li>
+                    <li><a href="contact" class="btn btn-nav-cta">Plan a Visit</a></li>
                 </ul>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="hamburger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
             </div>
         </nav>
     </header>
@@ -109,7 +92,7 @@
     </section>
 
     <!-- Events Grid Section -->
-    <section class="events-listing section-padding">
+    <section class="events-listing section">
         <div class="container">
 
             <!-- Event 1: Dominion Power Confrence 3.0 -->
@@ -129,7 +112,7 @@
                     </div>
                     <h2>Dominion Power Confrence 3.0</h2>
                     <p class="event-description">Last year, we ADVANCED… ➡
-This year, we go higher⬆️ — we are ELEVATING to something more. 🔥
+This year, we go higher — we are ELEVATING to something more. 
 DPC 3.0 is not a repetition — it is a progression. From climbing to soaring. From effort to empowerment. From pursuit to divine lifting. Get ready for a week of intense Word, Prayer & Prophetic encounters, and Worship that will shift you into your next dimension.</p>
                     <div class="event-details-grid">
                         <div class="detail-item">
@@ -174,7 +157,7 @@ DPC 3.0 is not a repetition — it is a progression. From climbing to soaring. F
                         </span>
                     </div>
                     <h2>84 Days Non-Stop Prayer</h2>
-                    <p class="event-description">Come and ignite your altar, stir the embers, and burn with purpose. This is not routine prayer — this is intentional fire for transformation, revival, and answers. 🔥🙏🏽</p>
+                    <p class="event-description">Come and ignite your altar, stir the embers, and burn with purpose. This is not routine prayer — this is intentional fire for transformation, revival, and answers. </p>
                     <div class="event-details-grid">
                         <div class="detail-item">
                             <i class="fas fa-clock"></i>
@@ -443,23 +426,18 @@ Step into a realm of power, communion, and ascension with God. Your life will no
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
-                <div class="footer-column">
+                <div class="footer-column footer-brand">
                     <h3>RCCG Dominion Centre</h3>
-                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
+                    <p>An expression church branding the future look of RCCG.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -471,41 +449,25 @@ Step into a realm of power, communion, and ascension with God. Your life will no
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Service Times -->
                 <div class="footer-column">
                     <h4>Service Times</h4>
                     <ul class="footer-links">
                         <li><strong>Sunday:</strong> 7:00 AM | 8:30 AM | 10:30 AM</li>
                         <li><strong>Wednesday:</strong> 5:00 PM</li>
-                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
+                        <li><strong>Kids Church:</strong> Sunday 10:30 AM</li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            #199 Woji Road, GRA Phase 2<br>
-                            Port Harcourt, Rivers State, Nigeria
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 908 748 4840</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
-                        </li>
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt, Rivers State</span></li>
+                        <li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33.</p><br>
-                <p>Developed by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
+                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p>
             </div>
         </div>
     </footer>
