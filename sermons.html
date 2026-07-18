@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Watch and listen to life-transforming sermons from RCCG Dominion Centre, Port Harcourt. Messages by Dr. Perez Araka on faith, dominion, and kingdom living."/>
+<title>Sermons | RCCG Dominion Centre</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  /* ── SERMON PAGE DESIGN TOKENS ─────────────────────────────── */
+  :root {
+    --navy:       #0B1120;
+    --navy-mid:   #111B2E;
+    --navy-light: #1A2840;
+    --gold:       #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim:   #8A6F30;
+    --cream:      #F5F0E8;
+    --cream-mid:  #EDE6D6;
+    --white:      #FFFFFF;
+    --text-muted: #7A8BA5;
+    --text-mid:   #A8B8CC;
+    --border-navy:#1E2D47;
+    --serif:      'Cormorant Garamond', Georgia, serif;
+    --sans:       'Inter', system-ui, sans-serif;
+    --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--navy);
+    color: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV (matches your site exactly) ───────────────────────── */
+  /* .site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,17,32,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .site-header.scrolled {
+    background: var(--navy);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.5rem; height: 72px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none;
+  }
+  .nav-logo img { height: 42px; width: auto; }
+  .nav-logo-text {
+    font-family: var(--serif); font-size: 1rem; font-weight: 600;
+    color: var(--cream); letter-spacing: 0.01em; line-height: 1.25;
+  }
+  .nav-logo-text span { display: block; font-size: 0.7rem; font-weight: 400; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+  .nav-menu {
+    display: flex; align-items: center; gap: 0.25rem; list-style: none;
+  }
+  .nav-link {
+    font-size: 0.875rem; font-weight: 500; color: var(--text-mid);
+    text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--white); background: rgba(255,255,255,0.06); }
+  .nav-link.active { color: var(--gold); }
+  .btn-nav-cta {
+    font-size: 0.875rem; font-weight: 600; color: var(--navy);
+    background: var(--gold); text-decoration: none; padding: 0.5rem 1.25rem;
+    border-radius: 6px; transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .btn-nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all 0.3s ease; }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-menu {
+      position: fixed; inset: 72px 0 0 0;
+      flex-direction: column; justify-content: flex-start;
+      background: var(--navy); padding: 2rem 1.5rem;
+      gap: 0.5rem; transform: translateX(100%);
+      transition: transform 0.35s var(--ease-out);
+    }
+    .nav-menu.active { transform: translateX(0); }
+    .nav-menu li { width: 100%; }
+    .nav-link, .btn-nav-cta { display: block; padding: 0.85rem 1rem; font-size: 1rem; }
+    .btn-nav-cta { text-align: center; margin-top: 1rem; }
+  } */
+
+  /* ── HERO ────────────────────────────────────────────────────── */
+  .sermon-hero {
+    position: relative; min-height: 56vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 140px 1.5rem 80px;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0B1120 0%, #111B2E 50%, #0D1929 100%);
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 80%, rgba(201,168,76,0.05) 0%, transparent 60%);
+  }
+  .hero-overline {
+    position: relative;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+  }
+  .hero-overline::before, .hero-overline::after {
+    content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--gold-dim);
+  }
+  .hero-title {
+    position: relative;
+    font-family: var(--serif); font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 600; line-height: 1.08; letter-spacing: -0.01em;
+    color: var(--white); margin-bottom: 1.25rem;
+  }
+  .hero-title em { font-style: italic; color: var(--gold); }
+  .hero-subtitle {
+    position: relative;
+    font-size: 1.05rem; color: var(--text-mid); max-width: 540px;
+    font-weight: 300; margin-bottom: 2.5rem; line-height: 1.7;
+  }
+  .hero-search {
+    position: relative; width: 100%; max-width: 520px;
+  }
+  .hero-search input {
+    width: 100%; padding: 1rem 1.25rem 1rem 3.25rem;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px; color: var(--cream); font-family: var(--sans); font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .hero-search input:focus { border-color: var(--gold); background: rgba(255,255,255,0.08); }
+  .hero-search input::placeholder { color: var(--text-muted); }
+  .hero-search svg {
+    position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+    width: 18px; height: 18px; stroke: var(--text-muted); pointer-events: none;
+  }
+  .hero-scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; animation: bounce 2.5s ease-in-out infinite;
+  }
+  .hero-scroll-hint svg { width: 20px; height: 20px; stroke: var(--gold-dim); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ── FILTER BAR ──────────────────────────────────────────────── */
+  .filter-section {
+    background: var(--navy-mid); border-bottom: 1px solid var(--border-navy);
+    position: sticky; top: 72px; z-index: 50;
+  }
+  .filter-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; overflow-x: auto; scrollbar-width: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  .event-filters { display: flex; gap: 0.25rem; padding: 0.75rem 0; flex-shrink: 0; }
+  .filter-btn {
+    font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
+    background: transparent; border: 1px solid transparent;
+    border-radius: 6px; padding: 0.45rem 0.9rem; cursor: pointer;
+    white-space: nowrap; transition: all 0.2s ease;
+  }
+  .filter-btn:hover { color: var(--cream); background: rgba(255,255,255,0.05); }
+  .filter-btn.active { color: var(--gold); background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.3); }
+  .filter-sort {
+    display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
+  }
+  .filter-sort label { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; }
+  .filter-sort select {
+    font-size: 0.8rem; color: var(--cream); background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-navy); border-radius: 6px;
+    padding: 0.4rem 0.75rem; outline: none; cursor: pointer;
+    font-family: var(--sans);
+  }
+
+  /* ── FEATURED SERMON ─────────────────────────────────────────── */
+  .section { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600; color: var(--white); line-height: 1.15; margin-bottom: 0.5rem;
+  }
+  .section-sub { font-size: 0.95rem; color: var(--text-mid); max-width: 500px; }
+
+  .featured-wrap { padding: 5rem 0 3rem; }
+  .featured-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: center; margin-top: 2.5rem;
+  }
+  .featured-video {
+    position: relative; border-radius: 14px; overflow: hidden;
+    aspect-ratio: 16/9; background: var(--navy-light);
+    border: 1px solid var(--border-navy);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+  .featured-video iframe { width: 100%; height: 100%; border: none; }
+  .featured-badge {
+    position: absolute; top: 1rem; left: 1rem;
+    background: var(--gold); color: var(--navy);
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 0.35rem 0.75rem; border-radius: 4px;
+  }
+  .featured-info { display: flex; flex-direction: column; gap: 1.25rem; }
+  .featured-series-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold); font-size: 0.78rem; font-weight: 500;
+    padding: 0.35rem 0.85rem; border-radius: 5px; width: fit-content;
+  }
+  .featured-title {
+    font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600; color: var(--white); line-height: 1.2;
+  }
+  .featured-meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .meta-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.82rem; color: var(--text-muted);
+  }
+  .meta-item svg { width: 14px; height: 14px; stroke: var(--gold-dim); flex-shrink: 0; }
+  .featured-desc { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; }
+  .featured-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gold); color: var(--navy);
+    font-size: 0.875rem; font-weight: 600; text-decoration: none;
+    padding: 0.75rem 1.5rem; border-radius: 8px;
+    transition: background 0.2s ease, transform 0.15s ease;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--cream);
+    font-size: 0.875rem; font-weight: 500; text-decoration: none;
+    padding: 0.75rem 1.5rem; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .btn-primary svg, .btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; }
+
+  /* ── SERIES STRIP ────────────────────────────────────────────── */
+  .series-wrap { padding: 4rem 0; border-top: 1px solid var(--border-navy); }
+  .series-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;
+  }
+  .view-all {
+    font-size: 0.83rem; font-weight: 500; color: var(--gold);
+    text-decoration: none; display: flex; align-items: center; gap: 0.3rem;
+    transition: gap 0.2s ease;
+  }
+  .view-all:hover { gap: 0.55rem; }
+  .view-all svg { width: 14px; height: 14px; stroke: currentColor; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem;
+  }
+  .series-card {
+    background: var(--navy-mid); border: 1px solid var(--border-navy);
+    border-radius: 12px; overflow: hidden; cursor: pointer;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none; color: inherit;
+  }
+  .series-card:hover {
+    border-color: rgba(201,168,76,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  }
+  .series-card-thumb {
+    aspect-ratio: 16/9; background: var(--navy-light);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .series-thumb-icon {
+    width: 44px; height: 44px;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  }
+  .series-thumb-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; }
+  .series-count-badge {
+    position: absolute; top: 0.6rem; right: 0.6rem;
+    background: rgba(11,17,32,0.85); border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold); font-size: 0.7rem; font-weight: 600;
+    padding: 0.25rem 0.6rem; border-radius: 4px;
+  }
+  .series-card-body { padding: 1rem 1.1rem 1.25rem; }
+  .series-card-title {
+    font-family: var(--serif); font-size: 1.05rem; font-weight: 600;
+    color: var(--white); margin-bottom: 0.35rem; line-height: 1.25;
+  }
+  .series-card-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ── ALL SERMONS GRID ────────────────────────────────────────── */
+  .sermons-wrap { padding: 4rem 0 6rem; border-top: 1px solid var(--border-navy); }
+  .sermons-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem; margin-top: 2rem;
+  }
+  .sermon-card {
+    background: var(--navy-mid); border: 1px solid var(--border-navy);
+    border-radius: 14px; overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none; color: inherit; display: flex; flex-direction: column;
+  }
+  .sermon-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+  }
+  .sermon-thumb {
+    position: relative; aspect-ratio: 16/9;
+    background: var(--navy-light); overflow: hidden;
+  }
+  .sermon-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .sermon-thumb-placeholder {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  }
+  .play-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.35); opacity: 0; transition: opacity 0.25s ease;
+  }
+  .sermon-card:hover .play-overlay { opacity: 1; }
+  .play-circle {
+    width: 52px; height: 52px; background: var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transform: scale(0.9); transition: transform 0.25s ease;
+  }
+  .sermon-card:hover .play-circle { transform: scale(1); }
+  .play-circle svg { width: 20px; height: 20px; fill: var(--navy); margin-left: 3px; }
+  .sermon-cat-tag {
+    position: absolute; bottom: 0.6rem; left: 0.6rem;
+    background: rgba(11,17,32,0.85); border: 1px solid rgba(201,168,76,0.18);
+    color: var(--gold-light); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; border-radius: 4px;
+  }
+  .sermon-body { padding: 1.1rem 1.25rem 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+  .sermon-title {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 600;
+    color: var(--white); line-height: 1.3;
+  }
+  .sermon-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: auto; }
+  .sermon-meta-item {
+    display: flex; align-items: center; gap: 0.35rem;
+    font-size: 0.75rem; color: var(--text-muted);
+  }
+  .sermon-meta-item svg { width: 12px; height: 12px; stroke: var(--gold-dim); flex-shrink: 0; }
+
+  /* ── GRADIENT DIVIDER PATTERN ───────────────────────────────── */
+  .gold-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px; margin: 0.6rem 0 0;
+  }
+
+  /* ── PODCAST / LISTEN BANNER ─────────────────────────────────── */
+  .listen-banner {
+    background: var(--navy-light); border-top: 1px solid var(--border-navy);
+    border-bottom: 1px solid var(--border-navy); padding: 4rem 0;
+  }
+  .listen-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+    display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+  }
+  .listen-text .section-label { margin-bottom: 0.4rem; }
+  .listen-title {
+    font-family: var(--serif); font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 600; color: var(--white); margin-bottom: 0.75rem; line-height: 1.2;
+  }
+  .listen-sub { font-size: 0.9rem; color: var(--text-mid); max-width: 480px; line-height: 1.7; }
+  .listen-platforms {
+    display: flex; flex-direction: column; gap: 0.75rem; flex-shrink: 0;
+  }
+  .platform-btn {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border-navy);
+    border-radius: 8px; padding: 0.75rem 1.25rem; cursor: pointer;
+    text-decoration: none; color: var(--cream);
+    transition: border-color 0.2s ease, background 0.2s ease;
+    min-width: 200px;
+  }
+  .platform-btn:hover { border-color: rgba(201,168,76,0.35); background: rgba(201,168,76,0.06); }
+  .platform-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .platform-btn-text { font-size: 0.82rem; font-weight: 500; }
+  .platform-btn-sub { font-size: 0.7rem; color: var(--text-muted); margin-top: 1px; }
+
+  /* ── PASTOR CARD ─────────────────────────────────────────────── */
+  .pastor-wrap { padding: 5rem 0; border-top: 1px solid var(--border-navy); }
+  .pastor-inner {
+    display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center;
+  }
+  .pastor-avatar {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 2px solid rgba(201,168,76,0.3);
+    background: var(--navy-light); overflow: hidden; flex-shrink: 0;
+  }
+  .pastor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .pastor-avatar-placeholder {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 2.5rem; font-weight: 600; color: var(--gold);
+  }
+  .pastor-info .section-label { margin-bottom: 0.4rem; }
+  .pastor-name {
+    font-family: var(--serif); font-size: 2rem; font-weight: 600;
+    color: var(--white); margin-bottom: 0.25rem;
+  }
+  .pastor-role { font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 1rem; letter-spacing: 0.05em; }
+  .pastor-quote {
+    font-family: var(--serif); font-size: 1.15rem; font-style: italic;
+    color: var(--cream-mid); line-height: 1.6; max-width: 560px;
+  }
+  .pastor-quote::before { content: '\201C'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -0.3em; margin-right: 0.2rem; }
+  .pastor-quote::after  { content: '\201D'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -0.3em; margin-left: 0.2rem; }
+
+  /* ── NEWSLETTER ──────────────────────────────────────────────── */
+  .newsletter-wrap {
+    background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.03) 100%);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 5rem 0;
+  }
+  .newsletter-inner {
+    max-width: 600px; margin: 0 auto; text-align: center; padding: 0 1.5rem;
+  }
+  .newsletter-title {
+    font-family: var(--serif); font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 600; color: var(--white); margin-bottom: 0.75rem;
+  }
+  .newsletter-sub { font-size: 0.95rem; color: var(--text-mid); margin-bottom: 2rem; line-height: 1.7; }
+  .newsletter-form { display: flex; gap: 0.75rem; }
+  .newsletter-form input {
+    flex: 1; padding: 0.85rem 1.1rem;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px; color: var(--cream); font-family: var(--sans); font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s ease;
+  }
+  .newsletter-form input:focus { border-color: var(--gold); }
+  .newsletter-form input::placeholder { color: var(--text-muted); }
+  .newsletter-form button { white-space: nowrap; }
+
+  /* ── FOOTER ──────────────────────────────────────────────────── */
+  /* .site-footer {
+    background: #080E1A; border-top: 1px solid var(--border-navy);
+    padding: 4rem 0 2rem;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+  .footer-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .footer-logo img { height: 36px; width: auto; }
+  .footer-logo-text {
+    font-family: var(--serif); font-size: 0.9rem; font-weight: 600; color: var(--cream);
+  }
+  .footer-logo-text span { display: block; font-size: 0.65rem; font-weight: 400; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+  .footer-socials { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+  .social-icon {
+    width: 34px; height: 34px; border-radius: 7px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border-navy);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; color: var(--text-muted);
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .social-icon:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+  .social-icon svg { width: 15px; height: 15px; stroke: currentColor; }
+  .footer-col h4 {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul li a {
+    font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-col ul li a:hover { color: var(--cream); }
+  .footer-col .service-time { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+  .footer-col .service-time strong { color: var(--cream); font-weight: 500; }
+  .footer-bottom {
+    max-width: 1200px; margin: 3rem auto 0; padding: 1.5rem 1.5rem 0;
+    border-top: 1px solid var(--border-navy);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { font-size: 0.78rem; color: var(--text-muted); } */
+
+  /* ── BACK TO TOP ─────────────────────────────────────────────── */
+  .back-to-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--gold); color: var(--navy); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+    opacity: 0; transform: translateY(12px) scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 90;
+  }
+  .back-to-top.show { opacity: 1; transform: translateY(0) scale(1); }
+  .back-to-top:hover { background: var(--gold-light); }
+  .back-to-top svg { width: 18px; height: 18px; stroke: var(--navy); }
+
+  /* ── UTILS ────────────────────────────────────────────────────── */
+  .animate-on-scroll {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
+  }
+  .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+  .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+  .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+  .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+
+  /* ── RESPONSIVE ───────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .featured-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .pastor-inner { grid-template-columns: 1fr; text-align: center; }
+    .pastor-avatar { margin: 0 auto; }
+    .listen-inner { grid-template-columns: 1fr; }
+    .listen-platforms { flex-direction: row; flex-wrap: wrap; }
+    .platform-btn { min-width: 170px; }
+  }
+  @media (max-width: 600px) {
+    .sermon-hero { padding: 120px 1.25rem 60px; }
+    .featured-wrap, .series-wrap, .sermons-wrap, .pastor-wrap { padding: 3rem 0; }
+    .sermons-grid { grid-template-columns: 1fr; }
+    .series-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form button { width: 100%; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 400px) {
+    .series-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body>
+    <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo-wrap">
+                <img src="images/dclogo1.png" alt="RCCG Dominion Centre">
+            </div>
+            <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
+        </div>
+    </div>
+    <header class="site-header site-header--solid" id="siteHeader">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+    <a href="/">
+        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
+        <div class="logo-text-wrapper">
+            <span class="logo-text">RCCG</span>
+            <span class="logo-subtext">Dominion Centre</span>
+        </div>
+    </a>
+</div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index" class="nav-link">Home</a></li>
+                    <li><a href="about" class="nav-link">About</a></li>
+                    <li><a href="events" class="nav-link">Events</a></li>
+                    <li><a href="volunteer" class="nav-link active">Volunteer</a></li>
+                    <li><a href="give" class="nav-link">Give</a></li>
+                    <li><a href="https://rccgdominioncentre.org/review/login.php" class="nav-link">Review</a></li>
+                    <li><a href="contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="sermon-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overline">The Word</div>
+  <h1 class="hero-title">
+    Messages that move<br/><em>mountains</em>
+  </h1>
+  <p class="hero-subtitle">
+    Life-transforming sermons from RCCG Dominion Centre — rooted in scripture, delivered with fire.
+  </p>
+  <div class="hero-search">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/>
+    </svg>
+    <input type="search" id="sermon-search" placeholder="Search sermons, series, or topics…" aria-label="Search sermons"/>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- ── FILTER BAR ─────────────────────────────────────────────── -->
+<div class="filter-section">
+  <div class="filter-inner">
+    <div class="event-filters" role="tablist" aria-label="Filter sermons by category">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Sermons</button>
+      <button class="filter-btn" data-filter="dominion" role="tab">Dominion</button>
+      <button class="filter-btn" data-filter="faith" role="tab">Faith</button>
+      <button class="filter-btn" data-filter="family" role="tab">Family</button>
+      <button class="filter-btn" data-filter="prayer" role="tab">Prayer</button>
+      <button class="filter-btn" data-filter="purpose" role="tab">Purpose</button>
+    </div>
+    <div class="filter-sort">
+      <label for="sort-select">Sort:</label>
+      <select id="sort-select" aria-label="Sort sermons">
+        <option value="recent">Most Recent</option>
+        <option value="popular">Most Watched</option>
+        <option value="series">By Series</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ── FEATURED SERMON ────────────────────────────────────────── -->
+<div class="featured-wrap">
+  <div class="section">
+    <div class="animate-on-scroll">
+      <div class="section-label">Latest Message</div>
+      <h2 class="section-title">Featured Sermon</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-video animate-on-scroll delay-1">
+        <div class="featured-badge">Now Playing</div>
+        <iframe
+          src="https://www.youtube.com/embed/sJ9H_y73zZc?si=Q_nvgHPeqVdVjVg3"
+          title="Latest sermon from RCCG Dominion Centre"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="featured-info animate-on-scroll delay-2">
+        <div class="featured-series-tag">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-linecap="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor"/></svg>
+          Kingdom Dominion Series
+        </div>
+        <h2 class="featured-title">Rise, Rule &amp; Reign — Walking in Divine Authority</h2>
+        <div class="featured-meta">
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>
+            Dr. Perez Araka
+          </span>
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Sunday Service
+          </span>
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            45 min
+          </span>
+        </div>
+        <p class="featured-desc">
+          God's mandate over your life is not just survival — it's dominion. In this message, Dr. Perez Araka unpacks what it means to rise above every mountain of influence and walk in the full authority God has already given you.
+        </p>
+        <div class="featured-actions">
+          <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" stroke="currentColor" stroke-linejoin="round"/></svg>
+            Watch on YouTube
+          </a>
+          <button class="btn-secondary" onclick="window.copyToClipboard('https://www.youtube.com/@rccgdc_ph')">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke-linecap="round"/></svg>
+            Share
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SERMON SERIES ───────────────────────────────────────────── -->
+<section class="series-wrap">
+  <div class="section">
+    <div class="series-header animate-on-scroll">
+      <div>
+        <div class="section-label">Ongoing & Past</div>
+        <h2 class="section-title">Sermon Series</h2>
+        <div class="gold-divider"></div>
+      </div>
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="view-all">
+        View all on YouTube
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="series-grid">
+
+      <a href="https://www.youtube.com/watch?v=gQZrjZrwJnE" target="_blank" rel="noopener" class="series-card animate-on-scroll delay-1">
+        <div class="series-card-thumb">
+          <div class="series-thumb-icon">
+            <iframe width="" height="" src="https://www.youtube.com/embed/gQZrjZrwJnE?si=iCmc3S7Cgp5FQ7k9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="series-count-badge">Current</div>
+        </div>
+        <div class="series-card-body">
+          <div class="series-card-title">FOUR Core Pillars of Leadership</div>
+          <div class="series-card-sub">Leadership is not defined by position but by the principles that sustain influence and guide impact. In this powerful message, we explore the 4 core pillars of leadership—the foundational qualities that shape effective and transformative leaders.</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="series-card animate-on-scroll delay-2">
+        <div class="series-card-thumb">
+          <div class="series-thumb-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor"/></svg>
+          </div>
+          <div class="series-count-badge">Series</div>
+        </div>
+        <div class="series-card-body">
+          <div class="series-card-title">Elevating Faith</div>
+          <div class="series-card-sub">Dominion Power Conference 3.0 messages</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="series-card animate-on-scroll delay-3">
+        <div class="series-card-thumb">
+          <div class="series-thumb-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor"/></svg>
+          </div>
+          <div class="series-count-badge">Series</div>
+        </div>
+        <div class="series-card-body">
+          <div class="series-card-title">Purpose &amp; Identity</div>
+          <div class="series-card-sub">Discovering who God made you to be</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="series-card animate-on-scroll delay-1">
+        <div class="series-card-thumb">
+          <div class="series-thumb-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="series-count-badge">Series</div>
+        </div>
+        <div class="series-card-body">
+          <div class="series-card-title">The Kingdom Home</div>
+          <div class="series-card-sub">Building family on God's blueprint</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ALL SERMONS GRID ───────────────────────────────────────── -->
+<section class="sermons-wrap">
+  <div class="section">
+    <div class="series-header animate-on-scroll">
+      <div>
+        <div class="section-label">Archive</div>
+        <h2 class="section-title">All Sermons</h2>
+        <div class="gold-divider"></div>
+      </div>
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="view-all">
+        Full YouTube library
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="sermons-grid" id="sermons-grid">
+
+      <a href="https://www.youtube.com/watch?v=wjbYG1tMDiY" target="_blank" rel="noopener" class="sermon-card event-item animate-on-scroll delay-1" data-category="dominion">
+        <div class="sermon-thumb">
+          <div class="sermon-thumb-placeholder" style="background:linear-gradient(135deg,#111B2E,#0D1929)">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wjbYG1tMDiY?si=-vB1nIWnIEWcyG4i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          <span class="sermon-cat-tag">Dominion</span>
+        </div>
+        <div class="sermon-body">
+          <h3 class="sermon-title">WAR MANUAL FOR THE BELIEVER</h3>
+          <div class="sermon-meta">
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Dr. Perez Araka</span>
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>38 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=9chOuCfmn7U" target="_blank" rel="noopener" class="sermon-card event-item animate-on-scroll delay-2" data-category="prayer">
+        <div class="sermon-thumb">
+          <div class="sermon-thumb-placeholder" style="background:linear-gradient(135deg,#12182B,#0A1520)">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9chOuCfmn7U?si=PT6XnhuBUJVnF6uG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          <span class="sermon-cat-tag">Prayer</span>
+        </div>
+        <div class="sermon-body">
+          <h3 class="sermon-title">PRAYER IS OXYGEN EP.2</h3>
+          <div class="sermon-meta">
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Dr. Perez Araka</span>
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>10 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=EXj78i2aRQ8" target="_blank" rel="noopener" class="sermon-card event-item animate-on-scroll delay-3" data-category="faith">
+        <div class="sermon-thumb">
+          <div class="sermon-thumb-placeholder" style="background:linear-gradient(135deg,#101825,#0C1620)">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EXj78i2aRQ8?si=k1BDYojscAoTWAk9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          <span class="sermon-cat-tag">Leadership</span>
+        </div>
+        <div class="sermon-body">
+          <h3 class="sermon-title">Embracing Responsibility in Leadership</h3>
+          <div class="sermon-meta">
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Dr. Perez Araka</span>
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>20 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=AzT8qTDBzek" target="_blank" rel="noopener" class="sermon-card event-item animate-on-scroll delay-1" data-category="purpose">
+        <div class="sermon-thumb">
+          <div class="sermon-thumb-placeholder" style="background:linear-gradient(135deg,#0E1B2A,#0B1520)">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/AzT8qTDBzek?si=tAHff-KdHbiMZFfB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          <span class="sermon-cat-tag">Purpose</span>
+        </div>
+        <div class="sermon-body">
+          <h3 class="sermon-title">WHO ARE YOU?</h3>
+          <div class="sermon-meta">
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Dr. Perez Araka</span>
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>9 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=eW2TC2QLKOI" target="_blank" rel="noopener" class="sermon-card event-item animate-on-scroll delay-2" data-category="family">
+        <div class="sermon-thumb">
+          <div class="sermon-thumb-placeholder" style="background:linear-gradient(135deg,#111C2C,#0D1622)">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eW2TC2QLKOI?si=XeRICNcxsWvuMYQa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          <span class="sermon-cat-tag">Family</span>
+        </div>
+        <div class="sermon-body">
+          <h3 class="sermon-title">WHO IS A MOTHER?</h3>
+          <div class="sermon-meta">
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Dr. Perez Araka</span>
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>13 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=a1YTsssggzM" target="_blank" rel="noopener" class="sermon-card event-item animate-on-scroll delay-3" data-category="dominion">
+        <div class="sermon-thumb">
+          <div class="sermon-thumb-placeholder" style="background:linear-gradient(135deg,#0C1828,#091420)">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/a1YTsssggzM?si=A0L2gjHNbsexsUQJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          <span class="sermon-cat-tag">Dominion</span>
+        </div>
+        <div class="sermon-body">
+          <h3 class="sermon-title">RULE YOUR SPACE</h3>
+          <div class="sermon-meta">
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Dr. Perez Araka</span>
+            <span class="sermon-meta-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>14 min</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Load more -->
+    <div style="text-align:center;margin-top:3rem">
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="btn-secondary animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        Watch more on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LISTEN PLATFORMS ───────────────────────────────────────── -->
+<section class="listen-banner">
+  <div class="listen-inner">
+    <div class="listen-text animate-on-scroll">
+      <div class="section-label">Never Miss a Message</div>
+      <h2 class="listen-title">Subscribe &amp; Stay Connected</h2>
+      <p class="listen-sub">
+        Watch our sermons on YouTube, or follow us on social media to receive updates whenever a new message drops. Kingdom living starts with the Word.
+      </p>
+    </div>
+    <div class="listen-platforms animate-on-scroll delay-2">
+      <a href="https://www.youtube.com/@rccgdc_ph" target="_blank" rel="noopener" class="platform-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C9A84C" stroke-width="2">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+          <polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="#C9A84C" stroke="none"/>
+        </svg>
+        <div>
+          <div class="platform-btn-text">YouTube</div>
+          <div class="platform-btn-sub">Watch & Subscribe</div>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/rccgdcph/" target="_blank" rel="noopener" class="platform-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C9A84C" stroke-width="2">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        <div>
+          <div class="platform-btn-text">Facebook</div>
+          <div class="platform-btn-sub">Watch Live Sundays</div>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/rccgdc_ph/" target="_blank" rel="noopener" class="platform-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C9A84C" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#C9A84C"/>
+        </svg>
+        <div>
+          <div class="platform-btn-text">Instagram</div>
+          <div class="platform-btn-sub">Clips &amp; highlights</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LEAD PASTOR ────────────────────────────────────────────── -->
+<section class="pastor-wrap">
+  <div class="section">
+    <div class="pastor-inner animate-on-scroll">
+      <div class="pastor-avatar">
+        <img src="images/dcimg36.png" alt="Dr. Perez Araka" onerror="this.parentElement.innerHTML='<div class=\'pastor-avatar-placeholder\'>PA</div>'"/>
+      </div>
+      <div class="pastor-info">
+        <div class="section-label">Lead Pastor</div>
+        <h2 class="pastor-name">Dr. Perez Araka</h2>
+        <div class="pastor-role">Senior Pastor · RCCG Dominion Centre</div>
+        <p class="pastor-quote">
+          Self-discipline is the key to your divine purpose. Rise to rule — don't remain a servant.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ─────────────────────────────────────────────── -->
+<section class="newsletter-wrap">
+  <div class="newsletter-inner animate-on-scroll">
+    <div class="section-label" style="text-align:center">Stay in the Word</div>
+    <h2 class="newsletter-title">Get notified when we post new sermons</h2>
+    <p class="newsletter-sub">
+      Join our community and receive alerts for new messages, upcoming events, and devotional content.
+    </p>
+    <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" placeholder="your@email.com" required aria-label="Email address"/>
+      <button type="submit" class="btn-primary">
+        Subscribe
+        <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+ <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <h3>RCCG Dominion Centre</h3>
+                    <p>An expression church branding the future look of RCCG. Join us as we grow together in faith, excellence, and fellowship.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt=""></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt=""></a>
+                        <a href="#" aria-label="Twitter"><img src="images/icons/social/icon-twitter.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="events">Events</a></li>
+                        <li><a href="volunteer">Volunteer</a></li>
+                        <li><a href="give">Give</a></li>
+                        <li><a href="https://rccgdominioncentre.org/review/login.php">Review</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Service Times</h4>
+                    <ul class="footer-links">
+                        <li><strong>Sunday:</strong> 7:00 AM | 9:00 AM | 11:00 AM</li>
+                        <li><strong>Wednesday:</strong> 5:00 PM</li>
+                        <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="icon icon--location" aria-hidden="true"></span><span>#199 Woji Road, GRA Phase 2<br>Port Harcourt, Rivers State</span></li>
+                        <li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. A Satellite Church of RCCG Region 33.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- ── SCRIPTS ────────────────────────────────────────────────── -->
+<script src="script.js"></script>
+<script>
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('input');
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Subscribed!';
+    btn.style.background = '#3A7D44';
+    btn.style.color = '#fff';
+    input.value = '';
+    setTimeout(() => {
+      btn.innerHTML = 'Subscribe <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+
+  // Search filter
+  document.getElementById('sermon-search')?.addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.sermon-card').forEach(card => {
+      const title = card.querySelector('.sermon-title')?.textContent.toLowerCase() || '';
+      const cat = (card.getAttribute('data-category') || '').toLowerCase();
+      card.style.display = (!q || title.includes(q) || cat.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
