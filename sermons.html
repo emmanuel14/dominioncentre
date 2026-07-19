@@ -419,11 +419,12 @@
     display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center;
   }
   .pastor-avatar {
-    width: 120px; height: 120px; border-radius: 50%;
-    border: 2px solid rgba(201,168,76,0.3);
+    width: 200px; height: 200px; border-radius: 50%;
+    border: 3px solid rgba(201,168,76,0.4);
     background: var(--navy-light); overflow: hidden; flex-shrink: 0;
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.08);
   }
-  .pastor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .pastor-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .pastor-avatar-placeholder {
     width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
     font-family: var(--serif); font-size: 2.5rem; font-weight: 600; color: var(--gold);
@@ -539,27 +540,100 @@
   .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
 
   /* ── RESPONSIVE ───────────────────────────────────────────────── */
+
+  /* ── Tablet (≤900px) ── */
   @media (max-width: 900px) {
+
+    /* Featured sermon: stack video above info */
     .featured-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .footer-inner { grid-template-columns: 1fr 1fr; }
-    .pastor-inner { grid-template-columns: 1fr; text-align: center; }
+    .featured-wrap { padding: 3.5rem 0 2.5rem; }
+
+    /* Listen section: stack vertically */
+    .listen-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .listen-platforms { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
+    .platform-btn { min-width: 170px; flex: 1; }
+
+    /* Pastor: center-aligned single column */
+    .pastor-inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
     .pastor-avatar { margin: 0 auto; }
-    .listen-inner { grid-template-columns: 1fr; }
-    .listen-platforms { flex-direction: row; flex-wrap: wrap; }
-    .platform-btn { min-width: 170px; }
+    .pastor-quote { margin: 0 auto; }
+
+    /* Filter bar: allow horizontal scroll on small screens */
+    .filter-inner { padding: 0 1rem; }
+    .filter-sort { display: none; } /* hide sort on tablet/mobile to save space */
+
+    /* Series grid: 2 columns */
+    .series-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Sermon grid: 2 columns */
+    .sermons-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Section spacing */
+    .series-wrap, .sermons-wrap { padding: 3rem 0; }
+    .pastor-wrap { padding: 3rem 0; }
+    .listen-banner { padding: 3rem 0; }
   }
-  @media (max-width: 600px) {
-    .sermon-hero { padding: 120px 1.25rem 60px; }
-    .featured-wrap, .series-wrap, .sermons-wrap, .pastor-wrap { padding: 3rem 0; }
-    .sermons-grid { grid-template-columns: 1fr; }
-    .series-grid { grid-template-columns: 1fr 1fr; }
-    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .newsletter-form { flex-direction: column; }
-    .newsletter-form button { width: 100%; }
-    .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* ── Mobile (≤640px) ── */
+  @media (max-width: 640px) {
+
+    /* Hero */
+    .sermon-hero { padding: 110px 1.25rem 70px; min-height: auto; }
+    .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: 2rem; }
+    .hero-search { max-width: 100%; }
+    .hero-scroll-hint { display: none; } /* hides scroll nudge on mobile */
+
+    /* Section padding */
+    .featured-wrap { padding: 2.5rem 0 2rem; }
+    .series-wrap, .sermons-wrap { padding: 2.5rem 0; }
+    .pastor-wrap { padding: 2.5rem 0; }
+    .listen-banner { padding: 2.5rem 0; }
+    .newsletter-wrap { padding: 3rem 0; }
+
+    /* Section headings */
+    .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
+    .series-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+
+    /* Featured info */
+    .featured-actions { flex-direction: column; }
+    .featured-actions .btn-primary,
+    .featured-actions .btn-secondary { width: 100%; justify-content: center; }
+
+    /* Sermon grid: single column */
+    .sermons-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+
+    /* Series grid: single column */
+    .series-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+    /* Listen platforms: stack vertically */
+    .listen-platforms { flex-direction: column; }
+    .platform-btn { min-width: 0; width: 100%; }
+
+    /* Newsletter form: stack */
+    .newsletter-form { flex-direction: column; gap: 0.75rem; }
+    .newsletter-form input { width: 100%; }
+    .newsletter-form button { width: 100%; justify-content: center; }
+
+    /* Pastor section */
+    .pastor-avatar { width: 160px; height: 160px; }
+    .pastor-name { font-size: 1.6rem; }
+    .pastor-quote { font-size: 1rem; }
+
+    /* Footer (inherits from your style.css footer-content grid) */
+    .footer-content { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
   }
+
+  /* ── Small mobile (≤400px) ── */
   @media (max-width: 400px) {
-    .series-grid { grid-template-columns: 1fr; }
+    .sermon-hero { padding: 100px 1rem 60px; }
+    .section { padding: 0 1rem; }
+    .filter-inner { padding: 0 0.75rem; }
+    .filter-btn { padding: 0.4rem 0.6rem; font-size: 0.75rem; }
+    .hero-search input { font-size: 0.85rem; padding: 0.875rem 1rem 0.875rem 2.75rem; }
+    .featured-series-tag { font-size: 0.72rem; }
+    .featured-meta { gap: 0.6rem; }
   }
 </style>
 </head>
@@ -1034,6 +1108,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. A Satellite Church of RCCG Region 33.</p>
+                <p>Developed by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
             </div>
         </div>
     </footer>
