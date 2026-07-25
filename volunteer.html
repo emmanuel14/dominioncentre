@@ -4,18 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Volunteer at RCCG Dominion Centre. Discover your purpose and serve in various departments including media, choir, children's ministry, and more.">
-    <meta name="keywords" content="RCCG Volunteer, Church Service, Ministry, Port Harcourt, Serve">
     <title>Volunteer - RCCG Dominion Centre</title>
-    
-    <!-- Google Fonts -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/dclogo1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=3">
+
+    <style>
+    /* ── DEPARTMENT CARDS WITH IMAGES ────────────────────────── */
+
+    .departments-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .department-card {
+        background: #111B2E;
+        border: 1px solid rgba(201,168,76,0.12);
+        border-radius: 14px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .department-card:hover {
+        border-color: rgba(201,168,76,0.4);
+        transform: translateY(-5px);
+        box-shadow: 0 24px 56px rgba(0,0,0,0.4);
+    }
+
+    /* Image area */
+    .dept-image {
+        position: relative;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        background: #0B1120;
+    }
+    .dept-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.5s ease;
+        filter: brightness(0.75) saturate(0.85);
+    }
+    .department-card:hover .dept-image img {
+        transform: scale(1.05);
+    }
+
+    /* Gold gradient overlay at bottom of image */
+    .dept-image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(11,17,32,0) 30%,
+            rgba(11,17,32,0.75) 100%
+        );
+    }
+
+    /* Category pill on image */
+    .dept-category-pill {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        background: rgba(11,17,32,0.82);
+        border: 1px solid rgba(201,168,76,0.35);
+        color: #C9A84C;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.7rem;
+        border-radius: 4px;
+        backdrop-filter: blur(4px);
+    }
+
+    /* Monogram sitting at bottom of image, overlapping into card body */
+    .dept-monogram-wrap {
+        position: absolute;
+        bottom: -22px;
+        right: 1.1rem;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: #C9A84C;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #0B1120;
+        letter-spacing: -0.02em;
+        border: 2px solid #111B2E;
+        z-index: 2;
+    }
+
+    /* Card body */
+    .dept-body {
+        padding: 1.6rem 1.35rem 1.4rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .dept-name {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #F5F0E8;
+        line-height: 1.25;
+        padding-right: 3rem; /* avoid overlap with monogram */
+    }
+
+    .dept-desc {
+        font-size: 0.855rem;
+        color: #A8B8CC;
+        line-height: 1.72;
+    }
+
+    /* Numbered role list */
+    .dept-roles {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        padding-top: 0.85rem;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .dept-roles li {
+        display: flex;
+        align-items: baseline;
+        gap: 0.65rem;
+        padding: 0.3rem 0;
+        font-size: 0.82rem;
+        color: #7A8BA5;
+        border-bottom: 1px solid rgba(255,255,255,0.03);
+        transition: color 0.2s ease;
+    }
+    .dept-roles li:last-child { border-bottom: none; }
+    .dept-roles li:hover { color: #C9A84C; }
+    .role-num {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: rgba(201,168,76,0.4);
+        min-width: 16px;
+        flex-shrink: 0;
+        letter-spacing: 0.04em;
+    }
+
+    /* ── BENEFIT ITEMS ─────────────────────────────────────────── */
+    .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.45rem 0;
+    }
+    .benefit-item::before {
+        content: '—';
+        color: #C9A84C;
+        font-weight: 700;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+    .benefit-item span {
+        font-size: 0.9rem;
+        color: #A8B8CC;
+        line-height: 1.5;
+    }
+
+    /* ── SCRIPTURE QUOTE ───────────────────────────────────────── */
+    .intro-quote {
+        background: rgba(201,168,76,0.06);
+        border-left: 3px solid #C9A84C;
+        border-radius: 0 8px 8px 0;
+        padding: 1.25rem 1.5rem;
+        margin-top: 1rem;
+    }
+    .intro-quote p {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #F5F0E8;
+        line-height: 1.5;
+        margin-bottom: 0.4rem;
+    }
+    .intro-quote span {
+        font-size: 0.78rem;
+        color: #C9A84C;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+        .departments-grid { grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+    }
+    @media (max-width: 560px) {
+        .departments-grid { grid-template-columns: 1fr; gap: 1rem; }
+        .dept-name { font-size: 1.1rem; padding-right: 2.5rem; }
+    }
+    </style>
 </head>
 <body>
+
     <div class="page-loader" id="pageLoader" aria-live="polite" aria-label="Loading">
         <div class="loader-inner">
             <div class="loader-logo-wrap">
@@ -24,19 +227,19 @@
             <div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div>
         </div>
     </div>
+
     <header class="site-header site-header--solid" id="siteHeader">
         <nav class="navbar">
             <div class="container nav-container">
                 <div class="logo">
-    <a href="/">
-        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-            <span class="logo-text">RCCG</span>
-            <span class="logo-subtext">Dominion Centre</span>
-        </div>
-    </a>
-</div>
-                
+                    <a href="/">
+                        <img src="images/dclogo1.png" alt="RCCG Dominion Centre Logo" class="logo-image">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">RCCG</span>
+                            <span class="logo-subtext">Dominion Centre</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index" class="nav-link">Home</a></li>
                     <li><a href="about" class="nav-link">About</a></li>
@@ -46,11 +249,8 @@
                     <li><a href="https://rccgdominioncentre.org/review/login.php" class="nav-link">Review</a></li>
                     <li><a href="contact" class="nav-link">Contact</a></li>
                 </ul>
-                
                 <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </div>
             </div>
         </nav>
@@ -72,7 +272,7 @@
         </div>
     </section>
 
-    <!-- Volunteer Intro Section -->
+    <!-- Volunteer Intro -->
     <section class="volunteer-intro section-padding">
         <div class="container">
             <div class="intro-content">
@@ -81,373 +281,394 @@
                         <span class="section-label">Get Involved</span>
                         <h2 class="section-title">Why Volunteer?</h2>
                     </div>
-                    <p>Looking to serve and grow in your faith? We're excited to welcome you into one of our church departments! Whether you love music, teaching, helping others, or working behind the scenes, there's a place for you here.</p>
-                    
-                    <p>Volunteering at RCCG Dominion Centre is more than just serving—it's about discovering your purpose, developing your gifts, and making a lasting impact in the lives of others. When you serve, you become part of a community that is transforming Port Harcourt and beyond.</p>
-                    
+                    <p>Looking to serve and grow in your faith? We're excited to welcome you into one of our church departments. Whether you love music, teaching, helping others, or working behind the scenes, there's a place for you here.</p>
+                    <p>Volunteering at RCCG Dominion Centre is more than just serving — it's about discovering your purpose, developing your gifts, and making a lasting impact in the lives of others.</p>
                     <div class="intro-benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Discover and develop your God-given talents</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Build meaningful relationships</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Grow spiritually through service</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Make a real difference in your community</span>
-                        </div>
+                        <div class="benefit-item"><span>Discover and develop your God-given talents</span></div>
+                        <div class="benefit-item"><span>Build meaningful relationships</span></div>
+                        <div class="benefit-item"><span>Grow spiritually through service</span></div>
+                        <div class="benefit-item"><span>Make a real difference in your community</span></div>
                     </div>
                 </div>
                 <div class="intro-image">
-                    <img src="images/dcimg20.jpg" alt="Volunteers">
+                    <img src="images/dcimg20.jpg" alt="Volunteers at RCCG Dominion Centre">
                     <div class="intro-quote">
-                        <i class="fas fa-quote-left"></i>
                         <p>"Not to be served, but to serve"</p>
-                        <span>- Mark 10:45</span>
+                        <span>— Mark 10:45</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Volunteer Departments Section -->
+    <!-- Departments -->
     <section class="volunteer-departments">
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-label">Available Opportunities</span>
                 <h2 class="section-title">Find Your Place to Serve</h2>
-                <p class="section-description">Explore our various departments and discover where your gifts can shine</p>
+                <p class="section-description">Explore our departments and discover where your gifts can shine</p>
             </div>
 
             <div class="departments-grid">
-                
-                <!-- Department 1: Spirit & Life (THE WORD) -->
+
+                <!-- 1. Spirit & Life -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-book-open"></i>
+                    <div class="dept-image">
+                        <img src="images/img2.jpeg" alt="Bible study and scripture reading" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">The Word</div>
+                        <div class="dept-monogram-wrap">SL</div>
                     </div>
-                    <h3>Spirit & Life: The Word</h3>
-                    <p>Dedicated to teaching and proclaiming God's Word with power and clarity. Join us in studying and sharing the life-giving message of Scripture.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-bible"></i> Bible Teachers</li>
-                        <li><i class="fas fa-book-reader"></i> Scripture Study Leaders</li>
-                        <li><i class="fas fa-chalkboard-teacher"></i> Word Ministry Team</li>
-                        <li><i class="fas fa-scroll"></i> Scripture Readers</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: The Word</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Spirit &amp; Life</h3>
+                        <p class="dept-desc">Dedicated to teaching and proclaiming God's Word with power and clarity. Join us in studying and sharing the life-giving message of Scripture.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Bible Teachers</li>
+                            <li><span class="role-num">02</span>Scripture Study Leaders</li>
+                            <li><span class="role-num">03</span>Word Ministry Team</li>
+                            <li><span class="role-num">04</span>Scripture Readers</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 2: Spirit & Power Ministry (MUSIC) -->
+                <!-- 2. Spirit & Power Ministry -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-music"></i>
+                    <div class="dept-image">
+                        <img src="images/dcimg46.jpeg" alt="Worship and choir singing" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Music</div>
+                        <div class="dept-monogram-wrap">SP</div>
                     </div>
-                    <h3>Spirit & Power Ministry (SPM)</h3>
-                    <p>Lead the congregation in passionate worship through music, singing, and instruments. Experience the power of worship as we lift God's name high.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-microphone"></i> Vocalists & Singers</li>
-                        <li><i class="fas fa-guitar"></i> Instrumentalists</li>
-                        <li><i class="fas fa-music"></i> Worship Leaders</li>
-                        <li><i class="fas fa-drum"></i> Choir Members</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Music</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Spirit &amp; Power Ministry</h3>
+                        <p class="dept-desc">Lead the congregation in passionate worship through music, singing, and instruments. Experience the power of worship as we lift God's name high.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Vocalists &amp; Singers</li>
+                            <li><span class="role-num">02</span>Instrumentalists</li>
+                            <li><span class="role-num">03</span>Worship Leaders</li>
+                            <li><span class="role-num">04</span>Choir Members</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 3: The Fire Place (PRAYER) -->
+                <!-- 3. The Fire Place -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-fire"></i>
+                    <div class="dept-image">
+                        <img src="images/img12.jpeg" alt="People praying together" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Prayer</div>
+                        <div class="dept-monogram-wrap">FP</div>
                     </div>
-                    <h3>The Fire Place</h3>
-                    <p>Stand in the gap through fervent prayer and intercession. Join us at The Fire Place where the altar never grows cold.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-praying-hands"></i> Intercessors</li>
-                        <li><i class="fas fa-hands-praying"></i> Prayer Warriors</li>
-                        <li><i class="fas fa-phone"></i> Prayer Line Team</li>
-                        <li><i class="fas fa-users"></i> Prayer Group Leaders</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Prayer</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">The Fire Place</h3>
+                        <p class="dept-desc">Stand in the gap through fervent prayer and intercession. Join us at The Fire Place where the altar never grows cold.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Intercessors</li>
+                            <li><span class="role-num">02</span>Prayer Warriors</li>
+                            <li><span class="role-num">03</span>Prayer Line Team</li>
+                            <li><span class="role-num">04</span>Prayer Group Leaders</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 4: Be Well (HEALTH) -->
+                <!-- 4. Be Well -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-heartbeat"></i>
+                    <div class="dept-image">
+                        <img src="images/img13.jpeg" alt="Medical and health professionals" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Health</div>
+                        <div class="dept-monogram-wrap">BW</div>
                     </div>
-                    <h3>Be Well</h3>
-                    <p>Promoting holistic health and wellness for our church family. Serve in health education, medical support, and wellness initiatives.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-user-md"></i> Medical Professionals</li>
-                        <li><i class="fas fa-first-aid"></i> First Aid Team</li>
-                        <li><i class="fas fa-running"></i> Health & Wellness Coordinators</li>
-                        <li><i class="fas fa-hospital"></i> Health Educators</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Health</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Be Well</h3>
+                        <p class="dept-desc">Promoting holistic health and wellness for our church family. Serve in health education, medical support, and wellness initiatives.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Medical Professionals</li>
+                            <li><span class="role-num">02</span>First Aid Team</li>
+                            <li><span class="role-num">03</span>Health &amp; Wellness Coordinators</li>
+                            <li><span class="role-num">04</span>Health Educators</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 5: Sanctuary Keepers (SANITATION) -->
+                <!-- 5. Sanctuary Keepers -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-broom"></i>
+                    <div class="dept-image">
+                        <img src="images/img26.jpg" alt="Cleaning and maintaining the sanctuary" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Sanitation</div>
+                        <div class="dept-monogram-wrap">SK</div>
                     </div>
-                    <h3>Sanctuary Keepers</h3>
-                    <p>Keep God's house clean, beautiful, and welcoming. Serve behind the scenes to maintain a pristine worship environment.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-hands-wash"></i> Cleaning Team</li>
-                        <li><i class="fas fa-spray-can"></i> Sanitation Coordinators</li>
-                        <li><i class="fas fa-soap"></i> Hygiene Team</li>
-                        <li><i class="fas fa-recycle"></i> Waste Management</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Sanitation</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Sanctuary Keepers</h3>
+                        <p class="dept-desc">Keep God's house clean, beautiful, and welcoming. Serve behind the scenes to maintain a pristine worship environment.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Cleaning Team</li>
+                            <li><span class="role-num">02</span>Sanitation Coordinators</li>
+                            <li><span class="role-num">03</span>Hygiene Team</li>
+                            <li><span class="role-num">04</span>Waste Management</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 6: Environment (SECURITY & SAFETY) -->
+                <!-- 6. Environment & Safety -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="dept-image">
+                        <img src="images/img25.jpg" alt="Security and safety team" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Security</div>
+                        <div class="dept-monogram-wrap">ES</div>
                     </div>
-                    <h3>Environment: Security & Safety</h3>
-                    <p>Ensure the safety and security of all worshippers. Provide a secure environment where people can worship freely.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-user-shield"></i> Security Personnel</li>
-                        <li><i class="fas fa-parking"></i> Parking Attendants</li>
-                        <li><i class="fas fa-traffic-light"></i> Traffic Control</li>
-                        <li><i class="fas fa-eye"></i> Safety Monitors</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Security</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Environment &amp; Safety</h3>
+                        <p class="dept-desc">Ensure the safety and security of all worshippers. Provide a secure environment where people can worship freely and without fear.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Security Personnel</li>
+                            <li><span class="role-num">02</span>Parking Attendants</li>
+                            <li><span class="role-num">03</span>Traffic Control</li>
+                            <li><span class="role-num">04</span>Safety Monitors</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 7: DMC (EVANGELISM & FOLLOW-UP) -->
+                <!-- 7. DMC -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-bullhorn"></i>
+                    <div class="dept-image">
+                        <img src="images/img17.jpeg" alt="Community outreach and evangelism" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Evangelism</div>
+                        <div class="dept-monogram-wrap">DM</div>
                     </div>
-                    <h3>Dominion Membership Connect (DMC)</h3>
-                    <p>Reach the lost and follow up with new converts. Be part of the evangelism and membership integration team.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-street-view"></i> Evangelists</li>
-                        <li><i class="fas fa-phone-volume"></i> Follow-Up Team</li>
-                        <li><i class="fas fa-user-plus"></i> New Members Integration</li>
-                        <li><i class="fas fa-handshake"></i> Membership Coordinators</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Evangelism</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Dominion Membership Connect</h3>
+                        <p class="dept-desc">Reach the lost and follow up with new converts. Be part of the evangelism and membership integration team.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Evangelists</li>
+                            <li><span class="role-num">02</span>Follow-Up Team</li>
+                            <li><span class="role-num">03</span>New Members Integration</li>
+                            <li><span class="role-num">04</span>Membership Coordinators</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 8: T&D (TRAINING & DEVELOPMENT) -->
+                <!-- 8. Training & Development -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                    <div class="dept-image">
+                        <img src="images/img5.jpeg" alt="Teaching and discipleship" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Education</div>
+                        <div class="dept-monogram-wrap">TD</div>
                     </div>
-                    <h3>Training & Development (T&D)</h3>
-                    <p>Sunday School, discipleship, and developmental programs. Help believers grow in their faith and knowledge of God.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-chalkboard"></i> Sunday School Teachers</li>
-                        <li><i class="fas fa-user-graduate"></i> Discipleship Leaders</li>
-                        <li><i class="fas fa-book"></i> Curriculum Developers</li>
-                        <li><i class="fas fa-users-cog"></i> Training Coordinators</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Education</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Training &amp; Development</h3>
+                        <p class="dept-desc">Sunday School, discipleship, and developmental programs. Help believers grow in their faith and knowledge of God.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Sunday School Teachers</li>
+                            <li><span class="role-num">02</span>Discipleship Leaders</li>
+                            <li><span class="role-num">03</span>Curriculum Developers</li>
+                            <li><span class="role-num">04</span>Training Coordinators</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 9: DIC (USHERING, GREETERS, PROTOCOL) -->
+                <!-- 9. DIC -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
+                    <div class="dept-image">
+                        <img src="images/img20.jpeg" alt="Welcoming and hospitality team" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Hospitality</div>
+                        <div class="dept-monogram-wrap">DI</div>
                     </div>
-                    <h3>Dominion Impact Centre (DIC)</h3>
-                    <p>Ushering, greeters, protocol, empowerment & care. Be the first smile visitors see and create a welcoming atmosphere.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-door-open"></i> Ushers</li>
-                        <li><i class="fas fa-handshake"></i> Greeters</li>
-                        <li><i class="fas fa-user-tie"></i> Protocol Team</li>
-                        <li><i class="fas fa-hands-helping"></i> Care & Welfare</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Hospitality</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Dominion Impact Centre</h3>
+                        <p class="dept-desc">Ushering, greeters, protocol, empowerment &amp; care. Be the first smile visitors see and create a welcoming atmosphere.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Ushers</li>
+                            <li><span class="role-num">02</span>Greeters</li>
+                            <li><span class="role-num">03</span>Protocol Team</li>
+                            <li><span class="role-num">04</span>Care &amp; Welfare</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 10: Family Affairs & House Fellowship -->
+                <!-- 10. Family Affairs -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-home"></i>
+                    <div class="dept-image">
+                        <img src="images/img23.jpg" alt="Family and fellowship gathering" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Fellowship</div>
+                        <div class="dept-monogram-wrap">FA</div>
                     </div>
-                    <h3>Family Affairs & House Fellowship</h3>
-                    <p>Coordinate family programs and house fellowship meetings. Build strong family units and intimate fellowship groups.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-users"></i> House Fellowship Leaders</li>
-                        <li><i class="fas fa-user-friends"></i> Family Coordinators</li>
-                        <li><i class="fas fa-baby"></i> Family Programs</li>
-                        <li><i class="fas fa-ring"></i> Marriage Ministry</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Fellowship</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Family Affairs &amp; House Fellowship</h3>
+                        <p class="dept-desc">Coordinate family programs and house fellowship meetings. Build strong family units and intimate fellowship groups.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>House Fellowship Leaders</li>
+                            <li><span class="role-num">02</span>Family Coordinators</li>
+                            <li><span class="role-num">03</span>Family Programs</li>
+                            <li><span class="role-num">04</span>Marriage Ministry</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 11: DAF (MEDIA) -->
+                <!-- 11. Dominion Air Force -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-camera"></i>
+                    <div class="dept-image">
+                        <img src="images/img20.jpeg" alt="Media production and photography" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Media</div>
+                        <div class="dept-monogram-wrap">DA</div>
                     </div>
-                    <h3>Dominion Air Force (DAF)</h3>
-                    <p>Capture and broadcast God's work through professional media production, photography, videography, and social media.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-video"></i> Videographers</li>
-                        <li><i class="fas fa-camera-retro"></i> Photographers</li>
-                        <li><i class="fas fa-laptop"></i> Graphics Designers</li>
-                        <li><i class="fas fa-share-alt"></i> Social Media Team</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Media</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Dominion Air Force</h3>
+                        <p class="dept-desc">Capture and broadcast God's work through professional media production, photography, videography, and social media.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Videographers</li>
+                            <li><span class="role-num">02</span>Photographers</li>
+                            <li><span class="role-num">03</span>Graphics Designers</li>
+                            <li><span class="role-num">04</span>Social Media Team</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 12: Sound & Light (TECHNICAL) -->
+                <!-- 12. Sound & Light -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-sliders-h"></i>
+                    <div class="dept-image">
+                        <img src="images/img16.jpeg" alt="Sound engineering and lighting" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Technical</div>
+                        <div class="dept-monogram-wrap">SL</div>
                     </div>
-                    <h3>Sound & Light</h3>
-                    <p>Technical excellence in sound engineering, lighting, and audio-visual production for impactful worship experiences.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-volume-up"></i> Sound Engineers</li>
-                        <li><i class="fas fa-lightbulb"></i> Lighting Technicians</li>
-                        <li><i class="fas fa-microphone-alt"></i> Audio Specialists</li>
-                        <li><i class="fas fa-broadcast-tower"></i> AV Coordinators</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Technical</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Sound &amp; Light</h3>
+                        <p class="dept-desc">Technical excellence in sound engineering, lighting, and audio-visual production for impactful worship experiences.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Sound Engineers</li>
+                            <li><span class="role-num">02</span>Lighting Technicians</li>
+                            <li><span class="role-num">03</span>Audio Specialists</li>
+                            <li><span class="role-num">04</span>AV Coordinators</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 13: IT, Software & Electronics -->
+                <!-- 13. IT & Software -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="dept-image">
+                        <img src="images/img21.jpeg" alt="IT and software team" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Technology</div>
+                        <div class="dept-monogram-wrap">IT</div>
                     </div>
-                    <h3>IT, Software & Electronics</h3>
-                    <p>Manage church technology infrastructure, software systems, and electronic equipment for seamless operations.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-code"></i> Software Developers</li>
-                        <li><i class="fas fa-network-wired"></i> IT Support</li>
-                        <li><i class="fas fa-database"></i> System Administrators</li>
-                        <li><i class="fas fa-microchip"></i> Electronics Technicians</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Technology</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">IT, Software &amp; Electronics</h3>
+                        <p class="dept-desc">Manage church technology infrastructure, software systems, and electronic equipment for seamless operations.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Software Developers</li>
+                            <li><span class="role-num">02</span>IT Support</li>
+                            <li><span class="role-num">03</span>System Administrators</li>
+                            <li><span class="role-num">04</span>Electronics Technicians</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 14: Maintenance & Electrical -->
+                <!-- 14. Maintenance & Electrical -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-tools"></i>
+                    <div class="dept-image">
+                        <img src="images/img24.jpg" alt="Maintenance and electrical work" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Maintenance</div>
+                        <div class="dept-monogram-wrap">ME</div>
                     </div>
-                    <h3>Maintenance & Electrical</h3>
-                    <p>Keep our facilities functional and well-maintained. Serve through practical skills in maintenance and electrical work.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-hammer"></i> General Maintenance</li>
-                        <li><i class="fas fa-bolt"></i> Electricians</li>
-                        <li><i class="fas fa-wrench"></i> Plumbers</li>
-                        <li><i class="fas fa-paint-roller"></i> Facility Care</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Maintenance</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Maintenance &amp; Electrical</h3>
+                        <p class="dept-desc">Keep our facilities functional and well-maintained. Serve through practical skills in maintenance and electrical work.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>General Maintenance</li>
+                            <li><span class="role-num">02</span>Electricians</li>
+                            <li><span class="role-num">03</span>Plumbers</li>
+                            <li><span class="role-num">04</span>Facility Care</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 15: Creative Arts & Talents -->
+                <!-- 15. Creative Arts -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-theater-masks"></i>
+                    <div class="dept-image">
+                        <img src="images/img18.jpeg" alt="Drama and creative arts performance" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Arts</div>
+                        <div class="dept-monogram-wrap">CA</div>
                     </div>
-                    <h3>Creative Arts & Talents</h3>
-                    <p>Drama, dancing, spoken word, and other creative talents. Use your artistic gifts to communicate God's message powerfully.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-mask"></i> Drama Team</li>
-                        <li><i class="fas fa-running"></i> Dancers</li>
-                        <li><i class="fas fa-comment-dots"></i> Spoken Word Artists</li>
-                        <li><i class="fas fa-palette"></i> Creative Talents</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Arts</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Creative Arts &amp; Talents</h3>
+                        <p class="dept-desc">Drama, dancing, spoken word, and other creative talents. Use your artistic gifts to communicate God's message powerfully.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Drama Team</li>
+                            <li><span class="role-num">02</span>Dancers</li>
+                            <li><span class="role-num">03</span>Spoken Word Artists</li>
+                            <li><span class="role-num">04</span>Creative Talents</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 16: Sports, Entertainment & Outreach -->
+                <!-- 16. Sports & Outreach -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-futbol"></i>
+                    <div class="dept-image">
+                        <img src="images/img8.jpeg" alt="Sports and community outreach" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Outreach</div>
+                        <div class="dept-monogram-wrap">SE</div>
                     </div>
-                    <h3>Sports, Entertainment & Outreach</h3>
-                    <p>Organize sports activities, entertainment programs, and community outreach initiatives to reach people for Christ.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-basketball-ball"></i> Sports Coordinators</li>
-                        <li><i class="fas fa-trophy"></i> Event Organizers</li>
-                        <li><i class="fas fa-street-view"></i> Outreach Team</li>
-                        <li><i class="fas fa-gamepad"></i> Entertainment Leaders</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Outreach</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Sports, Entertainment &amp; Outreach</h3>
+                        <p class="dept-desc">Organize sports activities, entertainment programs, and community outreach initiatives to reach people for Christ.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Sports Coordinators</li>
+                            <li><span class="role-num">02</span>Event Organizers</li>
+                            <li><span class="role-num">03</span>Outreach Team</li>
+                            <li><span class="role-num">04</span>Entertainment Leaders</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 17: Junior Church (DTCE) -->
+                <!-- 17. Junior Church -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-child"></i>
+                    <div class="dept-image">
+                        <img src="images/img9.jpeg" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Children &amp; Teens</div>
+                        <div class="dept-monogram-wrap">JC</div>
                     </div>
-                    <h3>Junior Church (DTCE)</h3>
-                    <p>Directorate of Teens & Children Education. Shape the next generation through engaging, age-appropriate ministry to children and teens.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-chalkboard-teacher"></i> Children Teachers</li>
-                        <li><i class="fas fa-users"></i> Teen Leaders</li>
-                        <li><i class="fas fa-gamepad"></i> Activity Coordinators</li>
-                        <li><i class="fas fa-shield-alt"></i> Safety Team</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Children/Teens</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">Junior Church (DTCE)</h3>
+                        <p class="dept-desc">Directorate of Teens &amp; Children Education. Shape the next generation through engaging, age-appropriate ministry.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Children Teachers</li>
+                            <li><span class="role-num">02</span>Teen Leaders</li>
+                            <li><span class="role-num">03</span>Activity Coordinators</li>
+                            <li><span class="role-num">04</span>Safety Team</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Department 18: General Services -->
+                <!-- 18. General Services -->
                 <div class="department-card">
-                    <div class="department-icon">
-                        <i class="fas fa-building"></i>
+                    <div class="dept-image">
+                        <img src="images/img22.jpg" alt="Administration and general services" loading="lazy">
+                        <div class="dept-image-overlay"></div>
+                        <div class="dept-category-pill">Administration</div>
+                        <div class="dept-monogram-wrap">GS</div>
                     </div>
-                    <h3>General Services</h3>
-                    <p>Facility management and administration. Support the smooth operation of all church activities and programs.</p>
-                    <ul class="department-roles">
-                        <li><i class="fas fa-clipboard-list"></i> Administrative Support</li>
-                        <li><i class="fas fa-folder-open"></i> Records Management</li>
-                        <li><i class="fas fa-warehouse"></i> Facility Coordination</li>
-                        <li><i class="fas fa-cogs"></i> Operations Team</li>
-                    </ul>
-                    <div class="department-meta">
-                        <span><i class="fas fa-tag"></i> Category: Administration</span>
+                    <div class="dept-body">
+                        <h3 class="dept-name">General Services</h3>
+                        <p class="dept-desc">Facility management and administration. Support the smooth operation of all church activities and programs.</p>
+                        <ul class="dept-roles">
+                            <li><span class="role-num">01</span>Administrative Support</li>
+                            <li><span class="role-num">02</span>Records Management</li>
+                            <li><span class="role-num">03</span>Facility Coordination</li>
+                            <li><span class="role-num">04</span>Operations Team</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -455,14 +676,13 @@
         </div>
     </section>
 
-    <!-- Volunteer Form Section -->
+    <!-- Volunteer Form -->
     <section class="volunteer-form-section section-padding">
         <div class="container">
             <div class="form-intro text-center">
                 <h2>Ready to Get Started?</h2>
                 <p>Fill out the form below and we'll connect you with the right department. We can't wait to serve with you!</p>
             </div>
-
             <div class="volunteer-form-container">
                 <form id="volunteer-form" class="volunteer-form">
                     <div class="form-row">
@@ -475,90 +695,68 @@
                             <input type="email" id="volunteer-email" name="email" required>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="form-group">
                             <label for="volunteer-phone">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="volunteer-phone" name="phone" required style="width: 100%; box-sizing: border-box;">
+                            <input type="tel" id="volunteer-phone" name="phone" required style="width:100%;box-sizing:border-box;">
                         </div>
                         <div class="form-group">
                             <label for="department">Preferred Department <span class="required">*</span></label>
-                            <select id="department" name="department" required style="width: 100%; box-sizing: border-box;">
+                            <select id="department" name="department" required style="width:100%;box-sizing:border-box;">
                                 <option value="">Select a department</option>
-                                <option value="spirit-life">Spirit & Life: The Word</option>
-                                <option value="spm">Spirit & Power Ministry (Music)</option>
+                                <option value="spirit-life">Spirit &amp; Life: The Word</option>
+                                <option value="spm">Spirit &amp; Power Ministry (Music)</option>
                                 <option value="fire-place">The Fire Place (Prayer)</option>
                                 <option value="be-well">Be Well (Health)</option>
                                 <option value="sanctuary-keepers">Sanctuary Keepers (Sanitation)</option>
-                                <option value="environment">Environment (Security & Safety)</option>
+                                <option value="environment">Environment (Security &amp; Safety)</option>
                                 <option value="dmc">Dominion Membership Connect (Evangelism)</option>
-                                <option value="training-dev">Training & Development (Sunday School)</option>
+                                <option value="training-dev">Training &amp; Development (Sunday School)</option>
                                 <option value="dic">Dominion Impact Centre (Ushering/Protocol)</option>
-                                <option value="family-affairs">Family Affairs & House Fellowship</option>
+                                <option value="family-affairs">Family Affairs &amp; House Fellowship</option>
                                 <option value="daf">Dominion Air Force (Media)</option>
-                                <option value="sound-light">Sound & Light (Technical)</option>
-                                <option value="it">IT, Software & Electronics</option>
-                                <option value="maintenance">Maintenance & Electrical</option>
-                                <option value="creative-arts">Creative Arts & Talents</option>
-                                <option value="sports">Sports, Entertainment & Outreach</option>
+                                <option value="sound-light">Sound &amp; Light (Technical)</option>
+                                <option value="it">IT, Software &amp; Electronics</option>
+                                <option value="maintenance">Maintenance &amp; Electrical</option>
+                                <option value="creative-arts">Creative Arts &amp; Talents</option>
+                                <option value="sports">Sports, Entertainment &amp; Outreach</option>
                                 <option value="junior-church">Junior Church (DTCE)</option>
                                 <option value="general-services">General Services (Facility/Admin)</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
                     </div>
-
-
                     <div class="form-group">
-                        <label for="availability">Your Availability</label>
+                        <label>Your Availability</label>
                         <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="availability" value="sunday-morning">
-                                <span>Sunday Mornings</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="availability" value="sunday-evening">
-                                <span>Sunday Evenings</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="availability" value="wednesday">
-                                <span>Wednesday Services</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="availability" value="weekdays">
-                                <span>Weekdays</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="availability" value="flexible">
-                                <span>Flexible Schedule</span>
-                            </label>
+                            <label class="checkbox-label"><input type="checkbox" name="availability" value="sunday-morning"><span>Sunday Mornings</span></label>
+                            <label class="checkbox-label"><input type="checkbox" name="availability" value="sunday-evening"><span>Sunday Evenings</span></label>
+                            <label class="checkbox-label"><input type="checkbox" name="availability" value="wednesday"><span>Wednesday Services</span></label>
+                            <label class="checkbox-label"><input type="checkbox" name="availability" value="weekdays"><span>Weekdays</span></label>
+                            <label class="checkbox-label"><input type="checkbox" name="availability" value="flexible"><span>Flexible Schedule</span></label>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label for="skills">Skills & Experience (Optional)</label>
+                        <label for="skills">Skills &amp; Experience (Optional)</label>
                         <textarea id="skills" name="skills" rows="4" placeholder="Tell us about any relevant skills, experience, or training you have..."></textarea>
                     </div>
-
                     <div class="form-group">
                         <label for="message">Why do you want to volunteer? (Optional)</label>
                         <textarea id="message" name="message" rows="4" placeholder="Share your motivation for serving..."></textarea>
                     </div>
-
                     <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="terms" required>
                             <span>I agree to attend orientation and training sessions <span class="required">*</span></span>
                         </label>
                     </div>
-
                     <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Volunteer CTA -->
+    <!-- CTA -->
     <section class="volunteer-cta">
         <div class="container">
             <div class="cta-content">
@@ -573,19 +771,16 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
-                <div class="footer-column">
+                <div class="footer-column footer-brand">
                     <h3>RCCG Dominion Centre</h3>
                     <p>An expression church branding the future look of RCCG. Join us as we grow together in faith and fellowship.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/rccgdcph/" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/icons/social/icon-facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.youtube.com/@rccgdc_ph" aria-label="YouTube" target="_blank" rel="noopener"><img src="images/icons/podcast/icon-youtube.svg" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/rccgdc_ph/?hl=en" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/icons/social/icon-instagram.svg" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter"><img src="images/icons/social/icon-twitter.svg" alt="Twitter"></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -598,46 +793,30 @@
                         <li><a href="contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Service Times -->
                 <div class="footer-column">
                     <h4>Service Times</h4>
-                   <ul class="footer-links">
+                    <ul class="footer-links">
                         <li><strong>Sunday:</strong> 7:00 AM | 9:00 AM | 11:00 AM</li>
                         <li><strong>Wednesday:</strong> 5:00 PM</li>
                         <li><strong>Kids Church:</strong> Sunday 8:30 AM</li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul class="footer-links">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            #199 Woji Road, GRA Phase 2<br>
-                            Port Harcourt, Rivers State, Nigeria
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+234">+234 908 748 4840</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@rccgdc.org">info@rccgdc.org</a>
-                        </li>
+                        <li>#199 Woji Road, GRA Phase 2<br>Port Harcourt, Rivers State, Nigeria</li>
+                        <li><a href="tel:+2349087484840">+234 908 748 4840</a></li>
+                        <li><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p><br>
-                <p>Developed by <a href="https://nueltech.netlify.app/" class="nav-link" style="color: rgb(255, 0, 0);">NuelTech</a></li>
+                <p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved. | A Satellite Church of RCCG Region 33</p>
+                <p>Developed by <a href="https://nueltech.netlify.app/" style="color:rgb(255,0,0);">NuelTech</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
