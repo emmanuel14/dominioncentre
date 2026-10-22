@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | Dominion Festival 3.0 | ARISE</title>
+<link rel="icon" type="image/png" href="../images/dclogo1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=8">
+<link rel="stylesheet" href="festival.css?v=1">
+</head>
+<body>
+<div class="page-loader" id="pageLoader" aria-label="Loading"><div class="loader-inner"><div class="loader-logo-wrap"><img src="../images/dclogo1.png" alt="RCCG Dominion Centre"></div><div class="loader-bar" aria-hidden="true"><span class="loader-bar-fill"></span></div></div></div>
+<header class="site-header site-header--solid" id="siteHeader"><nav class="navbar"><div class="container nav-container">
+<div class="logo"><a href="../"><img src="../images/dclogo1.png" alt="RCCG Dominion Centre" class="logo-image"><div class="logo-text-wrapper"><span class="logo-text">RCCG</span><span class="logo-subtext">Dominion Centre</span></div></a></div>
+<ul class="nav-menu"><li><a href="../index" class="nav-link">Home</a></li><li><a href="../about" class="nav-link">About</a></li><li><a href="../events" class="nav-link active">Events</a></li><li><a href="../volunteer" class="nav-link">Volunteer</a></li><li><a href="../give" class="nav-link">Give</a></li><li><a href="../contact" class="nav-link">Contact</a></li><li><a href="register.html" class="btn btn-nav-cta">Register Free</a></li></ul>
+<button class="hamburger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button></div></nav></header>
+
+<section class="page-header subpage-head"><div class="page-header-overlay"></div><div class="container"><div class="page-header-content">
+<p class="tagline" style="margin-bottom:.5rem">Discover &bull; Develop &bull; Elevate</p>
+<h1 class="page-title">Official Registration</h1><p class="page-subtitle">Dominion Festival 3.0 | ARISE &middot; Finale: Friday, 4 December 2026 &middot; Port Harcourt</p>
+<div class="breadcrumb"><a href="index.html">Dominion Festival 3.0</a><span>/</span><span>Register</span></div></div></div></section>
+
+<nav class="fest-nav"><div class="container"><a href="index.html">Overview</a><a href="index.html#prizes">Prizes</a><a href="index.html#categories">Categories</a><a href="rules.html">Rules &amp; Eligibility</a><a href="scoring.html">Scoring</a><a href="terms.html">Terms</a><a href="register.html" class="reg">Register</a></div></nav>
+
+<section class="section section--gray"><div class="container">
+<div class="reg-card" id="formCard">
+<div class="progress" id="progress"><div class="progress-top"><span id="progressLabel"><strong>Step 1 of 4</strong> &nbsp;·&nbsp; Personal details</span><span>Free &middot; About 4 minutes</span></div>
+<div class="steps"><div class="step active"><b>1</b>Personal</div><div class="step"><b>2</b>Talent</div><div class="step"><b>3</b>Audition</div><div class="step"><b>4</b>Review</div></div></div>
+
+<form id="registrationForm" novalidate><div class="form-body">
+
+<section class="panel active" data-step="0"><h2>Tell us about yourself</h2><p class="intro">If you are registering a group, enter the group representative's details.</p>
+<div class="grid">
+<div class="field"><label for="fullName">Full name / stage name <span class="req">*</span></label><input id="fullName" name="fullName" autocomplete="name" required><span class="error">Please enter a name.</span></div>
+<div class="field"><label for="birthDate">Date of birth <span class="req">*</span></label><input id="birthDate" name="birthDate" type="date" required><span class="hint">Age group is calculated as of 4 December 2026.</span><span class="error">Enter a valid date of birth.</span></div>
+<div class="field"><label for="ageGroup">Age group</label><select id="ageGroup" name="ageGroup" disabled><option>Enter date of birth first</option></select><span class="hint">Kids 6–12 · Teens 13–17 · Open 18+</span></div>
+<div class="field"><label for="email">Email address <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" required><span class="error">Enter a valid email address.</span></div>
+<div class="field"><label for="phone">Phone / WhatsApp number <span class="req">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code" required><span class="error">Enter a contact number.</span></div>
+<div class="field"><label for="contactMethod">Preferred contact method <span class="req">*</span></label><select id="contactMethod" name="contactMethod" required><option value="">Select one</option><option>Email</option><option>Phone call</option><option>WhatsApp / messaging</option></select><span class="error">Select a contact method.</span></div>
+<div class="subhead">Where you are joining from</div>
+<div class="field"><label for="country">Country of residence <span class="req">*</span></label><input id="country" name="country" autocomplete="country-name" required><span class="error">Enter your country.</span></div>
+<div class="field"><label for="region">State / region <span class="req">*</span></label><input id="region" name="region" autocomplete="address-level1" required><span class="error">Enter your state or region.</span></div>
+<div class="field"><label for="city">City / town <span class="req">*</span></label><input id="city" name="city" autocomplete="address-level2" required><span class="error">Enter your city or town.</span></div>
+</div>
+<div id="minorNotice" class="callout draft hidden"><strong>Parent or guardian permission required.</strong> Because the applicant is under 18, a parent or legal guardian must complete the consent section at the final step.</div>
+<div id="ageBlock" class="callout draft hidden"><strong>Not eligible.</strong> Applicants must be at least 6 years old on 4 December 2026.</div>
+</section>
+
+<section class="panel" data-step="1"><h2>Show us your talent</h2><p class="intro">Choose the discipline that best fits your performance. See the <a href="index.html#categories" target="_blank" style="color:var(--gold-500)">disciplines and prizes</a>.</p>
+<div class="grid">
+<div class="field"><label for="discipline">Competition category <span class="req">*</span></label><select id="discipline" name="discipline" required><option value="">Select a category</option><option>Music</option><option>Dance</option><option>Public Speaking &amp; Spoken Word</option><option>Drama &amp; Creative Skits</option></select><span class="error">Choose a category.</span></div>
+<div class="field"><label for="performanceType">Performance type <span class="req">*</span></label><select id="performanceType" name="performanceType" required disabled><option value="">Choose a category first</option></select><span class="error">Choose a performance type.</span></div>
+<div class="field full"><span class="lbl">Participation type <span class="req">*</span></span><div class="choice-row"><label class="choice"><input type="radio" name="entryType" value="Individual" checked> Individual / Solo</label><label class="choice"><input type="radio" name="entryType" value="Group"> Group</label></div></div>
+<div id="groupFields" class="grid full hidden" style="grid-column:1/-1">
+<div class="field"><label for="groupName">Group name <span class="req">*</span></label><input id="groupName" name="groupName"><span class="error">Enter the group name.</span></div>
+<div class="field"><label for="memberCount">Number of performers <span class="req">*</span></label><input id="memberCount" name="memberCount" type="number" min="2" max="100"><span class="error">Enter at least 2 performers.</span></div>
+<div class="field full"><label for="members">Performer names and ages <span class="req">*</span></label><textarea id="members" name="members" placeholder="One performer per line: full name, age"></textarea><span class="hint">Every performer under 18 needs guardian permission.</span><span class="error">List the group members and their ages.</span></div>
+<div class="field full"><label for="mixedAge">Does the group include more than one age group? <span class="req">*</span></label><select id="mixedAge" name="mixedAge"><option value="">Select one</option><option>No</option><option>Yes</option></select><span class="error">Please answer this question.</span></div>
+<div class="field full hidden" id="mixedRulesField"><label for="mixedRules">Mixed-age confirmation <span class="req">*</span></label><textarea id="mixedRules" name="mixedRules" placeholder="Confirm your group meets the published mixed-age rules."></textarea><span class="hint">Mixed-age rules are on the <a href="rules.html" target="_blank" style="color:var(--gold-500)">rules page</a>.</span><span class="error">Please complete this.</span></div>
+</div>
+<div class="field full"><label for="title">Title or description of your act <span class="req">*</span></label><input id="title" name="title" required><span class="error">Enter a title.</span></div>
+<div class="field"><label for="duration">Approximate duration of your live act <span class="req">*</span></label><input id="duration" name="duration" placeholder="e.g. 3 minutes" required><span class="error">Enter a duration.</span></div>
+<div class="field"><label for="language">Language of performance <span class="req">*</span></label><input id="language" name="language" placeholder="e.g. English, Yoruba" required><span class="error">Enter the language.</span></div>
+<div class="field"><label for="originality">Is this an original performance? <span class="req">*</span></label><select id="originality" name="originality" required><option value="">Select one</option><option>Yes</option><option>No</option><option>Partly</option></select><span class="error">Select an answer.</span></div>
+<div class="field"><label for="experience">Previous performance experience</label><input id="experience" name="experience" placeholder="Optional"></div>
+<div class="field full"><label for="description">Brief description <span class="req">*</span></label><textarea id="description" name="description" maxlength="1200" required placeholder="What will you perform? Include instruments or stage requirements."></textarea><span class="hint">Up to 1,200 characters.</span><span class="error">Add a short description.</span></div>
+<div class="field full"><label for="requirements">Special requirements</label><input id="requirements" name="requirements" placeholder="Optional: accessibility, equipment, backing track, etc."></div>
+<div class="field full"><label for="finale">Finale participation <span class="req">*</span></label><select id="finale" name="finale" required><option value="">Select one</option><option>I can attend the in-person finale if selected</option><option>I am applying internationally and need finale arrangements explained</option><option>I need to discuss participation arrangements</option></select><span class="hint">Please do not book travel until the festival team confirms arrangements.</span><span class="error">Select an option.</span></div>
+</div></section>
+
+<section class="panel" data-step="2"><h2>Submit your audition</h2><p class="intro">Record a clear <strong>60 to 120 second</strong> video demonstrating your talent. The video must feature the actual contestant or group.</p>
+<div class="grid">
+<div class="yt-guide"><h3>How to submit your YouTube video</h3><ol>
+<li>Record your act, <b>between 60 and 120 seconds</b>.</li>
+<li>Upload it to <b>YouTube</b> (Create → Upload video).</li>
+<li>Title it <b>Dominion Festival 3.0 | Your Name | Category</b>.</li>
+<li>Set visibility to <b>Unlisted</b> or <b>Public</b>. <b>Not Private.</b></li>
+<li>Tap <b>Share</b>, copy the link, and paste it below.</li>
+</ol><p style="font-size:.8rem;margin-top:.75rem;color:rgba(255,255,255,.6)">More help on the <a href="rules.html#video" target="_blank" style="color:var(--gold-400)">rules page</a>. File uploads are not accepted.</p></div>
+<div class="field full"><label for="videoLink">YouTube video link <span class="req">*</span></label><input id="videoLink" name="videoLink" type="url" placeholder="https://www.youtube.com/watch?v=..." required><span class="hint">Accepted: youtube.com/watch, youtu.be and youtube.com/shorts links.</span><span class="error" id="videoErr">Enter a valid YouTube link.</span></div>
+<input type="hidden" name="videoMethod" value="link">
+<div class="field full"><label class="checkline"><input type="checkbox" name="videoLength" required><span>My video is between 60 and 120 seconds long, features the actual contestant or group, and is set to Unlisted or Public. <span class="req">*</span></span></label><span class="error">Please confirm.</span></div>
+<div class="field full"><label class="checkline"><input type="checkbox" name="videoPermission" required><span>I have permission to submit this video, and everyone shown has agreed to its use for application review. <span class="req">*</span></span></label><span class="error">Permission is required.</span></div>
+<div class="field full"><label for="heardFrom">How did you hear about ARISE?</label><select id="heardFrom" name="heardFrom"><option value="">Select one</option><option>Church announcement</option><option>Social media</option><option>Friend or family</option><option>WhatsApp</option><option>Other</option></select></div>
+</div></section>
+
+<section class="panel" data-step="3"><h2>Review your application</h2><p class="intro">Check your details. You will receive a unique registration reference after submitting.</p>
+<div class="review" id="reviewBox"></div>
+<div id="guardianSection" class="consent-card hidden"><h3>Parent or legal guardian consent</h3><p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1rem">Required for applicants under 18. Group entries need consent for every minor performer.</p>
+<div class="grid">
+<div class="field"><label for="guardianName">Guardian full name <span class="req">*</span></label><input id="guardianName" name="guardianName"><span class="error">Enter the guardian's name.</span></div>
+<div class="field"><label for="guardianRelationship">Relationship <span class="req">*</span></label><select id="guardianRelationship" name="guardianRelationship"><option value="">Select one</option><option>Parent</option><option>Legal guardian</option></select><span class="error">Select one.</span></div>
+<div class="field"><label for="guardianEmail">Guardian email <span class="req">*</span></label><input id="guardianEmail" name="guardianEmail" type="email"><span class="error">Enter a valid email.</span></div>
+<div class="field"><label for="guardianPhone">Guardian phone <span class="req">*</span></label><input id="guardianPhone" name="guardianPhone" type="tel"><span class="error">Enter a phone number.</span></div>
+</div>
+<label class="checkline"><input type="checkbox" name="guardianConsent"><span>I am the applicant's parent or legal guardian. I give permission for this application and audition video to be submitted, and consent to the festival team contacting me. <span class="req">*</span></span></label>
+<div class="callout draft" style="margin-bottom:0"><strong>Verification:</strong> the festival team will verify guardian permission before any minor is shortlisted.</div></div>
+<label class="checkline" style="margin-top:1.25rem"><input type="checkbox" name="accuracy" required><span>I confirm the information is accurate and I have read the <a href="rules.html" target="_blank" style="color:var(--gold-500)">rules</a> and <a href="scoring.html" target="_blank" style="color:var(--gold-500)">scoring</a>. <span class="req">*</span></span></label>
+<label class="checkline"><input type="checkbox" name="privacy" required><span>I agree to the <a href="terms.html" target="_blank" style="color:var(--gold-500)">terms and privacy notice</a>, including use of my information and audition video to administer and review this application. <span class="req">*</span></span></label>
+</section>
+
+</div>
+<div class="actions"><button type="button" class="btn btn-line" id="backBtn" hidden>&larr; Back</button><span style="flex:1"></span><button type="button" class="btn btn-primary" id="nextBtn">Continue &rarr;</button><button type="submit" class="btn btn-primary hidden" id="submitBtn">Submit registration &rarr;</button></div>
+</form>
+
+<section class="success" id="success"><div class="mark">✓</div><h2>Application received.</h2><p style="color:var(--text-muted);max-width:32rem;margin:.5rem auto">Thank you for registering for Dominion Festival 3.0 | ARISE. The festival team will review your application and contact you using your preferred method.</p><div class="reference" id="refCode"></div><p style="font-size:.75rem;color:#8b93a0">Save this reference. This is a registration confirmation, not a selection notice.</p><button class="btn btn-outline-dark" onclick="window.print()" style="margin-top:1rem">Print confirmation</button></section>
+</div>
+<p class="text-center" style="font-size:.8rem;color:var(--text-muted);margin-top:1.25rem">Registration is free. Questions? <a href="../contact" style="color:var(--gold-500)">Contact the festival team</a>.</p>
+</div></section>
+
+<footer class="site-footer"><div class="container"><div class="footer-content">
+<div class="footer-column footer-brand"><h3>RCCG Dominion Centre</h3><p>An expression church branding the future look of RCCG.</p></div>
+<div class="footer-column"><h4>Festival</h4><ul class="footer-links"><li><a href="index.html">Overview</a></li><li><a href="rules.html">Rules</a></li><li><a href="scoring.html">Scoring</a></li><li><a href="terms.html">Terms &amp; Privacy</a></li><li><a href="register.html">Register</a></li></ul></div>
+<div class="footer-column"><h4>Church</h4><ul class="footer-links"><li><a href="../">Home</a></li><li><a href="../about">About Us</a></li><li><a href="../events">Events</a></li><li><a href="../contact">Contact</a></li></ul></div>
+<div class="footer-column"><h4>Contact</h4><ul class="footer-contact"><li><span class="icon icon--phone" aria-hidden="true"></span><a href="tel:+2349087484840">+234 908 748 4840</a></li><li><span class="icon icon--mail" aria-hidden="true"></span><a href="mailto:info@rccgdc.org">info@rccgdc.org</a></li></ul></div>
+</div><div class="footer-bottom"><p>&copy; 2026 RCCG Dominion Centre. All Rights Reserved.</p></div></div></footer>
+
+<script src="../script.js"></script>
+<script>
+(function(){
+var form=document.getElementById('registrationForm'),panels=[].slice.call(document.querySelectorAll('.panel')),steps=[].slice.call(document.querySelectorAll('.step')),label=document.getElementById('progressLabel'),back=document.getElementById('backBtn'),next=document.getElementById('nextBtn'),submit=document.getElementById('submitBtn'),current=0,CUTOFF=new Date(2026,11,4),names=['Personal details','Talent category','Audition','Confirmation'];
+var YT=/^https?:\/\/(www\.|m\.)?(youtube\.com\/(watch\?(.*&)?v=|shorts\/|live\/|embed\/)|youtu\.be\/)[\w-]{6,}/i;
+function $(id){return document.getElementById(id)}
+function ageOn(v){var d=new Date(v);if(!v||isNaN(d))return null;var a=CUTOFF.getFullYear()-d.getFullYear();if(CUTOFF.getMonth()<d.getMonth()||(CUTOFF.getMonth()===d.getMonth()&&CUTOFF.getDate()<d.getDate()))a--;return a}
+function isMinor(){var a=ageOn($('birthDate').value);return a!==null&&a<18}
+function val(n){var e=form.elements[n];if(!e)return'';if(e.length&&e[0]&&e[0].type==='radio'){var c=form.querySelector('[name="'+n+'"]:checked');return c?c.value:''}return e.value||''}
+function esc(x){return String(x).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function setStep(n){current=n;panels.forEach(function(p,i){p.classList.toggle('active',i===n)});steps.forEach(function(s,i){s.classList.toggle('active',i===n);s.classList.toggle('done',i<n)});label.innerHTML='<strong>Step '+(n+1)+' of 4</strong> &nbsp;·&nbsp; '+names[n];back.hidden=n===0;next.classList.toggle('hidden',n===3);submit.classList.toggle('hidden',n!==3);if(n===3)buildReview();$('progress').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function bad(el){el.closest('.field').classList.add('invalid');return false}
+function validate(panel){var ok=true;panel.querySelectorAll('.field').forEach(function(f){f.classList.remove('invalid')});
+panel.querySelectorAll('[required]').forEach(function(el){if(el.disabled||el.closest('.hidden'))return;var inv=!el.checkValidity()||(el.type==='checkbox'&&!el.checked);if(inv)ok=bad(el)});
+if(current===0){var a=ageOn($('birthDate').value);if(a!==null&&a<6){ok=bad($('birthDate'))}}
+if(current===1&&val('entryType')==='Group'){['groupName','memberCount','members','mixedAge'].forEach(function(id){if(!$(id).value)ok=bad($(id))});if($('mixedAge').value==='Yes'&&!$('mixedRules').value)ok=bad($('mixedRules'))}
+if(current===2&&!YT.test($('videoLink').value.trim())){ok=bad($('videoLink'))}
+if(current===3&&isMinor()){['guardianName','guardianRelationship','guardianEmail','guardianPhone'].forEach(function(id){var e=$(id);if(!e.value||!e.checkValidity())ok=bad(e)});if(!form.elements.guardianConsent.checked)ok=false}
+return ok}
+next.addEventListener('click',function(){if(validate(panels[current]))setStep(current+1);else{var f=panels[current].querySelector('.invalid');if(f)f.scrollIntoView({behavior:'smooth',block:'center'})}});
+back.addEventListener('click',function(){setStep(current-1)});
+$('birthDate').addEventListener('change',function(e){var v=e.target.value,sel=$('ageGroup'),a=ageOn(v);if(a===null){sel.innerHTML='<option>Enter date of birth first</option>';return}sel.disabled=false;sel.innerHTML=a<6?'<option value="">Not eligible (minimum age 6)</option>':a<=12?'<option>Kids (6–12)</option>':a<=17?'<option>Teens (13–17)</option>':'<option>Open (18+)</option>';$('minorNotice').classList.toggle('hidden',a>=18||a<6);$('ageBlock').classList.toggle('hidden',a>=6);$('guardianSection').classList.toggle('hidden',a>=18);['guardianName','guardianRelationship','guardianEmail','guardianPhone'].forEach(function(id){$(id).required=a<18});form.elements.guardianConsent.required=a<18});
+var types={'Music':['Singing','Instrumental performance','Approved musical act'],'Dance':['Solo dance performance','Group dance performance'],'Public Speaking & Spoken Word':['Poetry','Storytelling','Oratory','Spoken performance'],'Drama & Creative Skits':['Creative skit','Original skit','Comedy','Theatrical performance']};
+$('discipline').addEventListener('change',function(e){var s=$('performanceType'),o=types[e.target.value]||[];s.disabled=!o.length;s.innerHTML=o.length?'<option value="">Select a performance type</option>'+o.map(function(x){return'<option>'+esc(x)+'</option>'}).join(''):'<option value="">Choose a category first</option>'});
+form.querySelectorAll('[name="entryType"]').forEach(function(x){x.addEventListener('change',function(){var g=val('entryType')==='Group';$('groupFields').classList.toggle('hidden',!g);['groupName','memberCount','members','mixedAge'].forEach(function(id){$(id).required=g})})});
+$('mixedAge').addEventListener('change',function(e){var y=e.target.value==='Yes';$('mixedRulesField').classList.toggle('hidden',!y);$('mixedRules').required=y});
+function buildReview(){var g=val('entryType')==='Group';var rows=[['Name',val('fullName')],['Age group',val('ageGroup')],['Email',val('email')],['Phone',val('phone')],['Location',[val('city'),val('region'),val('country')].filter(Boolean).join(', ')],['Category',val('discipline')+' — '+val('performanceType')],['Participation',g?'Group: '+val('groupName')+' ('+val('memberCount')+' performers)':'Individual / Solo'],['Act',val('title')+' · '+val('duration')],['Language',val('language')],['YouTube link',val('videoLink')],['Finale',val('finale')]];if(isMinor())rows.push(['Guardian',val('guardianName')+' ('+val('guardianRelationship')+')']);$('reviewBox').innerHTML=rows.map(function(r){return'<div class="review-row"><span>'+r[0]+'</span><strong>'+esc(r[1]||'—')+'</strong></div>'}).join('')}
+form.addEventListener('submit',function(e){e.preventDefault();if(!validate(panels[3])){var f=panels[3].querySelector('.invalid');if(f)f.scrollIntoView({behavior:'smooth',block:'center'});return}
+submit.disabled=true;submit.textContent='Saving application…';
+fetch('submit.php',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){return r.json().then(function(j){if(!r.ok||!j.ok)throw new Error(j.message||'We could not save your application. Please try again.');return j})}).then(function(j){$('refCode').textContent=j.reference;$('progress').classList.add('hidden');form.classList.add('hidden');$('success').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}).catch(function(err){var b=$('serverError');if(!b){b=document.createElement('div');b.id='serverError';b.className='callout draft';b.setAttribute('role','alert');form.querySelector('.form-body').prepend(b)}b.textContent=err.message||'Unable to reach the registration server. Please try again.';b.scrollIntoView({behavior:'smooth',block:'center'})}).then(function(){submit.disabled=false;submit.textContent='Submit registration →'})});
+})();
+</script>
+</body>
+</html>
