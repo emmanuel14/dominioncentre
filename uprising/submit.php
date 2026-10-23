@@ -11,11 +11,15 @@ declare(strict_types=1);
 // ---------------------------------------------------------------------------
 // CONFIG - edit these (ideally load from env vars or a file outside web root)
 // ---------------------------------------------------------------------------
-const DB_HOST  = 'localhost';
-const DB_NAME  = 'your_database';
-const DB_USER  = 'your_db_user';
-const DB_PASS  = 'your_db_password';
-const DB_TABLE = 'festival_registrations';   // <-- change to your real table name
+// Shared config (same file the admin area uses): returns ['dsn', 'db_user', 'db_password', ...]
+$configPath = is_file(__DIR__ . '/config.php') ? __DIR__ . '/config.php' : dirname(__DIR__) . '/config.php';
+$config = is_file($configPath) ? require $configPath : null;
+
+// Optional: add 'registrations_table' => 'your_table' to config.php.
+// Falls back to this name if the key is not set.
+define('DB_TABLE', is_array($config) && !empty($config['registrations_table'])
+    ? (string) $config['registrations_table']
+    : 'festival_registrations');   // <-- change to your real table name
 
 const PRIVACY_NOTICE_VERSION = '2026-10-v1';
 const MIXED_AGE_RULES_VERSION = 'v1';
@@ -258,10 +262,13 @@ if ($isMinor) {
 // Database
 // ---------------------------------------------------------------------------
 try {
+    if (!is_array($config) || empty($config['dsn'])) {
+        throw new RuntimeException('config.php not found or missing "dsn".');
+    }
     $pdo = new PDO(
-        'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4',
-        DB_USER,
-        DB_PASS,
+        $config['dsn'],
+        $config['db_user'] ?? '',
+        $config['db_password'] ?? '',
         [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
