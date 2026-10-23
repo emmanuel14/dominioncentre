@@ -19,7 +19,7 @@ $config = is_file($configPath) ? require $configPath : null;
 // Falls back to this name if the key is not set.
 define('DB_TABLE', is_array($config) && !empty($config['registrations_table'])
     ? (string) $config['registrations_table']
-    : 'festival_registrations');   // <-- change to your real table name
+    : 'applications');
 
 const PRIVACY_NOTICE_VERSION = '2026-10-v1';
 const MIXED_AGE_RULES_VERSION = 'v1';
@@ -230,6 +230,10 @@ if ($entryType === 'Group') {
     if (!in_array($mixedAnswer, ['Yes', 'No'], true)) fail('Please say whether the group includes more than one age group.');
 
     if ($mixedAnswer === 'Yes') {
+        // Mixed-age groups are only accepted once the organisers publish the rules (config.php)
+        if (empty($config['mixed_age_rules_published'])) {
+            fail('Mixed-age groups are not being accepted yet because the rules have not been published. Please check back or contact the festival team.');
+        }
         $mixedAge = 1;
         if (post('mixedRules') === '') fail('Please complete the mixed-age confirmation.');
         $mixedConfirmed = 1;
@@ -320,7 +324,7 @@ try {
         'video_url'                  => $videoLink,
         'video_permission'           => 1,
         'finale_arrangement'         => $finaleValue,
-        'privacy_notice_version'     => PRIVACY_NOTICE_VERSION,
+        'privacy_notice_version'     => (string) ($config['privacy_notice_version'] ?? PRIVACY_NOTICE_VERSION),
         'accuracy_confirmed'         => 1,
     ];
 
