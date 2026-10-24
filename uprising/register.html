@@ -13,6 +13,63 @@
     />
     <link rel="stylesheet" href="../style.css?v=8" />
     <link rel="stylesheet" href="festival.css?v=1" />
+    <style>
+      /* five-step progress bar */
+      .steps {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .steps::before {
+        left: 10%;
+        right: 10%;
+      }
+      /* declarations */
+      .decl {
+        margin: 0 0 1.1rem;
+      }
+      .decl h3 {
+        display: flex;
+        align-items: baseline;
+        gap: 0.7rem;
+      }
+      .decl h3 .decl-n {
+        font-family: var(--font-display);
+        color: var(--gold-500);
+        font-size: 1.4rem;
+      }
+      .decl .decl-link {
+        font-size: 0.85rem;
+        margin: 0.25rem 0 0.75rem;
+        color: var(--text-muted);
+      }
+      .decl .decl-link a {
+        color: var(--gold-500);
+        font-weight: 600;
+      }
+      .decl-section {
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold-500);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+        margin: 2rem 0 1rem;
+      }
+      .decl.optional {
+        background: var(--white);
+      }
+      .preview-toggle {
+        border: 1px dashed var(--gray-200);
+        padding: 0.4rem 1rem;
+        margin: 0 0 1rem;
+        background: #fff;
+      }
+      @media (max-width: 768px) {
+        .step {
+          font-size: 0.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="page-loader" id="pageLoader" aria-label="Loading">
@@ -87,22 +144,29 @@
       <div class="container">
         <div class="reg-card" id="formCard">
           <div class="progress" id="progress">
-
             <div class="callout draft" style="margin-bottom: 1.25rem">
               <strong>Before you begin:</strong>
               Please read the
-              <a href="rules" target="_blank" style="color: var(--gold-500)">Rules &amp; Eligibility</a>,
-              <a href="scoring" target="_blank" style="color: var(--gold-500)">Scoring</a> and
-              <a href="terms" target="_blank" style="color: var(--gold-500)">Terms &amp; Privacy</a>
+              <a href="policy" target="_blank" style="color: var(--gold-500)">
+                Kingdom Content &amp; Performance Policy
+              </a>
+              ,
+              <a href="handbook" target="_blank" style="color: var(--gold-500)">
+                Contestants&rsquo; Handbook
+              </a>
+              and
+              <a href="terms" target="_blank" style="color: var(--gold-500)">
+                Competition Terms &amp; Conditions
+              </a>
               carefully. They will guide you in filling out this form correctly.
             </div>
 
             <div class="progress-top">
               <span id="progressLabel">
-                <strong>Step 1 of 4</strong>
+                <strong>Step 1 of 5</strong>
                 &nbsp;·&nbsp; Personal details
               </span>
-              <span>Free &middot; About 4 minutes</span>
+              <span>Free &middot; About 5 minutes</span>
             </div>
             <div class="steps">
               <div class="step active">
@@ -121,11 +185,18 @@
                 <b>4</b>
                 Review
               </div>
+              <div class="step">
+                <b>5</b>
+                Declarations
+              </div>
             </div>
           </div>
 
           <form id="registrationForm" novalidate>
+            <input type="hidden" name="declarationsVersion" id="declarationsVersion" />
+            <input type="hidden" name="declarationsRecord" id="declarationsRecord" />
             <div class="form-body">
+              <!-- STEP 1 -->
               <section class="panel active" data-step="0">
                 <h2>Tell us about yourself</h2>
                 <p class="intro">
@@ -221,7 +292,7 @@
                 <div id="minorNotice" class="callout draft hidden">
                   <strong>Parent or guardian permission required.</strong>
                   Because the applicant is under 18, a parent or legal guardian must complete the
-                  consent section at the final step.
+                  guardian authorisation at the final step.
                 </div>
                 <div id="ageBlock" class="callout draft hidden">
                   <strong>Not eligible.</strong>
@@ -229,6 +300,7 @@
                 </div>
               </section>
 
+              <!-- STEP 2 -->
               <section class="panel" data-step="1">
                 <h2>Show us your talent</h2>
                 <p class="intro">
@@ -329,12 +401,13 @@
                       <textarea
                         id="mixedRules"
                         name="mixedRules"
-                        placeholder="Confirm your group meets the published mixed-age rules."
+                        placeholder="Describe the age mix of your group."
                       ></textarea>
                       <span class="hint">
-                        Mixed-age rules are on the
-                        <a href="rules" target="_blank" style="color: var(--gold-500)">
-                          rules page
+                        Mixed-age groups receive a classification decision from the organisers. See
+                        the
+                        <a href="terms" target="_blank" style="color: var(--gold-500)">
+                          Terms &amp; Conditions
                         </a>
                         .
                       </span>
@@ -399,7 +472,15 @@
                       required
                       placeholder="What will you perform? Include instruments or stage requirements."
                     ></textarea>
-                    <span class="hint">Up to 1,200 characters.</span>
+                    <span class="hint">
+                      Up to 1,200 characters. Your performance must explicitly communicate a
+                      biblical truth, Christ-centred message or recognisable aspect of the Christian
+                      faith. See the
+                      <a href="policy" target="_blank" style="color: var(--gold-500)">
+                        Kingdom Content &amp; Performance Policy
+                      </a>
+                      .
+                    </span>
                     <span class="error">Add a short description.</span>
                   </div>
                   <div class="field full">
@@ -431,6 +512,7 @@
                 </div>
               </section>
 
+              <!-- STEP 3 -->
               <section class="panel" data-step="2">
                 <h2>Submit your audition</h2>
                 <p class="intro">
@@ -479,9 +561,9 @@
                         color: rgba(255, 255, 255, 0.6);
                       "
                     >
-                      More help on the
-                      <a href="rules#video" target="_blank" style="color: var(--gold-400)">
-                        rules page
+                      More audition tips in the
+                      <a href="handbook" target="_blank" style="color: var(--gold-400)">
+                        Contestants&rsquo; Handbook
                       </a>
                       . File uploads are not accepted.
                     </p>
@@ -540,97 +622,335 @@
                 </div>
               </section>
 
+              <!-- STEP 4 -->
               <section class="panel" data-step="3">
                 <h2>Review your application</h2>
                 <p class="intro">
-                  Check your details. You will receive a unique registration reference after
-                  submitting.
+                  Check your details. In the next step you will read and accept the declarations
+                  required to submit your application.
                 </p>
                 <div class="review" id="reviewBox"></div>
-                <div id="guardianSection" class="consent-card hidden">
-                  <h3>Parent or legal guardian consent</h3>
-                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem">
-                    Required for applicants under 18. Group entries need consent for every minor
-                    performer.
-                  </p>
-                  <div class="grid">
-                    <div class="field">
-                      <label for="guardianName">
-                        Guardian full name
-                        <span class="req">*</span>
-                      </label>
-                      <input id="guardianName" name="guardianName" />
-                      <span class="error">Enter the guardian's name.</span>
-                    </div>
-                    <div class="field">
-                      <label for="guardianRelationship">
-                        Relationship
-                        <span class="req">*</span>
-                      </label>
-                      <select id="guardianRelationship" name="guardianRelationship">
-                        <option value="">Select one</option>
-                        <option>Parent</option>
-                        <option>Legal guardian</option>
-                      </select>
-                      <span class="error">Select one.</span>
-                    </div>
-                    <div class="field">
-                      <label for="guardianEmail">
-                        Guardian email
-                        <span class="req">*</span>
-                      </label>
-                      <input id="guardianEmail" name="guardianEmail" type="email" />
-                      <span class="error">Enter a valid email.</span>
-                    </div>
-                    <div class="field">
-                      <label for="guardianPhone">
-                        Guardian phone
-                        <span class="req">*</span>
-                      </label>
-                      <input id="guardianPhone" name="guardianPhone" type="tel" />
-                      <span class="error">Enter a phone number.</span>
-                    </div>
-                  </div>
-                  <label class="checkline">
-                    <input type="checkbox" name="guardianConsent" />
-                    <span>
-                      I am the applicant's parent or legal guardian. I give permission for this
-                      application and audition video to be submitted, and consent to the festival
-                      team contacting me.
+              </section>
+
+              <!-- STEP 5 -->
+              <section class="panel" data-step="4">
+                <h2>Declarations, Agreements &amp; Consent</h2>
+                <p class="intro">
+                  Please read each declaration carefully. All mandatory declarations must be
+                  accepted before registration can be submitted. Nothing on this page is pre-ticked.
+                </p>
+
+                <div id="groupDeclNotice" class="callout draft hidden">
+                  <strong>Group entries.</strong>
+                  Each performer must give their own declarations, and every performer under 18
+                  needs verified parent or guardian authorisation. The festival team will contact
+                  the group representative for the individual permissions required.
+                </div>
+
+                <div class="consent-card decl" data-id="D1" data-title="Declaration of Accuracy & Eligibility">
+                  <h3>
+                    <span class="decl-n">1</span>
+                    Declaration of Accuracy &amp; Eligibility
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_accuracy" required />
+                      <span class="decl-text">
+                        I confirm that all personal information, age details, category selections and
+                        audition materials submitted in this application are true, accurate and
+                        complete. I understand that false information, impersonation or
+                        misrepresentation may result in rejection or disqualification.
+                      </span>
                       <span class="req">*</span>
-                    </span>
-                  </label>
-                  <div class="callout draft" style="margin-bottom: 0">
-                    <strong>Verification:</strong>
-                    the festival team will verify guardian permission before any minor is
-                    shortlisted.
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
                   </div>
                 </div>
-                <label class="checkline" style="margin-top: 1.25rem">
-                  <input type="checkbox" name="accuracy" required />
-                  <span>
-                    I confirm the information is accurate and I have read the
-                    <a href="rules" target="_blank" style="color: var(--gold-500)">rules</a>
-                    and
-                    <a href="scoring" target="_blank" style="color: var(--gold-500)">
-                      scoring
+
+                <div class="consent-card decl" data-id="D2" data-title="Kingdom Content & Performance Commitment">
+                  <h3>
+                    <span class="decl-n">2</span>
+                    Kingdom Content &amp; Performance Commitment
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_kingdom" required />
+                      <span class="decl-text">
+                        I have read, understood and agree to the UPRISING 3.0 Kingdom Content &amp;
+                        Performance Policy. I undertake to present only songs, dance performances,
+                        spoken-word presentations, speeches or dramatic productions that explicitly
+                        communicate a biblical truth, Christ-centred message or recognisable aspect
+                        of the Christian faith. I understand that content which is merely
+                        wholesome, inspirational or morally acceptable, without an identifiable
+                        Christian message, does not satisfy this requirement.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                  <p class="decl-link">
+                    <a href="policy" target="_blank">
+                      Read the full Kingdom Content &amp; Performance Policy
                     </a>
-                    .
-                    <span class="req">*</span>
-                  </span>
-                </label>
-                <label class="checkline">
-                  <input type="checkbox" name="privacy" required />
-                  <span>
-                    I agree to the
-                    <a href="terms" target="_blank" style="color: var(--gold-500)">
-                      terms and privacy notice
-                    </a>
-                    , including use of my information and audition video to administer and review
-                    this application.
-                    <span class="req">*</span>
-                  </span>
-                </label>
+                  </p>
+                </div>
+
+                <div class="consent-card decl" data-id="D3" data-title="Competition Terms & Conditions">
+                  <h3>
+                    <span class="decl-n">3</span>
+                    Competition Terms &amp; Conditions
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_terms" required />
+                      <span class="decl-text">
+                        I have read, understood and agree to abide by the UPRISING 3.0 Competition
+                        Terms &amp; Conditions, including eligibility, auditions, judging,
+                        intellectual property, contestant conduct, disqualification, complaints and
+                        dispute-resolution procedures.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                  <p class="decl-link">
+                    <a href="terms" target="_blank">Read Competition Terms and Conditions</a>
+                  </p>
+                </div>
+
+                <div class="consent-card decl" data-id="D4" data-title="Contestants' Handbook & Participation Guidelines">
+                  <h3>
+                    <span class="decl-n">4</span>
+                    Contestants&rsquo; Handbook &amp; Participation Guidelines
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_handbook" required />
+                      <span class="decl-text">
+                        I confirm that I have reviewed the UPRISING 3.0 Contestants&rsquo; Handbook
+                        and understand the applicable audition requirements, performance guidelines,
+                        schedules, communications and responsibilities expected of contestants.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                  <p class="decl-link">
+                    <a href="handbook" target="_blank">Read Contestants&rsquo; Handbook</a>
+                  </p>
+                </div>
+
+                <div class="consent-card decl" data-id="D5" data-title="Code of Conduct & Competition Integrity">
+                  <h3>
+                    <span class="decl-n">5</span>
+                    Code of Conduct &amp; Competition Integrity
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_conduct" required />
+                      <span class="decl-text">
+                        I undertake to act respectfully, honestly and responsibly throughout the
+                        competition. I will not engage in harassment, plagiarism, impersonation,
+                        fraudulent submissions, vote or score manipulation, intimidation,
+                        exploitation, sabotage or other conduct that compromises the integrity or
+                        safety of the competition.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                </div>
+
+                <div class="consent-card decl" data-id="D6" data-title="Originality, Copyright & Performance Rights">
+                  <h3>
+                    <span class="decl-n">6</span>
+                    Originality, Copyright &amp; Performance Rights
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_copyright" required />
+                      <span class="decl-text">
+                        I confirm that I own or have obtained the permissions necessary to submit
+                        and perform my chosen material, including any music, lyrics, recordings,
+                        choreography, scripts and other protected works. I understand that
+                        participation does not transfer ownership of my original work to the
+                        organisers.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                </div>
+
+                <div class="consent-card decl" data-id="D7" data-title="Privacy & Personal Data Acknowledgement">
+                  <h3>
+                    <span class="decl-n">7</span>
+                    Privacy &amp; Personal Data Acknowledgement
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_privacy" required />
+                      <span class="decl-text">
+                        I acknowledge that I have been provided with the UPRISING 3.0 Privacy
+                        Notice, explaining how my registration information, audition materials and
+                        related records will be processed for competition administration, judging,
+                        safety and lawful operational purposes.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                  <!-- TODO: replace with a real link once the Privacy Notice page is published -->
+                  <p class="decl-link">Privacy Notice: link to be published on the official website.</p>
+                </div>
+
+                <div class="consent-card decl" data-id="D8" data-title="Audition Recording & Event Production">
+                  <h3>
+                    <span class="decl-n">8</span>
+                    Audition Recording &amp; Event Production
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="decl_recording" required />
+                      <span class="decl-text">
+                        I understand that my auditions and performances may be recorded and used for
+                        judging, contestant assessment, event production, competition records and
+                        other purposes specifically explained in the published competition
+                        documents.
+                      </span>
+                      <span class="req">*</span>
+                    </label>
+                    <span class="error">This declaration must be accepted.</span>
+                  </div>
+                </div>
+
+                <!-- 9. Guardian -->
+                <div class="consent-card decl" data-id="D9-intro">
+                  <h3>
+                    <span class="decl-n">9</span>
+                    Parent / Legal Guardian Authorisation
+                  </h3>
+                  <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.75rem">
+                    Mandatory for contestants below 18 years of age. This section appears
+                    automatically according to the date of birth entered in step 1.
+                  </p>
+                  <label class="checkline preview-toggle">
+                    <input type="checkbox" id="guardianPreview" />
+                    <span>Preview registration for a contestant under 18</span>
+                  </label>
+                  <div id="guardianSection" class="hidden">
+                    <div class="consent-card" style="background: var(--white)">
+                      <h3>Guardian details</h3>
+                      <div class="grid">
+                        <div class="field">
+                          <label for="guardianName">
+                            Guardian full name
+                            <span class="req">*</span>
+                          </label>
+                          <input id="guardianName" name="guardianName" />
+                          <span class="error">Enter the guardian's name.</span>
+                        </div>
+                        <div class="field">
+                          <label for="guardianRelationship">
+                            Relationship
+                            <span class="req">*</span>
+                          </label>
+                          <select id="guardianRelationship" name="guardianRelationship">
+                            <option value="">Select one</option>
+                            <option>Parent</option>
+                            <option>Legal guardian</option>
+                          </select>
+                          <span class="error">Select one.</span>
+                        </div>
+                        <div class="field">
+                          <label for="guardianEmail">
+                            Guardian email
+                            <span class="req">*</span>
+                          </label>
+                          <input id="guardianEmail" name="guardianEmail" type="email" />
+                          <span class="error">Enter a valid email.</span>
+                        </div>
+                        <div class="field">
+                          <label for="guardianPhone">
+                            Guardian phone
+                            <span class="req">*</span>
+                          </label>
+                          <input id="guardianPhone" name="guardianPhone" type="tel" />
+                          <span class="error">Enter a phone number.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="consent-card decl"
+                      data-id="D9"
+                      data-title="Guardian Consent & Safeguarding Declaration"
+                      style="background: var(--white); margin-bottom: 0"
+                    >
+                      <h3>Guardian Consent &amp; Safeguarding Declaration</h3>
+                      <div class="field">
+                        <label class="checkline">
+                          <input type="checkbox" name="guardianConsent" />
+                          <span class="decl-text">
+                            I confirm that I am the parent or legally authorised guardian of the
+                            named contestant. I have reviewed the competition requirements,
+                            including the Kingdom Content Policy, Terms &amp; Conditions, Privacy
+                            Notice and applicable safeguarding arrangements. I authorise the
+                            minor's participation and confirm that the information provided is
+                            accurate.
+                          </span>
+                          <span class="req">*</span>
+                        </label>
+                        <span class="error">Guardian authorisation is required.</span>
+                      </div>
+                      <div class="callout draft" style="margin-bottom: 0">
+                        <strong>Verification:</strong>
+                        the festival team will obtain and verify this authorisation directly from
+                        the parent or legal guardian before any minor is shortlisted.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Optional -->
+                <div class="decl-section">Additional Permissions</div>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem">
+                  Optional. Declining these permissions will not affect competition eligibility or
+                  judging.
+                </p>
+
+                <div class="consent-card decl optional" data-id="D10" data-title="Publicity & Promotional Media Consent" data-optional="1">
+                  <h3>
+                    <span class="decl-n">10</span>
+                    Publicity &amp; Promotional Media Consent
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="publicityConsent" />
+                      <span class="decl-text">
+                        I authorise the organisers to use selected photographs, interviews,
+                        performance excerpts and recordings featuring me for publicity and
+                        promotion of UPRISING and related programmes, subject to the published
+                        media terms.
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="consent-card decl optional" data-id="D11" data-title="Future Opportunities & Communications" data-optional="1">
+                  <h3>
+                    <span class="decl-n">11</span>
+                    Future Opportunities &amp; Communications
+                  </h3>
+                  <div class="field">
+                    <label class="checkline">
+                      <input type="checkbox" name="commsConsent" />
+                      <span class="decl-text">
+                        I would like to receive information about future UPRISING competitions,
+                        talent development opportunities and related programmes.
+                      </span>
+                    </label>
+                  </div>
+                </div>
               </section>
             </div>
             <div class="actions">
@@ -653,6 +973,8 @@
             <div class="reference" id="refCode"></div>
             <p style="font-size: 0.75rem; color: #8b93a0">
               Save this reference. This is a registration confirmation, not a selection notice.
+              Applicants under 18 are not shortlisted until guardian authorisation has been
+              verified.
             </p>
           </section>
         </div>
@@ -678,9 +1000,9 @@
             <h4>Festival</h4>
             <ul class="footer-links">
               <li><a href="/uprising/">Overview</a></li>
-              <li><a href="rules">Rules</a></li>
-              <li><a href="scoring">Scoring</a></li>
-              <li><a href="terms">Terms &amp; Privacy</a></li>
+              <li><a href="policy">Policy</a></li>
+              <li><a href="handbook">Handbook</a></li>
+              <li><a href="terms">Terms &amp; Conditions</a></li>
               <li><a href="register">Register</a></li>
             </ul>
           </div>
@@ -724,8 +1046,17 @@
           next = document.getElementById("nextBtn"),
           submit = document.getElementById("submitBtn"),
           current = 0,
+          LAST = 4,
           CUTOFF = new Date(2026, 11, 4),
-          names = ["Personal details", "Talent category", "Audition", "Confirmation"];
+          DECL_VERSION = "UPRISING-3.0-DECL-v1.0",
+          GUARDIAN_IDS = ["guardianName", "guardianRelationship", "guardianEmail", "guardianPhone"],
+          names = [
+            "Personal details",
+            "Talent category",
+            "Audition",
+            "Review",
+            "Declarations, agreements & consent",
+          ];
         var YT =
           /^https?:\/\/(www\.|m\.)?(youtube\.com\/(watch\?(.*&)?v=|shorts\/|live\/|embed\/)|youtu\.be\/)[\w-]{6,}/i;
         function $(id) {
@@ -745,6 +1076,18 @@
         function isMinor() {
           var a = ageOn($("birthDate").value);
           return a !== null && a < 18;
+        }
+        // Guardian section shows for a real minor, or when the preview box is ticked.
+        function minorMode() {
+          return isMinor() || $("guardianPreview").checked;
+        }
+        function updateGuardian() {
+          var m = minorMode();
+          $("guardianSection").classList.toggle("hidden", !m);
+          GUARDIAN_IDS.forEach(function (id) {
+            $(id).required = m;
+          });
+          form.elements.guardianConsent.required = m;
         }
         function val(n) {
           var e = form.elements[n];
@@ -769,11 +1112,16 @@
             s.classList.toggle("active", i === n);
             s.classList.toggle("done", i < n);
           });
-          label.innerHTML = "<strong>Step " + (n + 1) + " of 4</strong> &nbsp;·&nbsp; " + names[n];
+          label.innerHTML =
+            "<strong>Step " + (n + 1) + " of 5</strong> &nbsp;·&nbsp; " + names[n];
           back.hidden = n === 0;
-          next.classList.toggle("hidden", n === 3);
-          submit.classList.toggle("hidden", n !== 3);
+          next.classList.toggle("hidden", n === LAST);
+          submit.classList.toggle("hidden", n !== LAST);
           if (n === 3) buildReview();
+          if (n === LAST) {
+            $("groupDeclNotice").classList.toggle("hidden", val("entryType") !== "Group");
+            updateGuardian();
+          }
           $("progress").scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
         function bad(el) {
@@ -805,14 +1153,11 @@
           if (current === 2 && !YT.test($("videoLink").value.trim())) {
             ok = bad($("videoLink"));
           }
-          if (current === 3 && isMinor()) {
-            ["guardianName", "guardianRelationship", "guardianEmail", "guardianPhone"].forEach(
-              function (id) {
-                var e = $(id);
-                if (!e.value || !e.checkValidity()) ok = bad(e);
-              },
-            );
-            if (!form.elements.guardianConsent.checked) ok = false;
+          if (current === LAST && minorMode()) {
+            GUARDIAN_IDS.forEach(function (id) {
+              var e = $(id);
+              if (!e.value || !e.checkValidity()) ok = bad(e);
+            });
           }
           return ok;
         }
@@ -826,12 +1171,14 @@
         back.addEventListener("click", function () {
           setStep(current - 1);
         });
+        $("guardianPreview").addEventListener("change", updateGuardian);
         $("birthDate").addEventListener("change", function (e) {
           var v = e.target.value,
             sel = $("ageGroup"),
             a = ageOn(v);
           if (a === null) {
             sel.innerHTML = "<option>Enter date of birth first</option>";
+            updateGuardian();
             return;
           }
           sel.disabled = false;
@@ -845,13 +1192,7 @@
                   : "<option>Open (18+)</option>";
           $("minorNotice").classList.toggle("hidden", a >= 18 || a < 6);
           $("ageBlock").classList.toggle("hidden", a >= 6);
-          $("guardianSection").classList.toggle("hidden", a >= 18);
-          ["guardianName", "guardianRelationship", "guardianEmail", "guardianPhone"].forEach(
-            function (id) {
-              $(id).required = a < 18;
-            },
-          );
-          form.elements.guardianConsent.required = a < 18;
+          updateGuardian();
         });
         var types = {
           Music: ["Singing", "Instrumental performance", "Approved musical act"],
@@ -916,8 +1257,6 @@
             ["YouTube link", val("videoLink")],
             ["Finale", val("finale")],
           ];
-          if (isMinor())
-            rows.push(["Guardian", val("guardianName") + " (" + val("guardianRelationship") + ")"]);
           $("reviewBox").innerHTML = rows
             .map(function (r) {
               return (
@@ -930,13 +1269,36 @@
             })
             .join("");
         }
+        // Capture the exact wording shown for every declaration, plus its version and answer.
+        // The server must add: UTC timestamp, application ID, IP/user agent, and the verified
+        // guardian authorisation (obtained from the guardian directly, not from this form).
+        function buildDeclarationRecord() {
+          var out = [];
+          form.querySelectorAll(".decl[data-id]").forEach(function (card) {
+            var cb = card.querySelector('input[type="checkbox"]');
+            var txt = card.querySelector(".decl-text");
+            if (!cb || !txt) return;
+            if (card.closest(".hidden")) return;
+            out.push({
+              id: card.getAttribute("data-id"),
+              title: card.getAttribute("data-title"),
+              field: cb.name,
+              optional: card.getAttribute("data-optional") === "1",
+              wording: txt.textContent.replace(/\s+/g, " ").trim(),
+              accepted: cb.checked,
+            });
+          });
+          return out;
+        }
         form.addEventListener("submit", function (e) {
           e.preventDefault();
-          if (!validate(panels[3])) {
-            var f = panels[3].querySelector(".invalid");
+          if (!validate(panels[LAST])) {
+            var f = panels[LAST].querySelector(".invalid");
             if (f) f.scrollIntoView({ behavior: "smooth", block: "center" });
             return;
           }
+          $("declarationsVersion").value = DECL_VERSION;
+          $("declarationsRecord").value = JSON.stringify(buildDeclarationRecord());
           submit.disabled = true;
           submit.textContent = "Saving application…";
           fetch("submit.php", {
