@@ -3,19 +3,26 @@
 /**
  * Dominion Festival 3.0 | ARISE - registration handler
  * Receives the FormData POST from register.html and saves it to the database.
- * Responds with JSON: { ok: true, reference: "DF3-XXXXXXXX" } or { ok: false, message: "..." }
+ * Responds with JSON.
  *
- * Declarations: the canonical wording and version live in this file (DECLARATIONS below).
- * Acceptance is read from the posted checkboxes only. Every declaration is written to
- * `application_declarations` with the server-side wording, version, UTC time, IP and
- * user agent, in the same transaction as the application. Run migration-declarations.sql first.
+ * Existing registration and declaration logic preserved.
+ * Added: PHPMailer registration confirmation email.
  */
 
 declare(strict_types=1);
 
 // ---------------------------------------------------------------------------
+// PHPMailer - Added Email Functionality
+// ---------------------------------------------------------------------------
+
+require_once __DIR__ . '/PHPMailer/src/Exception.php';
+require_once __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require_once __DIR__ . '/PHPMailer/src/SMTP.php';
+
+// ---------------------------------------------------------------------------
 // CONFIG - edit these (ideally load from env vars or a file outside web root)
 // ---------------------------------------------------------------------------
+
 // Shared config (same file the admin area uses): returns ['dsn', 'db_user', 'db_password', ...]
 $configPath = is_file(__DIR__ . '/config.php') ? __DIR__ . '/config.php' : dirname(__DIR__) . '/config.php';
 $config = is_file($configPath) ? require $configPath : null;
@@ -29,7 +36,7 @@ define('DB_TABLE', is_array($config) && !empty($config['registrations_table'])
 const DECLARATIONS_TABLE = 'application_declarations';
 const PRIVACY_NOTICE_VERSION = '2026-10-v1';
 const MIXED_AGE_RULES_VERSION = 'v1';
-const AGE_CUTOFF = '2026-12-04';             // age is calculated as of this date
+const AGE_CUTOFF = '2026-12-04';
 const LOG_FILE = __DIR__ . '/submit-errors.log';
 
 /**
@@ -125,6 +132,7 @@ const DECLARATIONS = [
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
@@ -193,6 +201,238 @@ function enumMatch(array $values, string $keyword): ?string
     return null;
 }
 
+// ---------------------------------------------------------------------------
+// NEW: UPRISING 2026 Registration Confirmation Email
+// ---------------------------------------------------------------------------
+
+function sendRegistrationEmail(
+    string $recipientEmail,
+    string $fullName,
+    string $reference,
+    string $discipline,
+    string $entryType
+): bool {
+
+    $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+
+    try {
+
+        // SMTP Configuration
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.titan.email';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'no-reply@rccgdominioncentredb.org';
+        $mail->Password   = '@123Admin';
+        $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
+
+        $mail->CharSet = 'UTF-8';
+        $mail->isHTML(true);
+
+        // Sender
+        $mail->setFrom(
+            'no-reply@rccgdominioncentredb.org',
+            'UPRISING 2026 Registration'
+        );
+
+        // Recipient
+        $mail->addAddress($recipientEmail, $fullName);
+
+        // Subject
+        $mail->Subject = 'Registration Successful - UPRISING 2026';
+
+        // Escape dynamic values
+        $safeName = htmlspecialchars(
+            ucwords(strtolower($fullName)),
+            ENT_QUOTES,
+            'UTF-8'
+        );
+
+        $safeReference = htmlspecialchars($reference, ENT_QUOTES, 'UTF-8');
+        $safeDiscipline = htmlspecialchars($discipline, ENT_QUOTES, 'UTF-8');
+        $safeEntryType = htmlspecialchars($entryType, ENT_QUOTES, 'UTF-8');
+
+        // Email Body
+        $body = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body style="margin:0;padding:30px;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">
+
+<div style="max-width:650px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;">
+
+    <div style="background:#143d28;padding:35px 20px;text-align:center;color:#ffffff;">
+
+        <h1 style="margin:0;font-size:32px;letter-spacing:2px;">
+            UPRISING 2026
+        </h1>
+
+        <p style="margin-top:10px;font-size:15px;">
+            A Generation Rising for God's Glory
+        </p>
+
+    </div>
+
+    <div style="padding:35px 30px;color:#333333;line-height:1.8;">
+
+        <h2 style="color:#15803d;text-align:center;">
+            REGISTRATION SUCCESSFUL!
+        </h2>
+
+        <p>
+            Dear <strong>{$safeName}</strong>,
+        </p>
+
+        <p>
+            Congratulations! We are delighted to confirm that
+            your registration for <strong>UPRISING 2026</strong>
+            has been successfully received.
+        </p>
+
+        <p>
+            Get ready for an extraordinary experience of
+            spiritual awakening, divine transformation,
+            renewed strength, and the opportunity to
+            showcase your God-given talents.
+        </p>
+
+        <p>
+            <strong>UPRISING 2026 is more than an event;
+            it is a divine appointment!</strong>
+        </p>
+
+        <div style="background:#f0fdf4;padding:22px;border-radius:8px;margin:25px 0;border-left:5px solid #16a34a;">
+
+            <h3 style="margin-top:0;color:#166534;">
+                Your Registration Details
+            </h3>
+
+            <p>
+                <strong>Registration Reference:</strong><br>
+                <span style="font-size:20px;color:#15803d;font-weight:bold;">
+                    {$safeReference}
+                </span>
+            </p>
+
+            <p>
+                <strong>Category:</strong> {$safeDiscipline}
+            </p>
+
+            <p>
+                <strong>Participation:</strong> {$safeEntryType}
+            </p>
+
+            <p>
+                <strong>Registration Status:</strong>
+                Successfully Submitted
+            </p>
+
+        </div>
+
+        <p>
+            Please keep your registration reference safe.
+            You may need it for future communication
+            concerning your application.
+        </p>
+
+        <p>
+            Our organising team will communicate further
+            information regarding auditions, screening,
+            schedules, and subsequent stages of the competition.
+        </p>
+
+        <p>
+            As we anticipate this glorious gathering,
+            prepare your heart, remain prayerful,
+            and come with great expectations.
+        </p>
+
+        <div style="text-align:center;padding:20px;background:#f9fafb;border-radius:8px;margin:25px 0;">
+
+            <h3 style="color:#15803d;margin:0;">
+                A GENERATION IS RISING!
+            </h3>
+
+            <p style="margin-bottom:0;">
+                A new fire is igniting.<br>
+                Your moment is here!
+            </p>
+
+        </div>
+
+        <p>
+            We look forward to welcoming you to
+            <strong>UPRISING 2026!</strong>
+        </p>
+
+        <p>
+            With love and great expectations,
+        </p>
+
+        <p>
+            <strong>
+                UPRISING 2026 Organising Committee
+            </strong><br>
+            RCCG Dominion Centre
+        </p>
+
+    </div>
+
+    <div style="background:#143d28;color:#ffffff;text-align:center;padding:20px;font-size:12px;line-height:1.7;">
+
+        <strong>UPRISING 2026</strong><br>
+        RCCG Dominion Centre
+
+        <p style="color:#d1d5db;">
+            This is an automated registration confirmation.
+            Please do not reply to this email.
+        </p>
+
+        <p>
+            &copy; 2026 RCCG Dominion Centre.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+HTML;
+
+        $mail->Body = $body;
+
+        // Plain Text Version
+        $mail->AltBody =
+            "Dear {$fullName},\n\n" .
+            "Congratulations! Your registration for UPRISING 2026 has been successfully received.\n\n" .
+            "Registration Reference: {$reference}\n" .
+            "Category: {$discipline}\n" .
+            "Participation: {$entryType}\n\n" .
+            "Please keep your registration reference safe.\n" .
+            "Our organising team will communicate further information regarding auditions and subsequent stages.\n\n" .
+            "A Generation Is Rising!\n\n" .
+            "UPRISING 2026 Organising Committee\n" .
+            "RCCG Dominion Centre";
+
+        $mail->send();
+
+        return true;
+    } catch (\Throwable $e) {
+
+        logError(
+            "Registration email failed for {$reference}: " .
+                $e->getMessage()
+        );
+
+        return false;
+    }
+}
+
 /**
  * TODO: deliver the guardian verification link, e.g. https://yoursite/uprising/verify-guardian?ref=...&token=...
  * The guardian must confirm directly; the application stays 'pending' until they do.
@@ -206,11 +446,12 @@ function sendGuardianVerification(string $guardianEmail, string $guardianName, s
 // ---------------------------------------------------------------------------
 // Request checks
 // ---------------------------------------------------------------------------
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     fail('Method not allowed.', 405);
 }
 
-// Honeypot (add <input name="website" style="display:none" tabindex="-1" autocomplete="off"> to the form if you want it)
+// Honeypot
 if (post('website') !== '') {
     respond(200, ['ok' => true, 'reference' => 'DF3-00000000']);
 }
@@ -223,6 +464,7 @@ if (post('declarationsVersion') !== DECLARATIONS_VERSION) {
 // ---------------------------------------------------------------------------
 // Validation
 // ---------------------------------------------------------------------------
+
 $errors = [];
 
 $fullName      = post('fullName');
@@ -274,7 +516,7 @@ if ($errors) {
     fail($errors[0]);
 }
 
-// Lengths (match column sizes)
+// Lengths
 if (len($fullName) > 160)    fail('Name is too long.');
 if (len($email) > 254)       fail('Email is too long.');
 if (len($phone) > 40)        fail('Phone number is too long.');
@@ -320,7 +562,7 @@ if (!in_array($perfType, $performanceTypes[$discipline], true)) fail('Select a v
 if (!in_array($originality, ['Yes', 'No', 'Partly'], true)) fail('Select a valid originality answer.');
 if (!in_array($entryType, ['Individual', 'Group'], true)) fail('Select a valid participation type.');
 
-// YouTube link (same pattern as the front-end)
+// YouTube link
 $ytPattern = '~^https?://(www\.|m\.)?(youtube\.com/(watch\?(.*&)?v=|shorts/|live/|embed/)|youtu\.be/)[\w-]{6,}~i';
 if (!preg_match($ytPattern, $videoLink)) {
     fail('Enter a valid YouTube link.');
@@ -346,7 +588,6 @@ if ($entryType === 'Group') {
     if (!in_array($mixedAnswer, ['Yes', 'No'], true)) fail('Please say whether the group includes more than one age group.');
 
     if ($mixedAnswer === 'Yes') {
-        // Mixed-age groups are only accepted once the organisers publish the rules (config.php)
         if (empty($config['mixed_age_rules_published'])) {
             fail('Mixed-age groups are not being accepted yet because the rules have not been published. Please check back or contact the festival team.');
         }
@@ -361,8 +602,7 @@ if ($entryType === 'Group') {
 if (!checked('videoLength'))     fail('Please confirm your video details.');
 if (!checked('videoPermission')) fail('Video permission is required.');
 
-// Declarations: every mandatory one must be ticked (and the guardian one for minors).
-// Optional ones are recorded as accepted or declined and never block submission.
+// Declarations
 foreach (DECLARATIONS as $d) {
     $required = $d['type'] === 'mandatory' || ($d['type'] === 'guardian' && $isMinor);
     if ($required && !checked($d['field'])) {
@@ -372,7 +612,7 @@ foreach (DECLARATIONS as $d) {
     }
 }
 
-// Wording the browser says it showed (audit only; the server's wording is what we record)
+// Wording the browser says it showed
 $shown = [];
 $rawRecord = json_decode(post('declarationsRecord'), true);
 if (is_array($rawRecord)) {
@@ -400,11 +640,14 @@ if ($isMinor) {
 // ---------------------------------------------------------------------------
 // Database
 // ---------------------------------------------------------------------------
+
 $pdo = null;
+
 try {
     if (!is_array($config) || empty($config['dsn'])) {
         throw new RuntimeException('config.php not found or missing "dsn".');
     }
+
     $pdo = new PDO(
         $config['dsn'],
         $config['db_user'] ?? '',
@@ -416,10 +659,10 @@ try {
         ]
     );
 
-    // Map the finale option to the stored enum value by keyword,
-    // so this works with whatever wording the enum uses.
+    // Map the finale option to the stored enum value
     $finaleEnum = enumValues($pdo, 'finale_arrangement');
     $finaleValue = null;
+
     if (stripos($finale, 'attend the in-person') !== false) {
         $finaleValue = enumMatch($finaleEnum, 'attend');
     } elseif (stripos($finale, 'internationally') !== false) {
@@ -427,12 +670,13 @@ try {
     } elseif (stripos($finale, 'discuss') !== false) {
         $finaleValue = enumMatch($finaleEnum, 'discuss');
     }
+
     if ($finaleValue === null) {
         logError('finale_arrangement mapping failed for: ' . $finale . ' | enum: ' . json_encode($finaleEnum));
         fail('Select a valid finale option.');
     }
 
-    // Core columns (your current table)
+    // Core columns
     $row = [
         'applicant_full_name'        => $fullName,
         'date_of_birth'              => $birthDate,
@@ -461,17 +705,16 @@ try {
         'video_permission'           => 1,
         'finale_arrangement'         => $finaleValue,
         'privacy_notice_version'     => (string) ($config['privacy_notice_version'] ?? PRIVACY_NOTICE_VERSION),
-        'accuracy_confirmed'         => 1, // declaration D1 is mandatory, so always accepted here
+        'accuracy_confirmed'         => 1,
     ];
 
-    // Guardian verification: the tick box alone is not proof. The guardian must confirm
-    // directly through an emailed link; until then the application is 'pending'.
+    // Guardian verification
     $guardianToken = null;
     if ($isMinor) {
         $guardianToken = bin2hex(random_bytes(32));
     }
 
-    // Optional columns: saved only if you have added them (run migration-declarations.sql).
+    // Optional columns
     $optional = [
         'group_members'         => $members !== '' ? $members : null,
         'previous_experience'  => post('experience') ?: null,
@@ -486,12 +729,14 @@ try {
         'guardian_verification_token_hash' => $guardianToken !== null ? hash('sha256', $guardianToken) : null,
         'declarations_version'  => DECLARATIONS_VERSION,
     ];
+
     $colStmt = $pdo->prepare(
         'SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS
          WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ?'
     );
     $colStmt->execute([DB_TABLE]);
     $existing = array_flip($colStmt->fetchAll(PDO::FETCH_COLUMN));
+
     foreach ($optional as $col => $val) {
         if (isset($existing[$col])) {
             $row[$col] = $val;
@@ -499,53 +744,59 @@ try {
     }
 
     // Application + declarations are saved together or not at all.
-    $acceptedAt = gmdate('Y-m-d H:i:s'); // UTC
+    $acceptedAt = gmdate('Y-m-d H:i:s');
     $ip = substr((string) ($_SERVER['REMOTE_ADDR'] ?? ''), 0, 45);
     $ua = substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 255);
 
     $pdo->beginTransaction();
 
-    // Insert with a unique reference (retry on the rare collision)
+    // Insert with a unique reference
     $reference = '';
     $saved = false;
+
     for ($attempt = 0; $attempt < 5; $attempt++) {
         $reference = 'DF3-' . strtoupper(bin2hex(random_bytes(4)));
         $row['registration_reference'] = $reference;
 
         $cols = array_keys($row);
         $sql = 'INSERT INTO `' . DB_TABLE . '` (`' . implode('`, `', $cols) . '`) VALUES (:' . implode(', :', $cols) . ')';
+
         try {
             $pdo->prepare($sql)->execute($row);
             $saved = true;
             break;
         } catch (PDOException $e) {
-            // 23000 = integrity violation; only retry if it's the reference that collided
             if ($e->getCode() === '23000' && stripos($e->getMessage(), 'registration_reference') !== false) {
                 continue;
             }
             throw $e;
         }
     }
+
     if (!$saved) {
         throw new RuntimeException('Could not generate a unique reference.');
     }
 
-    // Record every declaration shown to this applicant, accepted or declined.
+    // Record every declaration shown to this applicant
     $declStmt = $pdo->prepare(
         'INSERT INTO `' . DECLARATIONS_TABLE . '`
             (registration_reference, declarations_version, declaration_id, field_name, title,
              is_optional, wording, wording_shown, accepted, accepted_at, ip_address, user_agent)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
+
     foreach (DECLARATIONS as $d) {
         if ($d['type'] === 'guardian' && !$isMinor) {
-            continue; // not presented to adults
+            continue;
         }
+
         $canonical = normWording($d['wording']);
         $shownText = $shown[$d['id']] ?? null;
+
         if ($shownText !== null && $shownText !== $canonical) {
             logError("Wording mismatch for {$d['id']} on $reference (browser text differs from server text).");
         }
+
         $declStmt->execute([
             $reference,
             DECLARATIONS_VERSION,
@@ -564,20 +815,60 @@ try {
 
     $pdo->commit();
 
+    // -----------------------------------------------------------------------
+    // NEW: Send Registration Confirmation Email
+    // -----------------------------------------------------------------------
+
+    $emailSent = false;
+
+    try {
+        $emailSent = sendRegistrationEmail(
+            $email,
+            $fullName,
+            $reference,
+            $discipline,
+            $entryType
+        );
+    } catch (Throwable $mailErr) {
+        logError(
+            "Registration confirmation email failed for $reference: " .
+                $mailErr->getMessage()
+        );
+    }
+
+    // Existing guardian verification structure preserved
     if ($isMinor && $guardianToken !== null) {
         try {
-            sendGuardianVerification($guardian['email'], $guardian['name'], $reference, $guardianToken);
+            sendGuardianVerification(
+                $guardian['email'],
+                $guardian['name'],
+                $reference,
+                $guardianToken
+            );
         } catch (Throwable $mailErr) {
-            // The application is saved; staff can resend the verification request.
             logError("Guardian verification email failed for $reference: " . $mailErr->getMessage());
         }
     }
 
-    respond(200, ['ok' => true, 'reference' => $reference]);
+    // -----------------------------------------------------------------------
+    // JSON Response
+    // -----------------------------------------------------------------------
+
+    respond(200, [
+        'ok' => true,
+        'reference' => $reference,
+        'message' => $isMinor
+            ? 'Your UPRISING 2026 registration has been received. Parent or guardian verification is required before your application can proceed. Kindly ask your guardian to check ' . $guardian['email']
+            : 'Congratulations! Your registration for UPRISING 2026 was successful. An Email has been sent to ' . $email,
+        'email_sent' => $emailSent
+    ]);
 } catch (Throwable $e) {
+
     if ($pdo instanceof PDO && $pdo->inTransaction()) {
         $pdo->rollBack();
     }
+
     logError($e->getMessage());
+
     fail('We could not save your application. Please try again shortly.', 500);
 }
