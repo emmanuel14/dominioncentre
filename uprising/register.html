@@ -970,7 +970,8 @@
               Thank you for registering for Dominion Festival 3.0 | ARISE. The festival team will
               review your application and contact you using your preferred method.
             </p>
-            <div class="reference" id="refCode"></div>
+			<div id="email_message"></div>
+			<div class="reference" id="refCode"></div>
             <p style="font-size: 0.75rem; color: #8b93a0">
               Save this reference. This is a registration confirmation, not a selection notice.
               Applicants under 18 are not shortlisted until guardian authorisation has been
@@ -1316,7 +1317,8 @@
               });
             })
             .then(function (j) {
-              $("refCode").textContent = j.reference;
+			  $("email_message").textContent = j.message;
+			  $("refCode").textContent = j.reference;
               $("progress").classList.add("hidden");
               form.classList.add("hidden");
               $("success").classList.add("active");
