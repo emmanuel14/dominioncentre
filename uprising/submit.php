@@ -200,17 +200,317 @@ function enumMatch(array $values, string $keyword): ?string
     }
     return null;
 }
+// ---------------------------------------------------------------------------
+// BREVO - Integration
+// ---------------------------------------------------------------------------
+
+function brevo_SendRegistrationEmail(
+	string $recipientEmail,
+    string $fullName,
+    string $reference,
+    string $discipline,
+    string $entryType,
+    string $continuationToken): bool
+{
+	$apiKey = (string) getenv('BREVO_API_KEY');
+
+	
+	// Escape dynamic values
+	$safeName = htmlspecialchars(
+		ucwords(strtolower($fullName)),
+		ENT_QUOTES,
+		'UTF-8'
+	);
+	$safeReference = htmlspecialchars($reference, ENT_QUOTES, 'UTF-8');
+	$safeDiscipline = htmlspecialchars($discipline, ENT_QUOTES, 'UTF-8');
+	$safeEntryType = htmlspecialchars($entryType, ENT_QUOTES, 'UTF-8');
+
+	$continuationUrl = 'https://rccgdominioncentre.org/uprising/continue.php?ref=' . rawurlencode($reference) . '&token=' . rawurlencode($continuationToken);
+	$safeContinuationUrl = htmlspecialchars($continuationUrl, ENT_QUOTES, 'UTF-8');
+	
+	// Email Body
+        $body = <<<HTML
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<meta charset="UTF-8">
+		</head>
+
+		<body style="margin:0;padding:30px;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">
+
+		<div style="max-width:650px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;">
+
+			<div style="background:#143d28;padding:35px 20px;text-align:center;color:#ffffff;">
+
+				<h1 style="margin:0;font-size:32px;letter-spacing:2px;">
+					UPRISING 2026
+				</h1>
+
+				<p style="margin-top:10px;font-size:15px;">
+					A Generation Rising for God's Glory
+				</p>
+
+			</div>
+
+			<div style="padding:35px 30px;color:#333333;line-height:1.8;">
+
+				<h2 style="color:#15803d;text-align:center;">
+					REGISTRATION SUCCESSFUL!
+				</h2>
+
+				<p>
+					Dear <strong>{$safeName}</strong>,
+				</p>
+
+				<p>
+					Congratulations! We are delighted to confirm that
+					your registration for <strong>UPRISING 2026</strong>
+					has been successfully received.
+				</p>
+
+				<p>
+					Get ready for an extraordinary experience of
+					spiritual awakening, divine transformation,
+					renewed strength, and the opportunity to
+					showcase your God-given talents.
+				</p>
+
+				<p>
+					<strong>UPRISING 2026 is more than an event;
+					it is a divine appointment!</strong>
+				</p>
+
+				<div style="background:#f0fdf4;padding:22px;border-radius:8px;margin:25px 0;border-left:5px solid #16a34a;">
+
+					<h3 style="margin-top:0;color:#166534;">
+						Your Registration Details
+					</h3>
+
+					<p>
+						<strong>Registration Reference:</strong><br>
+						<span style="font-size:20px;color:#15803d;font-weight:bold;">
+							{$safeReference}
+						</span>
+					</p>
+
+					<p>
+						<strong>Category:</strong> {$safeDiscipline}
+					</p>
+
+					<p>
+						<strong>Participation:</strong> {$safeEntryType}
+					</p>
+
+					<p>
+						<strong>Registration Status:</strong>
+						Stage 1 received — audition submission pending
+					</p>
+
+				</div>
+
+				<p>
+					Please keep your registration reference safe.
+					You may need it for future communication
+					concerning your application.
+				</p>
+
+				<p>
+					<strong>Action required:</strong> Complete Stage 2 by submitting your YouTube audition video using the secure link below. Your application is not complete until Stage 2 is submitted.
+				</p>
+
+				<p style="text-align:center;margin:28px 0;">
+				  <a href="{$safeContinuationUrl}" style="display:inline-block;background:#15803d;color:#ffffff;text-decoration:none;padding:15px 24px;border-radius:7px;font-weight:bold;">Continue Application — Submit Audition</a>
+				</p>
+				<p style="font-size:13px;color:#666;overflow-wrap:anywhere;">If the button does not work, copy this link into your browser:<br>{$safeContinuationUrl}</p>
+				<p>
+					As we anticipate this glorious gathering,
+					prepare your heart, remain prayerful,
+					and come with great expectations.
+				</p>
+
+				<div style="text-align:center;padding:20px;background:#f9fafb;border-radius:8px;margin:25px 0;">
+
+					<h3 style="color:#15803d;margin:0;">
+						A GENERATION IS RISING!
+					</h3>
+
+					<p style="margin-bottom:0;">
+						A new fire is igniting.<br>
+						Your moment is here!
+					</p>
+
+				</div>
+
+				<p>
+					We look forward to welcoming you to
+					<strong>UPRISING 2026!</strong>
+				</p>
+
+				<p>
+					With love and great expectations,
+				</p>
+
+				<p>
+					<strong>
+						UPRISING 2026 Organising Committee
+					</strong><br>
+					RCCG Dominion Centre
+				</p>
+
+			</div>
+
+			<div style="background:#143d28;color:#ffffff;text-align:center;padding:20px;font-size:12px;line-height:1.7;">
+
+				<strong>UPRISING 2026</strong><br>
+				RCCG Dominion Centre
+
+				<p style="color:#d1d5db;">
+					This is an automated registration confirmation.
+					Please do not reply to this email.
+				</p>
+
+				<p>
+					&copy; 2026 RCCG Dominion Centre.
+					All Rights Reserved.
+				</p>
+
+			</div>
+
+		</div>
+
+		</body>
+		</html>
+		HTML;
+	
+	
+	
+	// Construct the request payload
+	$payload = [
+		'sender' => [
+			'name' => 'UPRISING 2026 Registration',
+			'email' => 'no-reply@rccgdominioncentre.org'
+		],
+		'to' => [
+			[
+				'name' => $fullName,
+				'email' => $recipientEmail
+			]
+		],
+		'subject' => 'Registration Successful - UPRISING 2026',
+		'htmlContent' => $body
+	];
+
+	$ch = curl_init('https://api.brevo.com/v3/smtp/email');
+
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, [
+		'accept: application/json',
+		'api-key: ' . $apiKey,
+		'content-type: application/json'
+	]);
+
+	$response = curl_exec($ch);
+	$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    $accepted = !curl_errno($ch) && $httpCode >= 200 && $httpCode < 300;
+	if (curl_errno($ch)) {
+		//echo 'cURL Error: ' . curl_error($ch);
+	} else {
+		if ($httpCode >= 200 && $httpCode < 300) {
+			//echo "Email sent successfully! Response: " . $response;
+		} else {
+			//echo "Request failed with status $httpCode: " . $response;
+		}
+	}
+
+	curl_close($ch);
+    return $accepted;
+}
+
+/** Send a one-time guardian approval link. Does not alter registration on SMTP failure. */
+function brevo_SendGuardianVerification(string $guardianEmail, string $guardianName, string $reference, string $token): void
+{
+    $apiKey = (string) getenv('BREVO_API_KEY');
+
+	$url = 'https://rccgdominioncentre.org/uprising/verify-guardian.php?ref='
+        . rawurlencode($reference) . '&token=' . rawurlencode($token);
+    $safeUrl = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+    $safeName = htmlspecialchars($guardianName, ENT_QUOTES, 'UTF-8');
+    $safeRef = htmlspecialchars($reference, ENT_QUOTES, 'UTF-8');
+    $body = <<<HTML
+<!doctype html><html><body style="margin:0;padding:28px;background:#f3f7f4;font-family:Arial,sans-serif;color:#23352b">
+<div style="max-width:620px;margin:auto;background:#fff;border-radius:12px;overflow:hidden">
+<div style="background:#143d28;color:#fff;padding:28px;text-align:center"><h1 style="margin:0">UPRISING 2026</h1><p>Parent / Guardian Verification</p></div>
+<div style="padding:32px;line-height:1.7"><p>Dear <strong>{$safeName}</strong>,</p>
+<p>A contestant under 18 has listed you as their parent or legal guardian for UPRISING 2026.</p>
+<p><strong>Registration reference:</strong> {$safeRef}</p>
+<p>To authorise the contestant's participation, please open the secure link below, review the declaration, and explicitly confirm your consent.</p>
+<p style="text-align:center;margin:30px 0"><a href="{$safeUrl}" style="background:#16803c;color:#fff;padding:15px 24px;text-decoration:none;border-radius:8px;font-weight:bold">Review &amp; Verify Guardian Consent</a></p>
+<p>This link expires in <strong>7 days</strong> and can be used once. If you did not expect this request, do not approve it; contact the organisers.</p>
+<p>UPRISING 2026 Organising Committee<br>RCCG Dominion Centre</p></div>
+<div style="background:#f3f7f4;padding:16px;text-align:center;font-size:12px">Automated message. Please do not reply.</div></div></body></html>
+HTML;
+    
+	
+	// Construct the request payload
+	$payload = [
+		'sender' => [
+			'name' => 'UPRISING 2026 Registration',
+			'email' => 'no-reply@rccgdominioncentre.org'
+		],
+		'to' => [
+			[
+				'name' => $guardianName,
+				'email' => $guardianEmail
+			]
+		],
+		'subject' => 'Guardian approval required - UPRISING 2026 (' . $reference . ')',
+		'htmlContent' => $body
+	];
+
+	$ch = curl_init('https://api.brevo.com/v3/smtp/email');
+
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, [
+		'accept: application/json',
+		'api-key: ' . $apiKey,
+		'content-type: application/json'
+	]);
+
+	$response = curl_exec($ch);
+	$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+	if (curl_errno($ch)) {
+		logError('Guardian email cURL error: ' . curl_error($ch));
+	} else {
+		if ($httpCode >= 200 && $httpCode < 300) {
+			// Successful provider acceptance; no output (JSON response is sent later).
+		} else {
+			logError("Guardian email API failed with HTTP $httpCode: " . (string) $response);
+		}
+	}
+
+	curl_close($ch);
+	
+}
+
+
 
 // ---------------------------------------------------------------------------
 // NEW: UPRISING 2026 Registration Confirmation Email
 // ---------------------------------------------------------------------------
 
-function sendRegistrationEmail(
+/*function sendRegistrationEmail(
     string $recipientEmail,
     string $fullName,
     string $reference,
     string $discipline,
-    string $entryType
+    string $entryType,
+    string $continuationToken
 ): bool {
 
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
@@ -222,7 +522,7 @@ function sendRegistrationEmail(
         $mail->Host       = 'smtp.titan.email';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'no-reply@rccgdominioncentredb.org';
-        $mail->Password   = '@123Admin';
+        $mail->Password   = (string) getenv('SMTP_PASSWORD');
         $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
@@ -251,6 +551,9 @@ function sendRegistrationEmail(
         $safeReference = htmlspecialchars($reference, ENT_QUOTES, 'UTF-8');
         $safeDiscipline = htmlspecialchars($discipline, ENT_QUOTES, 'UTF-8');
         $safeEntryType = htmlspecialchars($entryType, ENT_QUOTES, 'UTF-8');
+
+        $continuationUrl = 'https://rccgdominioncentre.org/uprising/continue.php?ref=' . rawurlencode($reference) . '&token=' . rawurlencode($continuationToken);
+        $safeContinuationUrl = htmlspecialchars($continuationUrl, ENT_QUOTES, 'UTF-8');
 
         // Email Body
         $body = <<<HTML
@@ -327,7 +630,7 @@ function sendRegistrationEmail(
 
             <p>
                 <strong>Registration Status:</strong>
-                Successfully Submitted
+                Stage 1 received — audition submission pending
             </p>
 
         </div>
@@ -339,11 +642,13 @@ function sendRegistrationEmail(
         </p>
 
         <p>
-            Our organising team will communicate further
-            information regarding auditions, screening,
-            schedules, and subsequent stages of the competition.
+            <strong>Action required:</strong> Complete Stage 2 by submitting your YouTube audition video using the secure link below. Your application is not complete until Stage 2 is submitted.
         </p>
 
+        <p style="text-align:center;margin:28px 0;">
+          <a href="{$safeContinuationUrl}" style="display:inline-block;background:#15803d;color:#ffffff;text-decoration:none;padding:15px 24px;border-radius:7px;font-weight:bold;">Continue Application — Submit Audition</a>
+        </p>
+        <p style="font-size:13px;color:#666;overflow-wrap:anywhere;">If the button does not work, copy this link into your browser:<br>{$safeContinuationUrl}</p>
         <p>
             As we anticipate this glorious gathering,
             prepare your heart, remain prayerful,
@@ -413,6 +718,8 @@ HTML;
             "Registration Reference: {$reference}\n" .
             "Category: {$discipline}\n" .
             "Participation: {$entryType}\n\n" .
+            "Stage 1 is complete. Submit your audition video to finish your application.\n" .
+            "Continue: {$continuationUrl}\n\n" .
             "Please keep your registration reference safe.\n" .
             "Our organising team will communicate further information regarding auditions and subsequent stages.\n\n" .
             "A Generation Is Rising!\n\n" .
@@ -431,17 +738,45 @@ HTML;
 
         return false;
     }
-}
+}*/
 
-/**
- * TODO: deliver the guardian verification link, e.g. https://yoursite/uprising/verify-guardian?ref=...&token=...
- * The guardian must confirm directly; the application stays 'pending' until they do.
- * Implement with your mailer (PHPMailer / SMTP / transactional email API).
- */
-function sendGuardianVerification(string $guardianEmail, string $guardianName, string $reference, string $token): void
+/** Send a one-time guardian approval link. Does not alter registration on SMTP failure. */
+/*function sendGuardianVerification(string $guardianEmail, string $guardianName, string $reference, string $token): void
 {
-    // intentionally empty until the mailer and verify page exist
-}
+    $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.titan.email';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'no-reply@rccgdominioncentredb.org';
+    $mail->Password = (string) getenv('SMTP_PASSWORD');
+    $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+    $mail->CharSet = 'UTF-8';
+    $mail->isHTML(true);
+    $mail->setFrom('no-reply@rccgdominioncentredb.org', 'UPRISING 2026 Registration');
+    $mail->addAddress($guardianEmail, $guardianName);
+    $mail->Subject = 'Guardian approval required - UPRISING 2026 (' . $reference . ')';
+    $url = 'https://rccgdominioncentre.org/uprising/verify-guardian.php?ref='
+        . rawurlencode($reference) . '&token=' . rawurlencode($token);
+    $safeUrl = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+    $safeName = htmlspecialchars($guardianName, ENT_QUOTES, 'UTF-8');
+    $safeRef = htmlspecialchars($reference, ENT_QUOTES, 'UTF-8');
+    $mail->Body = <<<HTML
+<!doctype html><html><body style="margin:0;padding:28px;background:#f3f7f4;font-family:Arial,sans-serif;color:#23352b">
+<div style="max-width:620px;margin:auto;background:#fff;border-radius:12px;overflow:hidden">
+<div style="background:#143d28;color:#fff;padding:28px;text-align:center"><h1 style="margin:0">UPRISING 2026</h1><p>Parent / Guardian Verification</p></div>
+<div style="padding:32px;line-height:1.7"><p>Dear <strong>{$safeName}</strong>,</p>
+<p>A contestant under 18 has listed you as their parent or legal guardian for UPRISING 2026.</p>
+<p><strong>Registration reference:</strong> {$safeRef}</p>
+<p>To authorise the contestant's participation, please open the secure link below, review the declaration, and explicitly confirm your consent.</p>
+<p style="text-align:center;margin:30px 0"><a href="{$safeUrl}" style="background:#16803c;color:#fff;padding:15px 24px;text-decoration:none;border-radius:8px;font-weight:bold">Review &amp; Verify Guardian Consent</a></p>
+<p>This link expires in <strong>7 days</strong> and can be used once. If you did not expect this request, do not approve it; contact the organisers.</p>
+<p>UPRISING 2026 Organising Committee<br>RCCG Dominion Centre</p></div>
+<div style="background:#f3f7f4;padding:16px;text-align:center;font-size:12px">Automated message. Please do not reply.</div></div></body></html>
+HTML;
+    $mail->AltBody = "Dear {$guardianName},\n\nA contestant under 18 listed you as their parent/legal guardian for UPRISING 2026.\nReference: {$reference}\nReview and confirm consent: {$url}\n\nThis link expires in 7 days. If you did not expect this request, do not approve it.\nUPRISING 2026 Organising Committee";
+    $mail->send();
+}*/
 
 // ---------------------------------------------------------------------------
 // Request checks
@@ -504,7 +839,6 @@ foreach (
         'originality' => $originality,
         'description' => $description,
         'finale option' => $finale,
-        'video link' => $videoLink,
     ] as $label => $value
 ) {
     if ($value === '') {
@@ -525,7 +859,7 @@ if (len($title) > 180)       fail('Act title is too long.');
 if (len($duration) > 60)     fail('Duration text is too long.');
 if (len($language) > 100)    fail('Language text is too long.');
 if (len($description) > 1200) fail('Description must be 1,200 characters or fewer.');
-if (len($videoLink) > 2048)  fail('Video link is too long.');
+
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     fail('Enter a valid email address.');
@@ -562,12 +896,6 @@ if (!in_array($perfType, $performanceTypes[$discipline], true)) fail('Select a v
 if (!in_array($originality, ['Yes', 'No', 'Partly'], true)) fail('Select a valid originality answer.');
 if (!in_array($entryType, ['Individual', 'Group'], true)) fail('Select a valid participation type.');
 
-// YouTube link
-$ytPattern = '~^https?://(www\.|m\.)?(youtube\.com/(watch\?(.*&)?v=|shorts/|live/|embed/)|youtu\.be/)[\w-]{6,}~i';
-if (!preg_match($ytPattern, $videoLink)) {
-    fail('Enter a valid YouTube link.');
-}
-
 // Group fields
 $groupName = null;
 $groupSize = null;
@@ -599,8 +927,8 @@ if ($entryType === 'Group') {
 }
 
 // Audition checkboxes
-if (!checked('videoLength'))     fail('Please confirm your video details.');
-if (!checked('videoPermission')) fail('Video permission is required.');
+
+
 
 // Declarations
 foreach (DECLARATIONS as $d) {
@@ -659,6 +987,20 @@ try {
         ]
     );
 
+    // DUPLICATE REGISTRATION CHECK (before any application is inserted).
+    // Email identifies an existing Stage 1 registration, even if Stage 2 is pending.
+    $duplicateStmt = $pdo->prepare(
+        'SELECT registration_reference FROM `' . DB_TABLE . '` WHERE LOWER(TRIM(email)) = LOWER(?) LIMIT 1'
+    );
+    $duplicateStmt->execute([$email]);
+    if ($duplicateStmt->fetchColumn() !== false) {
+        respond(409, [
+            'ok' => false,
+            'code' => 'DUPLICATE_REGISTRATION',
+            'message' => 'This email address has already been registered for UPRISING 2026. Please check your email for your registration reference and continuation link, or contact the organisers for assistance.'
+        ]);
+    }
+
     // Map the finale option to the stored enum value
     $finaleEnum = enumValues($pdo, 'finale_arrangement');
     $finaleValue = null;
@@ -701,8 +1043,8 @@ try {
         'duration_text'              => $duration,
         'originality'                => $originality,
         'video_method'               => 'link',
-        'video_url'                  => $videoLink,
-        'video_permission'           => 1,
+        'video_url'                  => '',
+        'video_permission'           => 0,
         'finale_arrangement'         => $finaleValue,
         'privacy_notice_version'     => (string) ($config['privacy_notice_version'] ?? PRIVACY_NOTICE_VERSION),
         'accuracy_confirmed'         => 1,
@@ -727,6 +1069,7 @@ try {
         'guardian_consent'      => $isMinor ? 1 : 0,
         'guardian_verification_status'     => $isMinor ? 'pending' : 'not_required',
         'guardian_verification_token_hash' => $guardianToken !== null ? hash('sha256', $guardianToken) : null,
+        'guardian_verification_expires_at' => $guardianToken !== null ? gmdate('Y-m-d H:i:s', time() + 7 * 86400) : null,
         'declarations_version'  => DECLARATIONS_VERSION,
     ];
 
@@ -748,6 +1091,9 @@ try {
     $ip = substr((string) ($_SERVER['REMOTE_ADDR'] ?? ''), 0, 45);
     $ua = substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 255);
 
+    $continuationToken = bin2hex(random_bytes(32));
+    $continuationHash = hash('sha256', $continuationToken);
+
     $pdo->beginTransaction();
 
     // Insert with a unique reference
@@ -768,6 +1114,19 @@ try {
         } catch (PDOException $e) {
             if ($e->getCode() === '23000' && stripos($e->getMessage(), 'registration_reference') !== false) {
                 continue;
+            }
+            // A UNIQUE email index also blocks simultaneous duplicate submissions.
+            if ($e->getCode() === '23000' &&
+                (stripos($e->getMessage(), 'email') !== false ||
+                 stripos($e->getMessage(), 'uq_applications_email') !== false)) {
+                if ($pdo->inTransaction()) {
+                    $pdo->rollBack();
+                }
+                respond(409, [
+                    'ok' => false,
+                    'code' => 'DUPLICATE_REGISTRATION',
+                    'message' => 'This email address has already been registered for UPRISING 2026. Please use your existing registration email to continue your application.'
+                ]);
             }
             throw $e;
         }
@@ -813,6 +1172,12 @@ try {
         ]);
     }
 
+    // Store continuation token hash in the same transaction as the registration.
+    $pdo->prepare('INSERT INTO uprising_continuations
+        (registration_reference, token_hash, stage, created_at)
+        VALUES (?, ?, ?, UTC_TIMESTAMP())')
+        ->execute([$reference, $continuationHash, 'awaiting_audition']);
+
     $pdo->commit();
 
     // -----------------------------------------------------------------------
@@ -822,12 +1187,14 @@ try {
     $emailSent = false;
 
     try {
-        $emailSent = sendRegistrationEmail(
+        //$emailSent = sendRegistrationEmail(
+		$emailSent = brevo_SendRegistrationEmail(
             $email,
             $fullName,
             $reference,
             $discipline,
-            $entryType
+            $entryType,
+            $continuationToken
         );
     } catch (Throwable $mailErr) {
         logError(
@@ -836,10 +1203,11 @@ try {
         );
     }
 
-    // Existing guardian verification structure preserved
+    // Send separate guardian consent request after registration is saved.
     if ($isMinor && $guardianToken !== null) {
         try {
-            sendGuardianVerification(
+            //sendGuardianVerification(
+			brevo_SendGuardianVerification(
                 $guardian['email'],
                 $guardian['name'],
                 $reference,
@@ -858,8 +1226,8 @@ try {
         'ok' => true,
         'reference' => $reference,
         'message' => $isMinor
-            ? 'Your UPRISING 2026 registration has been received. Parent or guardian verification is required before your application can proceed. Kindly ask your guardian to check ' . $guardian['email']
-            : 'Congratulations! Your registration for UPRISING 2026 was successful. An Email has been sent to ' . $email,
+            ? 'Stage 1 registration received. Please check your email for the secure link to submit your audition video. Guardian verification will also be required before shortlisting.'
+            : 'Stage 1 registration received. Please check your email for your registration code and secure Stage 2 audition link.',
         'email_sent' => $emailSent
     ]);
 } catch (Throwable $e) {

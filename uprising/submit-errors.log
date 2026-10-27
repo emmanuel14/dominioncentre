@@ -1,0 +1,3 @@
+[2026-10-24T22:36:32+00:00] Registration email failed for DF3-BAD8B658: SMTP Error: Could not authenticate.
+[2026-10-26T16:57:35+00:00] Guardian verification email failed for DF3-83C46B31: SMTP Error: Could not authenticate.
+[2026-10-26T20:51:22+00:00] Registration confirmation email failed for DF3-56C60EA3: Call to undefined function sendRegistrationEmail()
