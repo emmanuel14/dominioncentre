@@ -1,4 +1,0 @@
-Options -Indexes
-<Files "_init.php">
-  Require all denied
-</Files>
