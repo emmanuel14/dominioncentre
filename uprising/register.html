@@ -164,7 +164,7 @@
 
             <div class="progress-top">
               <span id="progressLabel">
-                <strong>Step 1 of 5</strong>
+                <strong>Step 1 of 4</strong>
                 &nbsp;·&nbsp; Personal details
               </span>
               <span>Free &middot; About 5 minutes</span>
@@ -180,14 +180,10 @@
               </div>
               <div class="step">
                 <b>3</b>
-                Audition
-              </div>
-              <div class="step">
-                <b>4</b>
                 Review
               </div>
               <div class="step">
-                <b>5</b>
+                <b>4</b>
                 Declarations
               </div>
             </div>
@@ -513,118 +509,8 @@
                 </div>
               </section>
 
-              <!-- STEP 3 -->
-              <section class="panel" data-step="2">
-                <h2>Submit your audition</h2>
-                <p class="intro">
-                  Record a clear
-                  <strong>60 to 120 second</strong>
-                  video demonstrating your talent. The video must feature the actual contestant or
-                  group.
-                </p>
-                <div class="grid">
-                  <div class="yt-guide">
-                    <h3>How to submit your YouTube video</h3>
-                    <ol>
-                      <li>
-                        Record your act,
-                        <b>between 60 and 120 seconds</b>
-                        .
-                      </li>
-                      <li>
-                        Upload it to
-                        <b>YouTube</b>
-                        (Create → Upload video).
-                      </li>
-                      <li>
-                        Title it
-                        <b>Dominion Festival 3.0 | Your Name | Category</b>
-                        .
-                      </li>
-                      <li>
-                        Set visibility to
-                        <b>Unlisted</b>
-                        or
-                        <b>Public</b>
-                        .
-                        <b>Not Private.</b>
-                      </li>
-                      <li>
-                        Tap
-                        <b>Share</b>
-                        , copy the link, and paste it below.
-                      </li>
-                    </ol>
-                    <p
-                      style="
-                        font-size: 0.8rem;
-                        margin-top: 0.75rem;
-                        color: rgba(255, 255, 255, 0.6);
-                      "
-                    >
-                      More audition tips in the
-                      <a href="handbook" target="_blank" style="color: var(--gold-400)">
-                        Contestants&rsquo; Handbook
-                      </a>
-                      . File uploads are not accepted.
-                    </p>
-                  </div>
-                  <div class="field full">
-                    <label for="videoLink">
-                      YouTube video link
-                      <span class="req">*</span>
-                    </label>
-                    <input
-                      id="videoLink"
-                      name="videoLink"
-                      type="url"
-                      placeholder="https://www.youtube.com/watch?v=..."
-                      required
-                    />
-                    <span class="hint">
-                      Accepted: youtube.com/watch, youtu.be and youtube.com/shorts links.
-                    </span>
-                    <span class="error" id="videoErr">Enter a valid YouTube link.</span>
-                  </div>
-                  <input type="hidden" name="videoMethod" value="link" />
-                  <div class="field full">
-                    <label class="checkline">
-                      <input type="checkbox" name="videoLength" required />
-                      <span>
-                        My video is between 60 and 120 seconds long, features the actual contestant
-                        or group, and is set to Unlisted or Public.
-                        <span class="req">*</span>
-                      </span>
-                    </label>
-                    <span class="error">Please confirm.</span>
-                  </div>
-                  <div class="field full">
-                    <label class="checkline">
-                      <input type="checkbox" name="videoPermission" required />
-                      <span>
-                        I have permission to submit this video, and everyone shown has agreed to its
-                        use for application review.
-                        <span class="req">*</span>
-                      </span>
-                    </label>
-                    <span class="error">Permission is required.</span>
-                  </div>
-                  <div class="field full">
-                    <label for="heardFrom">How did you hear about ARISE?</label>
-                    <select id="heardFrom" name="heardFrom">
-                      <option value="">Select one</option>
-                      <option>Church announcement</option>
-                      <option>Social media</option>
-                      <option>Friend or family</option>
-                      <option>WhatsApp</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-              </section>
-
               <!-- STEP 4 -->
-              <section class="panel" data-step="3">
+              <section class="panel" data-step="2">
                 <h2>Review your application</h2>
                 <p class="intro">
                   Check your details. In the next step you will read and accept the declarations
@@ -634,7 +520,7 @@
               </section>
 
               <!-- STEP 5 -->
-              <section class="panel" data-step="4">
+              <section class="panel" data-step="3">
                 <h2>Declarations, Agreements &amp; Consent</h2>
                 <p class="intro">
                   Please read each declaration carefully. All mandatory declarations must be
@@ -959,22 +845,21 @@
               <span style="flex: 1"></span>
               <button type="button" class="btn btn-primary" id="nextBtn">Continue &rarr;</button>
               <button type="submit" class="btn btn-primary hidden" id="submitBtn">
-                Submit registration &rarr;
+                Register &amp; email my continuation link &rarr;
               </button>
             </div>
           </form>
 
           <section class="success" id="success">
             <div class="mark">✓</div>
-            <h2>Application received.</h2>
+            <h2>Stage 1 registration received.</h2>
             <p style="color: var(--text-muted); max-width: 32rem; margin: 0.5rem auto">
-              Thank you for registering for Dominion Festival 3.0 | ARISE. The festival team will
-              review your application and contact you using your preferred method.
+              Stage 1 is complete. Check your email for your registration reference and a secure link to submit your audition video in Stage 2. Your application is not yet complete.
             </p>
 			<div id="email_message"></div>
 			<div class="reference" id="refCode"></div>
             <p style="font-size: 0.75rem; color: #8b93a0">
-              Save this reference. This is a registration confirmation, not a selection notice.
+              Save this reference. Your application is pending your Stage 2 audition submission. This is not a selection notice.
               Applicants under 18 are not shortlisted until guardian authorisation has been
               verified.
             </p>
@@ -1048,14 +933,13 @@
           next = document.getElementById("nextBtn"),
           submit = document.getElementById("submitBtn"),
           current = 0,
-          LAST = 4,
+          LAST = 3,
           CUTOFF = new Date(2026, 11, 4),
           DECL_VERSION = "UPRISING-3.0-DECL-v1.0",
           GUARDIAN_IDS = ["guardianName", "guardianRelationship", "guardianEmail", "guardianPhone"],
           names = [
             "Personal details",
             "Talent category",
-            "Audition",
             "Review",
             "Declarations, agreements & consent",
           ];
@@ -1115,11 +999,11 @@
             s.classList.toggle("done", i < n);
           });
           label.innerHTML =
-            "<strong>Step " + (n + 1) + " of 5</strong> &nbsp;·&nbsp; " + names[n];
+            "<strong>Step " + (n + 1) + " of 4</strong> &nbsp;·&nbsp; " + names[n];
           back.hidden = n === 0;
           next.classList.toggle("hidden", n === LAST);
           submit.classList.toggle("hidden", n !== LAST);
-          if (n === 3) buildReview();
+          if (n === 2) buildReview();
           if (n === LAST) {
             $("groupDeclNotice").classList.toggle("hidden", val("entryType") !== "Group");
             updateGuardian();
@@ -1151,9 +1035,6 @@
               if (!$(id).value) ok = bad($(id));
             });
             if ($("mixedAge").value === "Yes" && !$("mixedRules").value) ok = bad($("mixedRules"));
-          }
-          if (current === 2 && !YT.test($("videoLink").value.trim())) {
-            ok = bad($("videoLink"));
           }
           if (current === LAST && minorMode()) {
             GUARDIAN_IDS.forEach(function (id) {
@@ -1256,7 +1137,7 @@
             ],
             ["Act", val("title") + " · " + val("duration")],
             ["Language", val("language")],
-            ["YouTube link", val("videoLink")],
+            ["Audition video", "To be submitted using the link emailed to you"],
             ["Finale", val("finale")],
           ];
           $("reviewBox").innerHTML = rows
@@ -1302,7 +1183,7 @@
           $("declarationsVersion").value = DECL_VERSION;
           $("declarationsRecord").value = JSON.stringify(buildDeclarationRecord());
           submit.disabled = true;
-          submit.textContent = "Saving application…";
+          submit.textContent = "Saving registration…";
           fetch("submit.php", {
             method: "POST",
             body: new FormData(form),
